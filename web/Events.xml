@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><events>
+	<event>
+		<title lang="en">Everyday Italian</title>
+		<place>Firth Court</place>
+		<date>4/08/2018</date>
+		<price>£ 30.00</price>
+	</event>
+	<event>
+		<title lang="en">Harry Potter</title>
+		<place>Diamond</place>
+		<date>4/23/2018</date>
+		<price>£ 29.99</price>
+	</event>
+	<event>
+		<title lang="en">Learning XML</title>
+		<place>Information Commons</place>
+		<date>4/11/2018</date>
+		<price>£ 39.95</price>
+	</event>
+<event><title>123</title><place>123</place><date>123</date><price>123</price></event></events>
