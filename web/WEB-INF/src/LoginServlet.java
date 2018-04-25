@@ -43,14 +43,13 @@ public class LoginServlet extends HttpServlet {
             throws ServletException, IOException {
 
         //Create Session
-        HttpSession session = request.getSession(true);
+        HttpSession session = request.getSession(false);
 
         String email = request.getParameter("email");
         String pass = request.getParameter("password");
 
         if (session.getAttribute("email") == null || session.getAttribute("email").equals("")) {
             if (checkUserFromDB(email, pass)) {
-
                 session.setAttribute("email", email);
                 response.sendRedirect("login.jsp");
             } else

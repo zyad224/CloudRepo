@@ -8,7 +8,6 @@
 <link rel="stylesheet" type="text/css" href="CSS\main.css">
 </head>
 <body>
-${status}
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
