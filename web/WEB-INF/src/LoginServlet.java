@@ -1,4 +1,6 @@
 
+import org.omg.CORBA.Request;
+
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -49,7 +51,7 @@ public class LoginServlet extends HttpServlet {
         String pass = request.getParameter("password");
 
         if (session.getAttribute("email") == null || session.getAttribute("email").equals("")) {
-            if (checkUserFromDB(email, pass)) {
+            if (checkUserFromDB(email, pass, session)) {
                 session.setAttribute("email", email);
                 session.setAttribute("password",pass);
                 response.sendRedirect("login.jsp");
@@ -99,25 +101,28 @@ public class LoginServlet extends HttpServlet {
         return flag;
     }
 */
-    private boolean checkUserFromDB(String uName, String pass) {
+    private boolean checkUserFromDB(String uName, String pass,  HttpSession session) {
         boolean flag = false;
         PreparedStatement pt = null; // manages prepared statement
         Connection con = null; // manages connection
         try {
 
             con = DatabaseConn.getConnection();
-            pt = con.prepareStatement("select username,password from students.users where username=?");
+            pt = con.prepareStatement("select peanut,username,password from students.users where username=?");
 
             // process query results
             pt.setString(1, uName);
             ResultSet rs = pt.executeQuery();
             String orgUname = "", orPass = "";
+            int currentPeanut=0;
             while (rs.next()) {
                 orgUname = rs.getString("username");
                 orPass = rs.getString("password");
+                currentPeanut = rs.getInt("peanut");
             }
             if (orgUname.equals(uName)&&orPass.equals(pass)) {
                 flag = true;
+                session.setAttribute("amountPeanut",currentPeanut);
                 rs.close();
             }
         } catch (Exception e) {

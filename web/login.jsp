@@ -9,12 +9,15 @@
         <!-- Right-sided navbar links. Hide them on small screens -->
         <div class="w3-right w3-hide-small">
             <a href="#" class="w3-bar-item w3-button">Create Event</a>
-            <a href="#" class="w3-bar-item w3-button">Peanut: </a>
+            <a href="PaymentServlet" class="w3-bar-item w3-button">Peanut: ${amountPeanut}</a>
             <a href="LogoutServlet" class="w3-bar-item w3-button">Log out</a>
         </div>
     </div>
 </div>
 <% } %>
+
+<%session.setAttribute("earning",15);%>
+<%//session.setAttribute("payment",5);%>
 
 <center>
 <br><br><br>
