@@ -16,6 +16,14 @@
         <servlet-name>registerUser</servlet-name>
         <servlet-class>RegisterUserServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>LogoutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>registerUser</servlet-name>
         <url-pattern>/registerUser</url-pattern>
