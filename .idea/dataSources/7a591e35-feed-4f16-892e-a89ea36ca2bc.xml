@@ -1106,8 +1106,9 @@
     </table>
     <column id="278" parent="277" name="id">
       <Position>1</Position>
-      <DataType>int(11)|0</DataType>
+      <DataType>mediumint(9)|0</DataType>
       <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="279" parent="277" name="peanut">
@@ -1136,10 +1137,15 @@
       <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="284" parent="277" name="peanut">
+    <column id="284" parent="277" name="gender">
+      <Position>7</Position>
+      <DataType>varchar(10)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="285" parent="277" name="peanut">
       <ColNames>peanut</ColNames>
     </index>
-    <key id="285" parent="277" name="PRIMARY">
+    <key id="286" parent="277" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>

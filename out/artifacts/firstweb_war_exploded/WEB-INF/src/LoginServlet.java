@@ -7,10 +7,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import javax.servlet.http.HttpSession;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.DocumentBuilder;
-import org.w3c.dom.Document;
-import java.io.File;
 import java.io.PrintWriter;
 import java.sql.*;
 
@@ -47,12 +43,27 @@ public class LoginServlet extends HttpServlet {
             throws ServletException, IOException {
 
         //Create Session
-        HttpSession session = request.getSession();
+        HttpSession session = request.getSession(true);
 
         String email = request.getParameter("email");
         String pass = request.getParameter("password");
 
+        if (session.getAttribute("email") == null || session.getAttribute("email").equals("")) {
+            if (checkUserFromDB(email, pass)) {
 
+                session.setAttribute("email", email);
+                response.sendRedirect("login.jsp");
+            } else
+                response.sendRedirect("loginError.jsp");
+        }
+        else{
+            response.setContentType("text/html");
+            PrintWriter output = response.getWriter();
+            output.println("<!DOCTYPE html>\n" + "<html>\n" + "<body>");
+            output.println("<h2>This session is open !!</h2>");
+            output.println("</body>" + "</html>\n");
+        }
+        /*
         if (session.getAttribute("email") == null || session.getAttribute("email").equals("")){
             if(checkUserFromDB(email, pass)) {
                 session.setAttribute("email",email);
@@ -65,7 +76,7 @@ public class LoginServlet extends HttpServlet {
             output.println("<!DOCTYPE html>\n" + "<html>\n" + "<body>");
             output.println("<h2>This session is open !!</h2>");
             output.println("</body>" + "</html>\n");
-        }
+        }*/
     }
 /*
     private boolean checkXml(String email, String pass) {
@@ -94,7 +105,7 @@ public class LoginServlet extends HttpServlet {
         Connection con = null; // manages connection
         try {
 
-            con = getConnection();
+            con = DatabaseConn.getConnection();
             pt = con.prepareStatement("select username,password from students.users where username=?");
 
             // process query results
@@ -113,11 +124,5 @@ public class LoginServlet extends HttpServlet {
             e.printStackTrace();
         }
         return flag;
-    }
-
-    private static Connection getConnection() throws Exception {
-        Class.forName("com.mysql.cj.jdbc.Driver");
-        String url = "jdbc:mysql://localhost:3306/STUDENTS?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-        return DriverManager.getConnection(url, "root", "");
     }
 }

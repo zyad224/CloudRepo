@@ -1,14 +1,14 @@
+<%@ page import="java.io.PrintWriter" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <title>Login Page</title>
-
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <link rel="stylesheet" type="text/css" href="CSS\util.css">
 <link rel="stylesheet" type="text/css" href="CSS\main.css">
 </head>
 <body>
+${status}
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
@@ -38,12 +38,12 @@
 					</div>
 
 					<div class="flex-col-c p-t-170 p-b-40">
-
+						<span class="txt1"> Do not have an account ? </span> <a href="registerUser.jsp" class="txt2">
+						Sing Up </a>
 					</div>
 				</form>
 			</div>
 		</div>
 	</div>
-
 </body>
 </html>

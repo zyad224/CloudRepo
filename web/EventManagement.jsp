@@ -36,6 +36,7 @@ javax.xml.parsers.DocumentBuilder,org.w3c.dom.*"%>
 			<tbody>
 			<tr>
 				<%
+
 					for (int i = 0; i < childNode; i++) {
 				%>
 				<td><%=nl.item(i).getFirstChild().hashCode()%></td>

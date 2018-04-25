@@ -11,15 +11,16 @@
         <servlet-name>CreateEvent</servlet-name>
         <servlet-class>CreateEventServlet</servlet-class>
     </servlet>
-    <servlet>
-        <servlet-name>DatabaseConn</servlet-name>
-        <servlet-class>DatabaseConn</servlet-class>
-    </servlet>
 
+    <servlet>
+        <servlet-name>registerUser</servlet-name>
+        <servlet-class>RegisterUserServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
-        <servlet-name>DatabaseConn</servlet-name>
-        <url-pattern>/DatabaseConn</url-pattern>
+        <servlet-name>registerUser</servlet-name>
+        <url-pattern>/registerUser</url-pattern>
     </servlet-mapping>
+
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/index</url-pattern>
