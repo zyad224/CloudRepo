@@ -17,12 +17,12 @@
         <servlet-class>RegisterUserServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-name>Logout</servlet-name>
         <servlet-class>LogoutServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>LogoutServlet</servlet-name>
-        <url-pattern>/</url-pattern>
+        <servlet-name>Logout</servlet-name>
+        <url-pattern>/login</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>registerUser</servlet-name>
