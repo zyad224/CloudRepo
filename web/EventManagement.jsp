@@ -45,7 +45,6 @@
 
 			<%
 				try {
-
 					Class.forName("com.mysql.cj.jdbc.Driver");
 					String url = "jdbc:mysql://localhost:3306/STUDENTS?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 					Connection conn = DriverManager.getConnection(url, "root", "");
@@ -54,9 +53,7 @@
 					String query = "select * from events";
 					ResultSet rs = st.executeQuery(query);
 
-
 					while (rs.next()) {
-
 			%>
 			<tr>
 				<td><%=rs.getString("eventName")%></td>
@@ -65,11 +62,10 @@
 				<td><%=rs.getString("time")%></td>
 				<td><%=rs.getString("peopleToAttend")%></td>
 				<td><%=rs.getString("price")%></td>
-				<td><button type="button" onclick="alert('Hello world!')">Book Me !</button>
+				<td><button class="button" type="button" onclick="alert('Hello world!')">Book Me !</button>
 				</td>
-
 			</tr>
-
+s
 			<%}
 				}catch (Exception e){
 				}

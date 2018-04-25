@@ -50,21 +50,21 @@ public class LoginServlet extends HttpServlet {
         String email = request.getParameter("email");
         String pass = request.getParameter("password");
 
-        if (session.getAttribute("email") == null || session.getAttribute("email").equals("")) {
+        //if (session.getAttribute("email") == null || session.getAttribute("email").equals("")) {
             if (checkUserFromDB(email, pass, session)) {
                 session.setAttribute("email", email);
                 session.setAttribute("password",pass);
                 response.sendRedirect("login.jsp");
             } else
                 response.sendRedirect("loginError.jsp");
-        }
+        /*}
         else{
             response.setContentType("text/html");
             PrintWriter output = response.getWriter();
             output.println("<!DOCTYPE html>\n" + "<html>\n" + "<body>");
             output.println("<h2>This session is open !!</h2>");
             output.println("</body>" + "</html>\n");
-        }
+        }*/
         /*
         if (session.getAttribute("email") == null || session.getAttribute("email").equals("")){
             if(checkUserFromDB(email, pass)) {
@@ -108,20 +108,23 @@ public class LoginServlet extends HttpServlet {
         try {
 
             con = DatabaseConn.getConnection();
-            pt = con.prepareStatement("select peanut,username,password from students.users where username=?");
+            pt = con.prepareStatement("select id,peanut,username,password from students.users where username=?");
 
             // process query results
             pt.setString(1, uName);
             ResultSet rs = pt.executeQuery();
             String orgUname = "", orPass = "";
             int currentPeanut=0;
+            int userId=0;
             while (rs.next()) {
                 orgUname = rs.getString("username");
                 orPass = rs.getString("password");
                 currentPeanut = rs.getInt("peanut");
+                userId = rs.getInt("id");
             }
             if (orgUname.equals(uName)&&orPass.equals(pass)) {
                 flag = true;
+                session.setAttribute("userID",userId);
                 session.setAttribute("amountPeanut",currentPeanut);
                 rs.close();
             }
