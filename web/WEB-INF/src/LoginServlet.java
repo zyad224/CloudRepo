@@ -51,6 +51,7 @@ public class LoginServlet extends HttpServlet {
         if (session.getAttribute("email") == null || session.getAttribute("email").equals("")) {
             if (checkUserFromDB(email, pass)) {
                 session.setAttribute("email", email);
+                session.setAttribute("password",pass);
                 response.sendRedirect("login.jsp");
             } else
                 response.sendRedirect("loginError.jsp");
