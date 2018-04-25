@@ -1,18 +1,6 @@
-<%@ page 	import="javax.xml.parsers.DocumentBuilderFactory,
-javax.xml.parsers.DocumentBuilder,org.w3c.dom.*"%>
+<%@ page import="java.sql.*" %>
 <link rel="stylesheet" type="text/css" href="CSS\eventList.css">
-<%
-	DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-	DocumentBuilder db = dbf.newDocumentBuilder();
-	Document doc = db.parse("C:\\Users\\pegas\\IdeaProjects\\firstweb\\web\\Events.xml");
-	NodeList nList = doc.getElementsByTagName("event");
-	int childNode = nList.getLength();
 
-	NodeList nl = doc.getElementsByTagName("title");
-	NodeList n2 = doc.getElementsByTagName("place");
-	NodeList n3 = doc.getElementsByTagName("date");
-	NodeList n4 = doc.getElementsByTagName("price");
-%>
 <section>
 
 	<!--for demo wrap-->
@@ -21,11 +9,15 @@ javax.xml.parsers.DocumentBuilder,org.w3c.dom.*"%>
 		<table cellpadding="0" cellspacing="0" border="0">
 			<thead>
 			<tr>
-				<th>Event ID</th>
+
 				<th>Event Title</th>
 				<th>Event Place</th>
 				<th>Event Date</th>
+				<th>Event Time</th>
+				<th>People</th>
 				<th>Event Price</th>
+				<th>Booking</th>
+
 			</tr>
 			</thead>
 		</table>
@@ -34,22 +26,53 @@ javax.xml.parsers.DocumentBuilder,org.w3c.dom.*"%>
 	<div class="tbl-content">
 		<table cellpadding="0" cellspacing="0" border="0">
 			<tbody>
-			<tr>
-				<%
 
-					for (int i = 0; i < childNode; i++) {
-				%>
-				<td><%=nl.item(i).getFirstChild().hashCode()%></td>
-				<td><%=nl.item(i).getFirstChild().getNodeValue()%></td>
-				<td><%=n2.item(i).getFirstChild().getNodeValue()%></td>
-				<td><%=n3.item(i).getFirstChild().getNodeValue()%></td>
-				<td><%=n4.item(i).getFirstChild().getNodeValue()%></td>
-			</tr>
 			<%
-				}
+				try {
+
+					Class.forName("com.mysql.cj.jdbc.Driver");
+					String url = "jdbc:mysql://localhost:3306/STUDENTS?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+					Connection conn = DriverManager.getConnection(url, "root", "123");
+
+					Statement st = conn.createStatement();
+					String query = "select * from events";
+					ResultSet rs = st.executeQuery(query);
+
+
+					while (rs.next()) {
+
 			%>
+			<tr>
+
+
+				<td><%=rs.getString("eventName")%></td>
+				<td><%=rs.getString("place")%></td>
+				<td><%=rs.getString("date")%></td>
+				<td><%=rs.getString("time")%></td>
+				<td><%=rs.getString("peopleToAttend")%></td>
+				<td><%=rs.getString("price")%></td>
+				<td><button type="button" onclick="alert('Hello world!')">Book Me !</button>
+				</td>
+
+			</tr>
+
+			<%
+					}
+
+				}catch (Exception e){
+
+				}
+
+
+			%>
+
+			<%--<%--%>
+			<%--}--%>
+			<%--%>--%>
 			</tbody>
 		</table>
 	</div>
 	<a href="/CreateEvent.html" class="button" style="vertical-align:middle"><span>Create Event</span></a>
+	<a href="/ShowMyEvents.jsp" class="button" style="vertical-align:middle"><span>Show my Events</span></a>
+
 </section>
