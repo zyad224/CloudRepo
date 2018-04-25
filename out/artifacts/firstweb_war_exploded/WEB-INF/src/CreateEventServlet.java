@@ -1,5 +1,3 @@
-
-
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -8,17 +6,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.PrintWriter;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.*;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamResult;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.xml.sax.SAXException;
+import java.sql.Connection;
+import java.sql.Statement;
 
 /**
  * Servlet implementation class createEvent
@@ -52,8 +41,10 @@ public class CreateEventServlet extends HttpServlet {
         String eventPlace=request.getParameter("Place");
         String eventDate=request.getParameter("Date");
         String eventPrice= request.getParameter("Price");
+        String eventTime= request.getParameter("Time");
+        String people= request.getParameter("People to attend");
 
-        addEvent2XML(eventName,eventPlace,eventDate,eventPrice);
+        insertEvent(eventName,eventPlace,eventDate,eventPrice, eventTime,people);
         doGet(request, response);
     }
 
@@ -69,75 +60,53 @@ public class CreateEventServlet extends HttpServlet {
     }
 
 
-    private void addEvent2XML(String eventName, String eventPlace, String eventDate, String eventPrice) {
+    private void insertEvent(String eventName, String eventPlace, String eventDate, String eventPrice
+            , String eventTime,String people) {
 
-        String xmlPath  = "C:\\Users\\pegas\\IdeaProjects\\firstweb\\web\\Events.xml";
-        DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
-        DocumentBuilder documentBuilder = null;
-        Document document = null;
-        Element root = null;
+        Connection con = null;
 
         try {
-            documentBuilder = documentBuilderFactory.newDocumentBuilder();
-            document = documentBuilder.parse(xmlPath);
-            root = document.getDocumentElement();
-
-            Collection<Event> events = new ArrayList<>();
-            events.add(new Event());
-
-            for (Event event : events) {
-                // event elements
-                Element newEvent = document.createElement("event");
-
-                Element title = document.createElement("title");
-                title.appendChild(document.createTextNode(eventName));
-                newEvent.appendChild(title);
-
-                Element place = document.createElement("place");
-                place.appendChild(document.createTextNode(eventPlace));
-                newEvent.appendChild(place);
-
-                Element date = document.createElement("date");
-                date.appendChild(document.createTextNode(eventDate));
-                newEvent.appendChild(date);
-
-                Element ePrice = document.createElement("price");
-                ePrice.appendChild(document.createTextNode(eventPrice));
-                newEvent.appendChild(ePrice);
-
-                root.appendChild(newEvent);
-            }
-
-            DOMSource source = new DOMSource(document);
-
-            TransformerFactory transformerFactory = TransformerFactory.newInstance();
-            Transformer transformer = transformerFactory.newTransformer();
-            StreamResult result = new StreamResult(xmlPath);
-            transformer.transform(source, result);
-
-        } catch (ParserConfigurationException e) {
+            con = DatabaseConn.getConnection();
+            Statement statement = con.createStatement();
+            String query = "insert into events (eventName, place, date, time, peopleToAttend, price, userID) " +
+                    "Values ('" + eventName + "','" + eventPlace +"','" + eventDate + "', '" +
+                    eventTime + "',  '" + people + "', '" + eventPrice + "' , " +
+                    "'" + 103 + "');";
+            statement.executeUpdate(query);
+        }catch (Exception e){
             e.printStackTrace();
-        } catch (SAXException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (TransformerConfigurationException e) {
-            e.printStackTrace();
-        } catch (TransformerException e) {
-            e.printStackTrace();
+
         }
+
     }
+
 }
 
 class Event{
-    String title;
+    String eventName;
     String place;
     String date;
+    String time;
+    String peopleToAttend;
     String price;
+    int userID;
 
-    public String getTitle() { return title; }
+
+
+    public String getEventName() { return eventName; }
     public String getPlace() { return place; }
     public String getDate() { return date; }
+    public String getTime() { return time; }
+    public String getPeople() { return peopleToAttend; }
     public String getPrice() { return price; }
+    public int getID() { return userID; }
+
+    public void setEventName(String eventName) { this.eventName=eventName; }
+    public void setPlace(String place) { this.place=place; }
+    public void setDate(String date) { this.date=date; }
+    public void setTime(String time) { this.time=time; }
+    public void setPeople(String peopleToAttend) { this.peopleToAttend=peopleToAttend; }
+    public void setPrice(String price) { this.price=price; }
+    public void setID(int userID) { this.userID=userID; }
 
 }

@@ -13,9 +13,9 @@
 <div class="container-contact100">
     <div class="wrap-contact100">
         <form class="contact100-form validate-form" action="CreateEventServlet" method="post">
-				<span class="contact100-form-title">
-					Create Your Event
-				</span>
+            <span class="contact100-form-title">
+               Create Your Event
+            </span>
 
             <div class="wrap-input100 validate-input" data-validate="Event title is required">
                 <span class="label-input100">Event Name</span>
@@ -35,11 +35,25 @@
                 <span class="focus-input100"></span>
             </div>
 
+            <div class="wrap-input100 validate-input" data-validate = "Event place is required">
+                <span class="label-input100">Event Time</span>
+                <input class="input100" type="text" name="Time" placeholder="Enter your event addess">
+                <span class="focus-input100"></span>
+            </div>
+
+            <div class="wrap-input100 validate-input" data-validate = "Price is required">
+                <span class="label-input100">People to attend</span>
+                <input class="input100" name="People to attend" placeholder="What is your event price?"></input>
+                <span class="focus-input100"></span>
+            </div>
+
             <div class="wrap-input100 validate-input" data-validate = "Price is required">
                 <span class="label-input100">Price</span>
                 <input class="input100" name="Price" placeholder="What is your event price?"></input>
                 <span class="focus-input100"></span>
             </div>
+
+
 
             <div class="container-contact100-form-btn">
                 <div class="wrap-contact100-form-btn">

@@ -1101,51 +1101,95 @@
       <Charset>utf8mb4</Charset>
       <DefaultForCharset>0</DefaultForCharset>
     </collation>
-    <table id="277" parent="5" name="users">
+    <table id="277" parent="5" name="events">
       <Engine>InnoDB</Engine>
     </table>
-    <column id="278" parent="277" name="id">
+    <table id="278" parent="5" name="users">
+      <Engine>InnoDB</Engine>
+    </table>
+    <column id="279" parent="277" name="eventName">
       <Position>1</Position>
-      <DataType>mediumint(9)|0</DataType>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="280" parent="277" name="place">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="281" parent="277" name="date">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="282" parent="277" name="time">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="283" parent="277" name="peopleToAttend">
+      <Position>5</Position>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="284" parent="277" name="price">
+      <Position>6</Position>
+      <DataType>varchar(255)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="285" parent="277" name="userID">
+      <Position>7</Position>
+      <DataType>int(11)|0</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="286" parent="277" name="userId___fk">
+      <ColNames>userID</ColNames>
+    </index>
+    <foreign-key id="287" parent="277" name="userId___fk">
+      <ColNames>userID</ColNames>
+      <RefSchemaName>students</RefSchemaName>
+      <RefTableName>users</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="288" parent="278" name="id">
+      <Position>1</Position>
+      <DataType>int(100)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="279" parent="277" name="peanut">
+    <column id="289" parent="278" name="peanut">
       <Position>2</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="280" parent="277" name="username">
+    <column id="290" parent="278" name="username">
       <Position>3</Position>
       <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="281" parent="277" name="password">
+    <column id="291" parent="278" name="password">
       <Position>4</Position>
       <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="282" parent="277" name="firstname">
+    <column id="292" parent="278" name="firstname">
       <Position>5</Position>
       <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="283" parent="277" name="lastname">
+    <column id="293" parent="278" name="lastname">
       <Position>6</Position>
       <DataType>varchar(255)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="284" parent="277" name="gender">
+    <column id="294" parent="278" name="gender">
       <Position>7</Position>
       <DataType>varchar(10)|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="285" parent="277" name="peanut">
-      <ColNames>peanut</ColNames>
-    </index>
-    <key id="286" parent="277" name="PRIMARY">
+    <key id="295" parent="278" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>

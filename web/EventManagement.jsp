@@ -2,14 +2,12 @@
 <link rel="stylesheet" type="text/css" href="CSS\eventList.css">
 
 <section>
-
 	<!--for demo wrap-->
 	<h1>Event List</h1>
 	<div class="tbl-header">
 		<table cellpadding="0" cellspacing="0" border="0">
 			<thead>
 			<tr>
-
 				<th>Event Title</th>
 				<th>Event Place</th>
 				<th>Event Date</th>
@@ -17,7 +15,6 @@
 				<th>People</th>
 				<th>Event Price</th>
 				<th>Booking</th>
-
 			</tr>
 			</thead>
 		</table>
@@ -32,7 +29,7 @@
 
 					Class.forName("com.mysql.cj.jdbc.Driver");
 					String url = "jdbc:mysql://localhost:3306/STUDENTS?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-					Connection conn = DriverManager.getConnection(url, "root", "123");
+					Connection conn = DriverManager.getConnection(url, "root", "");
 
 					Statement st = conn.createStatement();
 					String query = "select * from events";
@@ -43,8 +40,6 @@
 
 			%>
 			<tr>
-
-
 				<td><%=rs.getString("eventName")%></td>
 				<td><%=rs.getString("place")%></td>
 				<td><%=rs.getString("date")%></td>
@@ -56,14 +51,9 @@
 
 			</tr>
 
-			<%
-					}
-
+			<%}
 				}catch (Exception e){
-
 				}
-
-
 			%>
 
 			<%--<%--%>
