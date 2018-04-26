@@ -44,6 +44,7 @@ public class LoginServlet extends HttpServlet {
 
         String email = request.getParameter("email");
         String pass = request.getParameter("password");
+        System.out.println("pass:"+pass);
 //        System.out.println(pass);
         //if (session.getAttribute("email") == null || session.getAttribute("email").equals("")) {
             if (checkUserFromDB(email, pass, session)) {

@@ -43,6 +43,7 @@
                 <th>Description</th>
                 <th>Mobile</th>
                 <th>Price</th>
+                <th>People To Attend</th>
                 <th>Booking</th>
             </tr>
             </thead>
@@ -74,7 +75,9 @@
                 <td><%=rs.getString("description")%></td>
                 <td><%=rs.getString("mobile")%></td>
                 <td><%=rs.getString("price")%></td>
-                <td><button class="button" type="button" onclick="alert('Hello world!')">Book Me !</button>
+                <td><%=rs.getString("peopleToAttend")%></td>
+                <td><a href="BookHelpServlet?Id=<%=rs.getInt("id") %>" class="button2">Book Me!</a></td>
+
                 </td>
             </tr>
 
@@ -91,5 +94,7 @@
     </div>
     <a href="/CreateHelp.jsp" class="button" style="vertical-align:middle"><span>Create Help Request</span></a>
     <a href="/ShowMyHelps.jsp" class="button" style="vertical-align:middle"><span>My Help Requests</span></a>
+    <a href="/ShowMyHelpBookings.jsp" class="button" style="vertical-align:middle"><span>My Bookings</span></a>
+
 
 </section>

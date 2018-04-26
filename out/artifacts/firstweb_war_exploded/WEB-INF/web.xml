@@ -40,9 +40,18 @@
         <servlet-class>BookEventServlet</servlet-class>
     </servlet>
 
+    <servlet>
+        <servlet-name>BookHelp</servlet-name>
+        <servlet-class>BookHelpServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>BookEvent</servlet-name>
         <url-pattern>/EventManagement</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>BookHelp</servlet-name>
+        <url-pattern>/Peer2peer</url-pattern>
     </servlet-mapping>
 
     <servlet-mapping>

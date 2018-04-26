@@ -40,7 +40,7 @@
                 <th>Help Time</th>
                 <th>Help Topic</th>
                 <th>Description</th>
-                <th>Mobile</th>
+                <th>Peer Mobile</th>
                 <th>Price</th>
                 <th>User</th>
                 <th>Delete</th>

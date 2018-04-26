@@ -2,10 +2,9 @@
   Created by IntelliJ IDEA.
   User: Zeyad
   Date: 4/26/2018
-  Time: 12:25 AM
+  Time: 11:56 PM
   To change this template use File | Settings | File Templates.
 --%>
-
 <%@ page import="java.sql.*" %>
 <link rel="stylesheet" type="text/css" href="CSS\eventList.css">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -30,21 +29,22 @@
 
 <section>
     <!--for demo wrap-->
-    <h1>Help Request List</h1>
+    <h1>${email} Help Bookings</h1>
     <div class="tbl-header">
         <table cellpadding="0" cellspacing="0" border="0">
             <thead>
             <tr>
-                <th>Help Title</th>
+                <th>Help ID</th>
+                <th>Help Name</th>
                 <th>Help Place</th>
                 <th>Help Date</th>
                 <th>Help Time</th>
                 <th>Help Topic</th>
-                <th>Description</th>
+                <th>Help Price</th>
                 <th>Peer Mobile</th>
-                <th>Price</th>
-                <th>People To Attend</th>
-                <th>Booking</th>
+
+
+
             </tr>
             </thead>
         </table>
@@ -56,29 +56,47 @@
 
             <%
                 try {
+
                     Class.forName("com.mysql.cj.jdbc.Driver");
                     String url = "jdbc:mysql://localhost:3306/STUDENTS?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
                     Connection conn = DriverManager.getConnection(url, "root", "123");
 
-                    Statement st = conn.createStatement();
-                    String query = "select * from help";
-                    ResultSet rs = st.executeQuery(query);
+                    String s = (String)session.getAttribute("email");
+                    String p=(String) session.getAttribute("password");
 
-                    while (rs.next()) {
+                    Statement st = conn.createStatement();
+
+                    String query2="select id from users where username='"+s + "' AND password='" + p +"';";
+                    ResultSet rs = st.executeQuery(query2);
+                    rs.next();
+                    int id= rs.getInt("id");
+                    System.out.println(rs.getInt("id"));
+                    String query3= "select * from bookinghelp where userid='" + id +"';";
+                    ResultSet rs2=st.executeQuery(query3);
+
+                    while (rs2.next()) {
+                        System.out.println(rs2.getString("helpname"));
+
             %>
             <tr>
-                <td><%=rs.getString("helpName")%></td>
-                <td><%=rs.getString("place")%></td>
-                <td><%=rs.getString("date")%></td>
-                <td><%=rs.getString("time")%></td>
-                <td><%=rs.getString("topic")%></td>
-                <td><%=rs.getString("description")%></td>
-                <td><%=rs.getString("mobile")%></td>
-                <td><%=rs.getString("price")%></td>
-                <td><%=rs.getString("peopleToAttend")%></td>
-                <td><a href="BookHelpServlet?Id=<%=rs.getInt("id") %>" class="button2">Book Me!</a></td>
+                <td><%=rs2.getString("helpid")%></td>
+                <td><%=rs2.getString("helpname")%></td>
+                <td><%=rs2.getString("place")%></td>
+                <td><%=rs2.getString("date")%></td>
+                <td><%=rs2.getString("time")%></td>
+                <td><%=rs2.getString("topic")%></td>
+                <td><%=rs2.getString("price")%></td>
+                <td><%=rs2.getString("mobile")%></td>
+
+
+
+
+
+            <%--<td><%=s%></td>--%>
+
 
                 </td>
+
             </tr>
 
             <%}
@@ -92,9 +110,6 @@
             </tbody>
         </table>
     </div>
-    <a href="/CreateHelp.jsp" class="button" style="vertical-align:middle"><span>Create Help Request</span></a>
-    <a href="/ShowMyHelps.jsp" class="button" style="vertical-align:middle"><span>My Help Requests</span></a>
-    <a href="/ShowMyHelpBookings.jsp" class="button" style="vertical-align:middle"><span>My Bookings</span></a>
 
 
 </section>

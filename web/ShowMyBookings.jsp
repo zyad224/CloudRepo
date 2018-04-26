@@ -29,7 +29,7 @@
 
 <section>
     <!--for demo wrap-->
-    <h1>${email} Bookings</h1>
+    <h1>${email} Event Bookings</h1>
     <div class="tbl-header">
         <table cellpadding="0" cellspacing="0" border="0">
             <thead>

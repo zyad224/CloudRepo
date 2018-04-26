@@ -48,8 +48,10 @@ public class CreateHelpServlet extends HttpServlet {
         String helpTopic= request.getParameter("Topic");
         String helpDesc= request.getParameter("Description");
         String helpMob= request.getParameter("Mobile");
+        String people= request.getParameter("People");
 
-        insertHelp(helpName,helpPlace,helpDate,helpPrice, helpTime,helpTopic,helpDesc,helpMob,session);
+
+        insertHelp(helpName,helpPlace,helpDate,helpPrice, helpTime,helpTopic,helpDesc,helpMob,people,session);
         doGet(request, response);
     }
 
@@ -65,16 +67,16 @@ public class CreateHelpServlet extends HttpServlet {
     }
 
     private void insertHelp(String helpName, String helpPlace, String helpDate, String helpPrice
-            , String helpTime,String helpTopic,String helpDesc,String helpMob, HttpSession session) {
+            , String helpTime,String helpTopic,String helpDesc,String helpMob,String people, HttpSession session) {
 
         Connection con = null;
 
         try {
             con = DatabaseConn.getConnection();
             Statement statement = con.createStatement();
-            String query = "insert into help (helpName, place, date, time, topic, description,mobile,price, userID) " +
+            String query = "insert into help (helpName, place, date, time, topic, description,mobile,price,peopleToAttend, userID) " +
                     "Values ('" + helpName + "','" + helpPlace +"','" + helpDate + "', '" +
-                    helpTime + "',  '" + helpTopic + "', '" + helpDesc + "', '"  + helpMob + "', '" +helpPrice + "' , " +
+                    helpTime + "',  '" + helpTopic + "', '" + helpDesc + "', '"  + helpMob + "','"+helpPrice+"', '" +people + "' , " +
                     "'" + session.getAttribute("userID") + "');";
 
             statement.executeUpdate(query);
