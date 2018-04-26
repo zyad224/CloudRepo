@@ -20,7 +20,7 @@ public class PaymentServlet extends HttpServlet {
 
         String s = (String)session.getAttribute("email");
         String p = (String) session.getAttribute("password");
-
+        System.out.println(s + ", " + p);
         try{
             Connection conn = DatabaseConn.getConnection();
             Statement st = conn.createStatement();
@@ -40,8 +40,9 @@ public class PaymentServlet extends HttpServlet {
                 String message = payment(id,peanut,name,(int)session.getAttribute("payment"),session);
                 out.println("alert('"+message+"');");
                 out.println("</script>");
-                String referer = request.getHeader("referer");
-                response.sendRedirect(referer);
+                //String referer = request.getHeader("referer");
+                //response.sendRedirect(referer);
+                request.getRequestDispatcher("login.jsp").forward(request, response);
                 out.close();
             }
 
@@ -52,8 +53,9 @@ public class PaymentServlet extends HttpServlet {
                 String message2 = earning(id,peanut,name,(int)session.getAttribute("earning"),session);
                 out.println("alert('"+message2+"');");
                 out.println("</script>");
-                String referer = request.getHeader("referer");
-                response.sendRedirect(referer);
+                request.getRequestDispatcher("login.jsp").forward(request, response);
+                //String referer = request.getHeader("referer");
+                //response.sendRedirect(referer);
                 out.close();
             }
 
