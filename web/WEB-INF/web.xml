@@ -8,6 +8,20 @@
         <servlet-class>LoginServlet</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>DeleteEvent</servlet-name>
+        <servlet-class>DeleteEvent</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>CreateHelp</servlet-name>
+        <servlet-class>CreateHelpServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>DeleteHelp</servlet-name>
+        <servlet-class>DeleteHelp</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>CreateEvent</servlet-name>
         <servlet-class>CreateEventServlet</servlet-class>
     </servlet>
@@ -30,11 +44,26 @@
     </servlet-mapping>
 
     <servlet-mapping>
+        <servlet-name>DeleteEvent</servlet-name>
+        <url-pattern>/DeleteEvent</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>DeleteHelp</servlet-name>
+        <url-pattern>/DeleteHelp</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/index</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>CreateEvent</servlet-name>
         <url-pattern>/CreateEvent</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>CreateHelp</servlet-name>
+        <url-pattern>/CreateHelp</url-pattern>
     </servlet-mapping>
 </web-app>

@@ -56,9 +56,11 @@
 
                     Class.forName("com.mysql.cj.jdbc.Driver");
                     String url = "jdbc:mysql://localhost:3306/STUDENTS?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+
                     Connection conn = DriverManager.getConnection(url, "root", "123");
                     String s = (String)session.getAttribute("email");
                     String p=(String) session.getAttribute("password");
+                    System.out.println(s+""+p);
 
                     Statement st = conn.createStatement();
 
@@ -66,12 +68,14 @@
                     ResultSet rs = st.executeQuery(query2);
                     rs.next();
                     int id= rs.getInt("id");
-                    System.out.println(rs.getInt("id"));
+                    //System.out.println("in");
+                    //System.out.println(rs.getInt("id"));
                     String query3= "select * from events where userID='" + id +"';";
                     ResultSet rs2=st.executeQuery(query3);
 
                     while (rs2.next()) {
                         System.out.println(rs2.getString("eventName"));
+
 
             %>
             <tr>
@@ -82,8 +86,9 @@
                 <td><%=rs2.getString("peopleToAttend")%></td>
                 <td><%=rs2.getString("price")%></td>
                 <td><%=s%></td>
+                <%--<%System.out.println("this is is:"+rs2.getInt("id"));%>--%>
 
-                <td><button type="button" onclick="alert('Hello world!')">Delete !</button>
+                <td><a href="DeleteEvent?Id=<%=rs2.getInt("id") %>">delete</a></td>
                 </td>
 
             </tr>

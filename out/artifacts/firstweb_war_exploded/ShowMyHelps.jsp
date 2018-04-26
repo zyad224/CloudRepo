@@ -87,7 +87,8 @@
                 <td><%=rs2.getString("price")%></td>
                 <td><%=s%></td>
 
-                <td><button type="button" onclick="alert('Hello world!')">Delete !</button>
+                <td><a href="DeleteHelp?Id=<%=rs2.getInt("id") %>">delete</a></td>
+
                 </td>
 
             </tr>
