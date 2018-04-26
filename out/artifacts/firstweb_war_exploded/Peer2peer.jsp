@@ -1,14 +1,14 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <title>Insert title here</title>
-</head>
-<body>
+<%--
+  Created by IntelliJ IDEA.
+  User: Zeyad
+  Date: 4/26/2018
+  Time: 12:25 AM
+  To change this template use File | Settings | File Templates.
+--%>
 
+<%@ page import="java.sql.*" %>
+<link rel="stylesheet" type="text/css" href="CSS\eventList.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 <% if (session.getAttribute("email") == null) { %>
 
@@ -26,6 +26,70 @@
 </div>
 <% } %>
 
+<br><br>
 
-</body>
-</html>
+<section>
+    <!--for demo wrap-->
+    <h1>Help Request List</h1>
+    <div class="tbl-header">
+        <table cellpadding="0" cellspacing="0" border="0">
+            <thead>
+            <tr>
+                <th>Help Title</th>
+                <th>Help Place</th>
+                <th>Help Date</th>
+                <th>Help Time</th>
+                <th>Help Topic</th>
+                <th>Description</th>
+                <th>Mobile</th>
+                <th>Price</th>
+                <th>Booking</th>
+            </tr>
+            </thead>
+        </table>
+    </div>
+
+    <div class="tbl-content">
+        <table cellpadding="0" cellspacing="0" border="0">
+            <tbody>
+
+            <%
+                try {
+                    Class.forName("com.mysql.cj.jdbc.Driver");
+                    String url = "jdbc:mysql://localhost:3306/STUDENTS?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+                    Connection conn = DriverManager.getConnection(url, "root", "123");
+
+                    Statement st = conn.createStatement();
+                    String query = "select * from help";
+                    ResultSet rs = st.executeQuery(query);
+
+                    while (rs.next()) {
+            %>
+            <tr>
+                <td><%=rs.getString("helpName")%></td>
+                <td><%=rs.getString("place")%></td>
+                <td><%=rs.getString("date")%></td>
+                <td><%=rs.getString("time")%></td>
+                <td><%=rs.getString("topic")%></td>
+                <td><%=rs.getString("description")%></td>
+                <td><%=rs.getString("mobile")%></td>
+                <td><%=rs.getString("price")%></td>
+                <td><button class="button" type="button" onclick="alert('Hello world!')">Book Me !</button>
+                </td>
+            </tr>
+
+            <%}
+            }catch (Exception e){
+            }
+            %>
+
+            <%--<%--%>
+            <%--}--%>
+            <%--%>--%>
+            </tbody>
+        </table>
+    </div>
+    <a href="/CreateHelp.jsp" class="button" style="vertical-align:middle"><span>Create Help Request</span></a>
+    <a href="/ShowMyHelps.jsp" class="button" style="vertical-align:middle"><span>My Help Requests</span></a>
+
+</section>

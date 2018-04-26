@@ -29,17 +29,19 @@
 
 <section>
     <!--for demo wrap-->
-    <h1>${email} Event List</h1>
+    <h1>${email} Help Requests</h1>
     <div class="tbl-header">
         <table cellpadding="0" cellspacing="0" border="0">
             <thead>
             <tr>
-                <th>Event Title</th>
-                <th>Event Place</th>
-                <th>Event Date</th>
-                <th>Event Time</th>
-                <th>People</th>
-                <th>Event Price</th>
+                <th>Help Title</th>
+                <th>Help Place</th>
+                <th>Help Date</th>
+                <th>Help Time</th>
+                <th>Help Topic</th>
+                <th>Description</th>
+                <th>Mobile</th>
+                <th>Price</th>
                 <th>User</th>
                 <th>Delete</th>
             </tr>
@@ -67,19 +69,21 @@
                     rs.next();
                     int id= rs.getInt("id");
                     System.out.println(rs.getInt("id"));
-                    String query3= "select * from events where userID='" + id +"';";
+                    String query3= "select * from help where userID='" + id +"';";
                     ResultSet rs2=st.executeQuery(query3);
 
                     while (rs2.next()) {
-                        System.out.println(rs2.getString("eventName"));
+                      //  System.out.println(rs2.getString("eventName"));
 
             %>
             <tr>
-                <td><%=rs2.getString("eventName")%></td>
+                <td><%=rs2.getString("helpName")%></td>
                 <td><%=rs2.getString("place")%></td>
                 <td><%=rs2.getString("date")%></td>
                 <td><%=rs2.getString("time")%></td>
-                <td><%=rs2.getString("peopleToAttend")%></td>
+                <td><%=rs2.getString("topic")%></td>
+                <td><%=rs2.getString("description")%></td>
+                <td><%=rs2.getString("mobile")%></td>
                 <td><%=rs2.getString("price")%></td>
                 <td><%=s%></td>
 

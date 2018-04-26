@@ -1,3 +1,10 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: Zeyad
+  Date: 4/26/2018
+  Time: 12:25 AM
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page import="java.sql.*" %>
 <link rel="stylesheet" type="text/css" href="CSS\eventList.css">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -22,7 +29,7 @@
 
 <section>
     <!--for demo wrap-->
-    <h1>Event List</h1>
+    <h1>${email} Event List</h1>
     <div class="tbl-header">
         <table cellpadding="0" cellspacing="0" border="0">
             <thead>
@@ -53,13 +60,7 @@
                     String s = (String)session.getAttribute("email");
                     String p=(String) session.getAttribute("password");
 
-
-
                     Statement st = conn.createStatement();
-                   ;
-
-
-
 
                     String query2="select id from users where username='"+s + "' AND password='" + p +"';";
                     ResultSet rs = st.executeQuery(query2);

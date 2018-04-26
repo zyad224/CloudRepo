@@ -4,6 +4,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.PrintWriter;
 
 import java.sql.Connection;
@@ -37,6 +38,8 @@ public class CreateEventServlet extends HttpServlet {
      */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        HttpSession session = request.getSession();
+
         String eventName = request.getParameter("Title");
         String eventPlace=request.getParameter("Place");
         String eventDate=request.getParameter("Date");
@@ -44,7 +47,7 @@ public class CreateEventServlet extends HttpServlet {
         String eventTime= request.getParameter("Time");
         String people= request.getParameter("People to attend");
 
-        insertEvent(eventName,eventPlace,eventDate,eventPrice, eventTime,people);
+        insertEvent(eventName,eventPlace,eventDate,eventPrice, eventTime,people,session);
         doGet(request, response);
     }
 
@@ -59,9 +62,8 @@ public class CreateEventServlet extends HttpServlet {
         output.println("</body>" + "</html>\n");
     }
 
-
     private void insertEvent(String eventName, String eventPlace, String eventDate, String eventPrice
-            , String eventTime,String people) {
+            , String eventTime,String people, HttpSession session) {
 
         Connection con = null;
 
@@ -71,15 +73,12 @@ public class CreateEventServlet extends HttpServlet {
             String query = "insert into events (eventName, place, date, time, peopleToAttend, price, userID) " +
                     "Values ('" + eventName + "','" + eventPlace +"','" + eventDate + "', '" +
                     eventTime + "',  '" + people + "', '" + eventPrice + "' , " +
-                    "'" + 103 + "');";
+                    "'" + session.getAttribute("userID") + "');";
             statement.executeUpdate(query);
         }catch (Exception e){
             e.printStackTrace();
-
         }
-
     }
-
 }
 
 class Event{
