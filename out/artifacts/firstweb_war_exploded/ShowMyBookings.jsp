@@ -2,7 +2,7 @@
   Created by IntelliJ IDEA.
   User: Zeyad
   Date: 4/26/2018
-  Time: 12:25 AM
+  Time: 7:12 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page import="java.sql.*" %>
@@ -29,21 +29,16 @@
 
 <section>
     <!--for demo wrap-->
-    <h1>${email} Help Requests</h1>
+    <h1>${email} Bookings</h1>
     <div class="tbl-header">
         <table cellpadding="0" cellspacing="0" border="0">
             <thead>
             <tr>
-                <th>Help Title</th>
-                <th>Help Place</th>
-                <th>Help Date</th>
-                <th>Help Time</th>
-                <th>Help Topic</th>
-                <th>Description</th>
-                <th>Mobile</th>
-                <th>Price</th>
-                <th>User</th>
-                <th>Delete</th>
+                <th>Event ID</th>
+                <th>Event Name</th>
+                <th>Event Place</th>
+                <th>Event Date</th>
+                <th>Event Time</th>
             </tr>
             </thead>
         </table>
@@ -70,25 +65,22 @@
                     rs.next();
                     int id= rs.getInt("id");
                     System.out.println(rs.getInt("id"));
-                    String query3= "select * from help where userID='" + id +"';";
+                    String query3= "select * from booking where userid='" + id +"';";
                     ResultSet rs2=st.executeQuery(query3);
 
                     while (rs2.next()) {
-                      //  System.out.println(rs2.getString("eventName"));
+                         System.out.println(rs2.getString("eventName"));
 
             %>
             <tr>
-                <td><%=rs2.getString("helpName")%></td>
+                <td><%=rs2.getString("eventid")%></td>
+                <td><%=rs2.getString("eventname")%></td>
                 <td><%=rs2.getString("place")%></td>
                 <td><%=rs2.getString("date")%></td>
                 <td><%=rs2.getString("time")%></td>
-                <td><%=rs2.getString("topic")%></td>
-                <td><%=rs2.getString("description")%></td>
-                <td><%=rs2.getString("mobile")%></td>
-                <td><%=rs2.getString("price")%></td>
-                <td><%=s%></td>
 
-                <td><a href="DeleteHelp?Id=<%=rs2.getInt("id") %>">delete</a></td>
+                <%--<td><%=s%></td>--%>
+
 
                 </td>
 

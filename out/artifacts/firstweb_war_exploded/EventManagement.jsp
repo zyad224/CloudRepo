@@ -11,7 +11,7 @@
 		<!-- Right-sided navbar links. Hide them on small screens -->
 		<div class="w3-right w3-hide-small">
 			<a href="#" class="w3-bar-item w3-button">Create Event</a>
-			<a href="#" class="w3-bar-item w3-button">Peanut: </a>
+			<a href="#" class="w3-bar-item w3-button">Peanut: ${amountPeanut}</a>
 			<a href="LogoutServlet" class="w3-bar-item w3-button">Log out</a>
 		</div>
 	</div>
@@ -62,7 +62,7 @@
 				<td><%=rs.getString("time")%></td>
 				<td><%=rs.getString("peopleToAttend")%></td>
 				<td><%=rs.getString("price")%></td>
-				<td><button class="button" type="button" onclick="alert('Hello world!')">Book Me !</button>
+				<td><a href="BookEventServlet?Id=<%=rs.getInt("id") %>" class="button2">Book Me!</a></td>
 				</td>
 			</tr>
 
@@ -79,5 +79,7 @@
 	</div>
 	<a href="/CreateEvent.jsp" class="button" style="vertical-align:middle"><span>Create Event</span></a>
 	<a href="/ShowMyEvents.jsp" class="button" style="vertical-align:middle"><span>My Events</span></a>
+	<a href="/ShowMyBookings.jsp" class="button" style="vertical-align:middle"><span>My Bookings</span></a>
+
 
 </section>

@@ -68,8 +68,6 @@
                     ResultSet rs = st.executeQuery(query2);
                     rs.next();
                     int id= rs.getInt("id");
-                    //System.out.println("in");
-                    //System.out.println(rs.getInt("id"));
                     String query3= "select * from events where userID='" + id +"';";
                     ResultSet rs2=st.executeQuery(query3);
 
@@ -86,11 +84,8 @@
                 <td><%=rs2.getString("peopleToAttend")%></td>
                 <td><%=rs2.getString("price")%></td>
                 <td><%=s%></td>
-                <%--<%System.out.println("this is is:"+rs2.getInt("id"));%>--%>
-
-                <td><a href="DeleteEvent?Id=<%=rs2.getInt("id") %>">delete</a></td>
+                <td><a href="DeleteEvent?Id=<%=rs2.getInt("id") %>" class="button2">Delete</a></td>
                 </td>
-
             </tr>
 
             <%}

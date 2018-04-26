@@ -47,7 +47,7 @@
 				try {
 					Class.forName("com.mysql.cj.jdbc.Driver");
 					String url = "jdbc:mysql://localhost:3306/STUDENTS?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-					Connection conn = DriverManager.getConnection(url, "root", "");
+					Connection conn = DriverManager.getConnection(url, "root", "123");
 
 					Statement st = conn.createStatement();
 					String query = "select * from events";
@@ -79,5 +79,7 @@
 	</div>
 	<a href="/CreateEvent.jsp" class="button" style="vertical-align:middle"><span>Create Event</span></a>
 	<a href="/ShowMyEvents.jsp" class="button" style="vertical-align:middle"><span>My Events</span></a>
+	<a href="/ShowMyBookings.jsp" class="button" style="vertical-align:middle"><span>My Bookings</span></a>
+
 
 </section>

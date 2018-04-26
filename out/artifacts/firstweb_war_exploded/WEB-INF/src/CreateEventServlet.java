@@ -90,8 +90,6 @@ class Event{
     String price;
     int userID;
 
-
-
     public String getEventName() { return eventName; }
     public String getPlace() { return place; }
     public String getDate() { return date; }
