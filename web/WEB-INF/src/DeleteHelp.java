@@ -40,26 +40,12 @@ public class DeleteHelp extends HttpServlet {
      * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
      */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-//        HttpSession session = request.getSession();
-//
-//        String eventName = request.getParameter("Title");
-//        String eventPlace=request.getParameter("Place");
-//        String eventDate=request.getParameter("Date");
-//        String eventPrice= request.getParameter("Price");
-//        String eventTime= request.getParameter("Time");
-//        String people= request.getParameter("People to attend");
-//
-//        insertEvent(eventName,eventPlace,eventDate,eventPrice, eventTime,people,session);
         doGet(request, response);
     }
-
-
 
     private void deleteHelp(int helpID) {
 
         Connection con = null;
-
         try {
             con = DatabaseConn.getConnection();
             Statement statement = con.createStatement();

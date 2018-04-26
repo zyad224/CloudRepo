@@ -34,6 +34,17 @@
         <servlet-name>Logout</servlet-name>
         <servlet-class>LogoutServlet</servlet-class>
     </servlet>
+
+    <servlet>
+        <servlet-name>BookEvent</servlet-name>
+        <servlet-class>BookEventServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>BookEvent</servlet-name>
+        <url-pattern>/EventManagement</url-pattern>
+    </servlet-mapping>
+
     <servlet-mapping>
         <servlet-name>Logout</servlet-name>
         <url-pattern>/login</url-pattern>

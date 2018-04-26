@@ -77,8 +77,6 @@ section{
 }
 
 
-
-
 .button {
     display: inline-block;
     border-radius: 4px;
@@ -115,6 +113,46 @@ section{
 }
 
 .button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+.button2 {
+    display: inline-block;
+    border-radius: 2px;
+    background-color: #f4511e;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 10px;
+    padding: 10px;
+    width: 100px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.button2 span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.button2 span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -10px;
+    transition: 0.5s;
+}
+
+.button2:hover span {
+    padding-right: 15px;
+}
+
+.button2:hover span:after {
     opacity: 1;
     right: 0;
 }

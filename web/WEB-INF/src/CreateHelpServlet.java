@@ -49,9 +49,6 @@ public class CreateHelpServlet extends HttpServlet {
         String helpDesc= request.getParameter("Description");
         String helpMob= request.getParameter("Mobile");
 
-
-
-
         insertHelp(helpName,helpPlace,helpDate,helpPrice, helpTime,helpTopic,helpDesc,helpMob,session);
         doGet(request, response);
     }
@@ -80,11 +77,6 @@ public class CreateHelpServlet extends HttpServlet {
                     helpTime + "',  '" + helpTopic + "', '" + helpDesc + "', '"  + helpMob + "', '" +helpPrice + "' , " +
                     "'" + session.getAttribute("userID") + "');";
 
-
-//            String query = "insert into events (eventName, place, date, time, peopleToAttend, price, userID) " +
-//                    "Values ('" + eventName + "','" + eventPlace +"','" + eventDate + "', '" +
-//                    eventTime + "',  '" + people + "', '" + eventPrice + "' , " +
-//                    "'" + session.getAttribute("userID") + "');";
             statement.executeUpdate(query);
         }catch (Exception e){
             e.printStackTrace();

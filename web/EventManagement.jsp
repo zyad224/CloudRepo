@@ -11,7 +11,7 @@
 		<!-- Right-sided navbar links. Hide them on small screens -->
 		<div class="w3-right w3-hide-small">
 			<a href="#" class="w3-bar-item w3-button">Create Event</a>
-			<a href="#" class="w3-bar-item w3-button">Peanut: </a>
+			<a href="#" class="w3-bar-item w3-button">Peanut: ${amountPeanut}</a>
 			<a href="LogoutServlet" class="w3-bar-item w3-button">Log out</a>
 		</div>
 	</div>
@@ -47,7 +47,7 @@
 				try {
 					Class.forName("com.mysql.cj.jdbc.Driver");
 					String url = "jdbc:mysql://localhost:3306/STUDENTS?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-					Connection conn = DriverManager.getConnection(url, "root", "123");
+					Connection conn = DriverManager.getConnection(url, "root", "");
 
 					Statement st = conn.createStatement();
 					String query = "select * from events";
@@ -62,7 +62,7 @@
 				<td><%=rs.getString("time")%></td>
 				<td><%=rs.getString("peopleToAttend")%></td>
 				<td><%=rs.getString("price")%></td>
-				<td><button class="button" type="button" onclick="alert('Hello world!')">Book Me !</button>
+				<td><a href="BookEventServlet?Id=<%=rs.getInt("id") %>" class="button2">Book Me!</a></td>
 				</td>
 			</tr>
 
