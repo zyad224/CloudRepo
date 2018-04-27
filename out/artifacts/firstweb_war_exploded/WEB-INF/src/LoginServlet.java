@@ -5,8 +5,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.PrintWriter;
 import java.sql.*;
-
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Servlet implementation class LoginCheck
@@ -40,62 +42,35 @@ public class LoginServlet extends HttpServlet {
             throws ServletException, IOException {
 
         //Create Session
-        HttpSession session = request.getSession(false);
+        HttpSession session = request.getSession();
 
         String email = request.getParameter("email");
         String pass = request.getParameter("password");
-//        System.out.println(pass);
-        //if (session.getAttribute("email") == null || session.getAttribute("email").equals("")) {
+
+        if(SessionTableUtil.checkSessionTable(email,pass)){
+            System.out.println("session is already opened");
+            response.setContentType("text/html");
+            String path = "/EventManagement.jsp";
+            PrintWriter output = response.getWriter();
+            output.println("<!DOCTYPE html>\n" + "<html>\n" + "<body>");
+            output.println("<h2>This session is already open !!</h2>");
+            output.println("</body>" + "</html>\n");
+        }else{
+            System.out.println("new session required");
             if (checkUserFromDB(email, pass, session)) {
                 session.setAttribute("email", email);
-                session.setAttribute("password",pass);
-                response.sendRedirect("login.jsp");
-            } else
-                response.sendRedirect("loginError.jsp");
-        /*}
-        else{
-            response.setContentType("text/html");
-            PrintWriter output = response.getWriter();
-            output.println("<!DOCTYPE html>\n" + "<html>\n" + "<body>");
-            output.println("<h2>This session is open !!</h2>");
-            output.println("</body>" + "</html>\n");
-        }*/
-        /*
-        if (session.getAttribute("email") == null || session.getAttribute("email").equals("")){
-            if(checkUserFromDB(email, pass)) {
-                session.setAttribute("email",email);
-                response.sendRedirect("login.jsp");
-            }else
-                response.sendRedirect("loginError.jsp");
-        }else{
-            response.setContentType("text/html");
-            PrintWriter output = response.getWriter();
-            output.println("<!DOCTYPE html>\n" + "<html>\n" + "<body>");
-            output.println("<h2>This session is open !!</h2>");
-            output.println("</body>" + "</html>\n");
-        }*/
-    }
-/*
-    private boolean checkXml(String email, String pass) {
-        boolean flag = false;
-        try {
-
-            File file = new File("C:\\Users\\pegas\\IdeaProjects\\firstweb\\web\\users.xml");
-            DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
-            DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
-            Document document = documentBuilder.parse(file);
-            String usr = document.getElementsByTagName("user").item(0).getTextContent();
-            String pwd = document.getElementsByTagName("password").item(0).getTextContent();
-
-            if (email.equals(usr) && pass.equals(pwd)) {
-                flag = true;
+                session.setAttribute("password", pass);
+                List<String> user = getUserInfo(email,pass);
+                SessionTableUtil.add2SessionTable(user.get(0),email,session.getId(),user.get(2),pass,user.get(1));
+                request.getRequestDispatcher("login.jsp").forward(request, response);
+                //response.sendRedirect("login.jsp");
+            } else {
+                request.getRequestDispatcher("loginError.jsp").forward(request, response);
+                //response.sendRedirect("loginError.jsp");
             }
-        } catch (Exception e) {
-            e.printStackTrace();
         }
-        return flag;
     }
-*/
+
     private boolean checkUserFromDB(String uName, String pass,  HttpSession session) {
         boolean flag = false;
         PreparedStatement pt = null; // manages prepared statement
@@ -127,5 +102,26 @@ public class LoginServlet extends HttpServlet {
             e.printStackTrace();
         }
         return flag;
+    }
+
+
+
+    private List<String> getUserInfo(String username, String pass){
+        List<String> data = new ArrayList<String>();
+        try{
+            Connection conn = DatabaseConn.getConnection();
+            Statement st = conn.createStatement();
+            String userID = "select id, firstname, lastname from users where username='"+ username + "' AND password='" + pass +"';";
+            ResultSet rs = st.executeQuery(userID);
+            rs.next();
+            int id = rs.getInt("id");
+            String fname = rs.getString("firstname");
+            String lname = rs.getString("lastname");
+            data.add(String.valueOf(id));
+            data.add(fname);
+            data.add(lname);
+        }catch (Exception e){
+        }
+        return data;
     }
 }

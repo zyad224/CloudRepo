@@ -17,10 +17,9 @@ public class PaymentServlet extends HttpServlet {
 
         HttpSession session = request.getSession();
 
-
-        String s = (String)session.getAttribute("email");
+        String s = (String) session.getAttribute("email");
         String p = (String) session.getAttribute("password");
-        System.out.println(s + ", " + p);
+
         try{
             Connection conn = DatabaseConn.getConnection();
             Statement st = conn.createStatement();
@@ -31,7 +30,7 @@ public class PaymentServlet extends HttpServlet {
             int id = rs.getInt("id");
             int peanut = rs.getInt("peanut");
             String name = rs.getString("username");
-            //System.out.println(request.getRequestURI());
+
 
             if(session.getAttribute("payment")!= null){
                 response.setContentType("text/html");

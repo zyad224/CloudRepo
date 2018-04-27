@@ -18,6 +18,7 @@ public class LogoutServlet extends HttpServlet {
         request.getRequestDispatcher("/login.jsp").include(request, response);
 
         HttpSession session = request.getSession();
+        SessionTableUtil.deleteUserInSessionTable((int)session.getAttribute("userID"));
         session.invalidate();
         out.println("<script type=\"text/javascript\">");
         out.println("alert('You are successfully logged out!');");
