@@ -7,6 +7,7 @@
 --%>
 <%@ page import="java.sql.*" %>
 <link rel="stylesheet" type="text/css" href="CSS\eventList.css">
+<link rel="stylesheet" type="text/css" href="CSS\EventListSearch.css">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 <% if (session.getAttribute("email") == null) { %>
@@ -25,7 +26,11 @@
 </div>
 <% } %>
 
-<br><br>
+<br><br><br>
+<form class="example" action="">
+    <input type="text" placeholder="Search Helps.." id="search">
+    <!--<button type="submit"><i class="fa fa-search"></i></button>-->
+</form>
 
 <section>
     <!--for demo wrap-->
@@ -50,7 +55,22 @@
     </div>
 
     <div class="tbl-content">
-        <table cellpadding="0" cellspacing="0" border="0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script>
+            // Write on keyup event of keyword input element
+            $("#search").keyup(function(){
+                _this = this;
+                // Show only matching TR, hide rest of them
+                $.each($("#ShowMyHelps tbody").find("tr"), function() {
+
+                    if($(this).find('td').text().toLowerCase().indexOf($(_this).val().toLowerCase()) == -1)
+                        $(this).hide();
+                    else
+                        $(this).show();
+                });
+            });
+        </script>
+        <table cellpadding="0" cellspacing="0" border="0" id="ShowMyHelps">
             <tbody>
 
             <%
@@ -88,7 +108,7 @@
                 <td><%=rs2.getString("price")%></td>
                 <td><%=s%></td>
 
-                <td><a href="DeleteHelp?Id=<%=rs2.getInt("id") %>">delete</a></td>
+                <td><a href="DeleteHelp?Id=<%=rs2.getInt("id") %>" class="button2">Delete</a></td>
 
                 </td>
 
@@ -105,6 +125,4 @@
             </tbody>
         </table>
     </div>
-
-
 </section>

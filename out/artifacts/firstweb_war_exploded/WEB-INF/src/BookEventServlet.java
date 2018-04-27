@@ -8,6 +8,8 @@ import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Servlet implementation class BookEventServlet
@@ -32,15 +34,23 @@ public class BookEventServlet extends HttpServlet {
 
         int eventID = Integer.parseInt(request.getParameter("Id"));
         int userID =(int)request.getSession().getAttribute("userID");
+        System.out.println(eventID +","+ userID + " Click the book button");
 
+        //try to book event
         if(bookEvent(eventID, userID)){
             PrintWriter out=response.getWriter();
             out.print("<script language='javascript'>" +
                     "alert('You booked an Event!');" +
                     "window.location.href='EventManagement.jsp';" +
                     "</script>");
+        }else{
+            PrintWriter out=response.getWriter();
+            out.print("<script language='javascript'>" +
+                    "alert('You already booked this Event!');" +
+                    "window.location.href='EventManagement.jsp';" +
+                    "</script>");
         }
-        }
+    }
 
     /**
      * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
@@ -53,6 +63,47 @@ public class BookEventServlet extends HttpServlet {
         boolean flag = false;
         Connection con = null;
         try {
+            con = DatabaseConn.getConnection();
+            Statement statement = con.createStatement();
+
+            //check user's booking
+            String query = "SELECT eventid FROM booking where userid='" + userID +"';";
+            ResultSet rs = statement.executeQuery(query);
+
+            List<Integer> list = new ArrayList<Integer>();
+
+            // checking if ResultSet is empty
+            if (rs.next() == false)
+            {
+                flag = bookAndUpdateTable(con,userID,eventID);
+                System.out.println("This is first time booking of this user" );
+                return flag;
+
+            }else{
+                do{
+                    int qResult = Integer.parseInt(rs.getString("eventid"));
+                    System.out.println("qresult: " + qResult + "event id: " + eventID);
+                    list.add(qResult);
+                } while (rs.next());
+            }
+
+            if(!list.contains(eventID)){
+                System.out.println(eventID + ", Event is not exist" );
+                flag = bookAndUpdateTable(con,userID,eventID);
+            }else{
+                System.out.println(eventID + ", Event is exist" );
+                }
+            con.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return flag;
+    }
+
+    private boolean bookAndUpdateTable(Connection con, int userID, int eventID){
+        boolean flag = false;
+        try{
+
             con = DatabaseConn.getConnection();
             Statement statement = con.createStatement();
 
@@ -73,9 +124,6 @@ public class BookEventServlet extends HttpServlet {
             String date= rs.getString("date");
             String time= rs.getString("time");
 
-
-
-
             //Update events table to peopleToAttend col
             int result = Integer.parseInt(people2Attend)-1;
             query = "UPDATE events " + "SET peopleToAttend ="+String.valueOf(result)+" WHERE id in ("+eventID+")";
@@ -89,7 +137,7 @@ public class BookEventServlet extends HttpServlet {
             flag = true;
 
         }catch (Exception e){
-            e.printStackTrace();
+
         }
         return flag;
     }

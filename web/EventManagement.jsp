@@ -19,6 +19,7 @@
 		</div>
 	</div>
 </div>
+
 <% } %>
 
 <br><br><br>
@@ -54,8 +55,7 @@
                 _this = this;
                 // Show only matching TR, hide rest of them
                 $.each($("#table tbody").find("tr"), function() {
-                    console.log($(this).text());
-                    var s = $("#sss").val(); if($(this).find('td').text().toLowerCase().indexOf($(_this).val().toLowerCase()) == -1)
+                    if($(this).find('td').text().toLowerCase().indexOf($(_this).val().toLowerCase()) == -1)
                         $(this).hide();
                     else
                         $(this).show();
