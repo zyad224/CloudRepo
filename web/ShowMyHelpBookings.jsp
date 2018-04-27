@@ -2,7 +2,7 @@
   Created by IntelliJ IDEA.
   User: Zeyad
   Date: 4/26/2018
-  Time: 12:25 AM
+  Time: 11:56 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page import="java.sql.*" %>
@@ -18,7 +18,7 @@
         <!-- Right-sided navbar links. Hide them on small screens -->
         <div class="w3-right w3-hide-small">
             <a href="#" class="w3-bar-item w3-button">Create Event</a>
-            <a href="#" class="w3-bar-item w3-button">Peanut: </a>
+            <a href="#" class="w3-bar-item w3-button">Peanut: ${amountPeanut}</a>
             <a href="LogoutServlet" class="w3-bar-item w3-button">Log out</a>
         </div>
     </div>
@@ -29,19 +29,22 @@
 
 <section>
     <!--for demo wrap-->
-    <h1>${email} Event List</h1>
+    <h1>${email} Help Bookings</h1>
     <div class="tbl-header">
         <table cellpadding="0" cellspacing="0" border="0">
             <thead>
             <tr>
-                <th>Event Title</th>
-                <th>Event Place</th>
-                <th>Event Date</th>
-                <th>Event Time</th>
-                <th>People</th>
-                <th>Event Price</th>
-                <th>User</th>
-                <th>Delete</th>
+                <th>Help ID</th>
+                <th>Help Name</th>
+                <th>Help Place</th>
+                <th>Help Date</th>
+                <th>Help Time</th>
+                <th>Help Topic</th>
+                <th>Help Price</th>
+                <th>Peer Mobile</th>
+
+
+
             </tr>
             </thead>
         </table>
@@ -53,39 +56,41 @@
 
             <%
                 try {
-
                     Class.forName("com.mysql.cj.jdbc.Driver");
                     String url = "jdbc:mysql://localhost:3306/STUDENTS?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-
                     Connection conn = DriverManager.getConnection(url, "root", "");
                     String s = (String)session.getAttribute("email");
                     String p=(String) session.getAttribute("password");
-                    System.out.println(s+""+p);
-
                     Statement st = conn.createStatement();
-
                     String query2="select id from users where username='"+s + "' AND password='" + p +"';";
                     ResultSet rs = st.executeQuery(query2);
                     rs.next();
                     int id= rs.getInt("id");
-                    String query3= "select * from events where userID='" + id +"';";
+                    System.out.println(rs.getInt("id"));
+                    String query3= "select * from bookinghelp where userid='" + id +"';";
                     ResultSet rs2=st.executeQuery(query3);
-
                     while (rs2.next()) {
-                        System.out.println(rs2.getString("eventName"));
-
-
+                        System.out.println(rs2.getString("helpname"));
             %>
             <tr>
-                <td><%=rs2.getString("eventName")%></td>
+                <td><%=rs2.getString("helpid")%></td>
+                <td><%=rs2.getString("helpname")%></td>
                 <td><%=rs2.getString("place")%></td>
                 <td><%=rs2.getString("date")%></td>
                 <td><%=rs2.getString("time")%></td>
-                <td><%=rs2.getString("peopleToAttend")%></td>
+                <td><%=rs2.getString("topic")%></td>
                 <td><%=rs2.getString("price")%></td>
-                <td><%=s%></td>
-                <td><a href="DeleteEvent?Id=<%=rs2.getInt("id") %>" class="button2">Delete</a></td>
+                <td><%=rs2.getString("mobile")%></td>
+
+
+
+
+
+                <%--<td><%=s%></td>--%>
+
+
                 </td>
+
             </tr>
 
             <%}

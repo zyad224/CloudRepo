@@ -88,6 +88,12 @@
                 <span class="focus-input100"></span>
             </div>
 
+            <div class="wrap-input100 validate-input" data-validate = "Price is required">
+                <span class="label-input100">People To Attend</span>
+                <input class="input100" name="People" placeholder="What is number of people to help?"></input>
+                <span class="focus-input100"></span>
+            </div>
+
             <div class="container-contact100-form-btn">
                 <div class="wrap-contact100-form-btn">
                     <div class="contact100-form-bgbtn"></div>

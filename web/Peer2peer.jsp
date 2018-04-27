@@ -41,8 +41,9 @@
                 <th>Help Time</th>
                 <th>Help Topic</th>
                 <th>Description</th>
-                <th>Mobile</th>
+                <th>Peer Mobile</th>
                 <th>Price</th>
+                <th>People to Attend</th>
                 <th>Booking</th>
             </tr>
             </thead>
@@ -57,7 +58,7 @@
                 try {
                     Class.forName("com.mysql.cj.jdbc.Driver");
                     String url = "jdbc:mysql://localhost:3306/STUDENTS?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-                    Connection conn = DriverManager.getConnection(url, "root", "123");
+                    Connection conn = DriverManager.getConnection(url, "root", "");
 
                     Statement st = conn.createStatement();
                     String query = "select * from help";
@@ -74,7 +75,8 @@
                 <td><%=rs.getString("description")%></td>
                 <td><%=rs.getString("mobile")%></td>
                 <td><%=rs.getString("price")%></td>
-                <td><button class="button" type="button" onclick="alert('Hello world!')">Book Me !</button>
+                <td><%=rs.getString("peopleToAttend")%></td>
+                <td><a href="BookHelpServlet?Id=<%=rs.getInt("id") %>" class="button2">Book Me!</a></td>
                 </td>
             </tr>
 
@@ -91,5 +93,5 @@
     </div>
     <a href="/CreateHelp.jsp" class="button" style="vertical-align:middle"><span>Create Help Request</span></a>
     <a href="/ShowMyHelps.jsp" class="button" style="vertical-align:middle"><span>My Help Requests</span></a>
-
+    <a href="/ShowMyHelpBookings.jsp" class="button" style="vertical-align:middle"><span>My Bookings</span></a>
 </section>
