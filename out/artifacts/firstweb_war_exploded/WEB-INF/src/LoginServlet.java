@@ -48,7 +48,6 @@ public class LoginServlet extends HttpServlet {
         String pass = request.getParameter("password");
 
         if(SessionTableUtil.checkSessionTable(email,pass)){
-            System.out.println("session is already opened");
             response.setContentType("text/html");
             String path = "/EventManagement.jsp";
             PrintWriter output = response.getWriter();
@@ -56,7 +55,6 @@ public class LoginServlet extends HttpServlet {
             output.println("<h2>This session is already open !!</h2>");
             output.println("</body>" + "</html>\n");
         }else{
-            System.out.println("new session required");
             if (checkUserFromDB(email, pass, session)) {
                 session.setAttribute("email", email);
                 session.setAttribute("password", pass);
@@ -103,7 +101,6 @@ public class LoginServlet extends HttpServlet {
         }
         return flag;
     }
-
 
 
     private List<String> getUserInfo(String username, String pass){

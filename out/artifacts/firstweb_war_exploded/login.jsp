@@ -16,9 +16,6 @@
 </div>
 <% } %>
 
-<%session.setAttribute("earning",15);%>
-<%//session.setAttribute("payment",5);%>
-
 <center>
 <br><br><br>
     <a href="EventManagement.jsp">

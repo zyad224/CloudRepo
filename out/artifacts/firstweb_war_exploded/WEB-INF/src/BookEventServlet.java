@@ -3,6 +3,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
@@ -32,21 +33,35 @@ public class BookEventServlet extends HttpServlet {
      */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        HttpSession session = request.getSession();
         int eventID = Integer.parseInt(request.getParameter("Id"));
         int userID =(int)request.getSession().getAttribute("userID");
         System.out.println(eventID +","+ userID + " Click the book button");
 
         //try to book event
-        if(bookEvent(eventID, userID)){
+        int r = bookEvent(eventID, userID,session);
+        if(r == 0){
             PrintWriter out=response.getWriter();
             out.print("<script language='javascript'>" +
-                    "alert('You booked an Event!');" +
+                    "alert('You booked an Event and your payment is successful !');" +
+                    "window.location.href='EventManagement.jsp';" +
+                    "</script>");
+        }else if(r == 1){
+            PrintWriter out=response.getWriter();
+            out.print("<script language='javascript'>" +
+                    "alert('You already booked this Event!');" +
+                    "window.location.href='EventManagement.jsp';" +
+                    "</script>");
+        }else if(r == 2){
+            PrintWriter out=response.getWriter();
+            out.print("<script language='javascript'>" +
+                    "alert('You peanuts are not enough for this Event!');" +
                     "window.location.href='EventManagement.jsp';" +
                     "</script>");
         }else{
             PrintWriter out=response.getWriter();
             out.print("<script language='javascript'>" +
-                    "alert('You already booked this Event!');" +
+                    "alert('we could not to service to you, Sorry !!');" +
                     "window.location.href='EventManagement.jsp';" +
                     "</script>");
         }
@@ -59,8 +74,8 @@ public class BookEventServlet extends HttpServlet {
         doGet(request, response);
     }
 
-    private boolean bookEvent(int eventID, int userID) {
-        boolean flag = false;
+    private int bookEvent(int eventID, int userID,HttpSession session) {
+        int flag = -1;
         Connection con = null;
         try {
             con = DatabaseConn.getConnection();
@@ -75,7 +90,7 @@ public class BookEventServlet extends HttpServlet {
             // checking if ResultSet is empty
             if (rs.next() == false)
             {
-                flag = bookAndUpdateTable(con,userID,eventID);
+                flag = bookAndUpdateTable(con,userID,eventID,session);
                 System.out.println("This is first time booking of this user" );
                 return flag;
 
@@ -89,41 +104,46 @@ public class BookEventServlet extends HttpServlet {
 
             if(!list.contains(eventID)){
                 System.out.println(eventID + ", Event is not exist" );
-                flag = bookAndUpdateTable(con,userID,eventID);
+                flag = bookAndUpdateTable(con,userID,eventID,session);
             }else{
+                flag = 1;
                 System.out.println(eventID + ", Event is exist" );
                 }
             con.close();
         }catch (Exception e){
             e.printStackTrace();
         }
+
         return flag;
     }
 
-    private boolean bookAndUpdateTable(Connection con, int userID, int eventID){
-        boolean flag = false;
+    private int bookAndUpdateTable(Connection con, int userID, int eventID,HttpSession session){
+        int flag = -1;
         try{
 
             con = DatabaseConn.getConnection();
             Statement statement = con.createStatement();
 
             //get user data from users table
-            String query = "SELECT firstname, lastname FROM users where id='" + userID +"';";
+            String query = "SELECT peanut,firstname, lastname FROM users where id='" + userID +"';";
             ResultSet rs = statement.executeQuery(query);
             rs.next();
             String fname = rs.getString("firstname");
             String lname = rs.getString("lastname");
+            String peanut = rs.getString("peanut");
 
             //get event data from events table
-            query = "SELECT eventName,place,date,time,peopleToAttend FROM events where id='" + eventID +"';";
+            query = "SELECT eventName,place,date,time,peopleToAttend,price FROM events where id='" + eventID +"';";
             rs = statement.executeQuery(query);
             rs.next();
             String ename = rs.getString("eventName");
             String people2Attend = rs.getString("peopleToAttend");
-            String place= rs.getString("place");
-            String date= rs.getString("date");
-            String time= rs.getString("time");
+            String place = rs.getString("place");
+            String date = rs.getString("date");
+            String time = rs.getString("time");
+            String price = rs.getString("price");
 
+            //TODO IF PEOPLE TO ATTENT EQUAL 0, DON'T SHOW THIS EVENT
             //Update events table to peopleToAttend col
             int result = Integer.parseInt(people2Attend)-1;
             query = "UPDATE events " + "SET peopleToAttend ="+String.valueOf(result)+" WHERE id in ("+eventID+")";
@@ -134,7 +154,16 @@ public class BookEventServlet extends HttpServlet {
                     "Values ('" + userID+ "','" + fname +"','" + lname+ "','" +
                     eventID + "',  '" + ename + "','"+place+"','"+date+"','"+time+"');";
             statement.executeUpdate(query);
-            flag = true;
+
+            //check amount of peanut
+            if(Integer.parseInt(peanut) > Integer.parseInt(price)){
+                //make payment
+                if(PaymentSystem.doPayment(userID,price,peanut,session)){
+                    flag = 0;
+                }
+            }else{
+                flag = 2;
+            }
 
         }catch (Exception e){
 
