@@ -106,5 +106,15 @@
     </div>
 </div>
 <div id="dropDownSelect1"></div>
+<%
+
+    // Set refresh, autoload time as 1 min
+    response.setIntHeader("Refresh", 60);
+
+    // for checking the session is available or not, If session dead go to Home page
+    if (session == null) {
+        session.invalidate();
+    }
+%>
 </body>
 </html>

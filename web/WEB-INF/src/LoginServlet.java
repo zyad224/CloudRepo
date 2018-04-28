@@ -48,22 +48,26 @@ public class LoginServlet extends HttpServlet {
         String pass = request.getParameter("password");
 
         if(SessionTableUtil.checkSessionTable(email,pass)){
-            response.setContentType("text/html");
-            String path = "/EventManagement.jsp";
-            PrintWriter output = response.getWriter();
-            output.println("<!DOCTYPE html>\n" + "<html>\n" + "<body>");
-            output.println("<h2>This session is already open !!</h2>");
-            output.println("</body>" + "</html>\n");
+            if(session.getId().equals("")){
+                request.getRequestDispatcher("/login.jsp").forward(request, response);
+            }else{
+                response.setContentType("text/html");
+                String path = "/EventManagement.jsp";
+                PrintWriter output = response.getWriter();
+                output.println("<!DOCTYPE html>\n" + "<html>\n" + "<body>");
+                output.println("<h2>This session is already open !!</h2>");
+                output.println("</body>" + "</html>\n");
+            }
         }else{
             if (checkUserFromDB(email, pass, session)) {
                 session.setAttribute("email", email);
                 session.setAttribute("password", pass);
                 List<String> user = getUserInfo(email,pass);
                 SessionTableUtil.add2SessionTable(user.get(0),email,session.getId(),user.get(2),pass,user.get(1));
-                request.getRequestDispatcher("login.jsp").forward(request, response);
+                request.getRequestDispatcher("/login.jsp").forward(request, response);
                 //response.sendRedirect("login.jsp");
             } else {
-                request.getRequestDispatcher("loginError.jsp").forward(request, response);
+                request.getRequestDispatcher("/loginError.jsp").forward(request, response);
                 //response.sendRedirect("loginError.jsp");
             }
         }

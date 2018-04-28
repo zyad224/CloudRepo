@@ -16,6 +16,13 @@
 </div>
 <% } %>
 
+<%
+    // for checking the session is available or not, If session dead go to Home page
+    if (session == null) {
+        session.invalidate();
+        response.sendRedirect("index.jsp");
+    }
+%>
 <center>
 <br><br><br>
     <a href="EventManagement.jsp">

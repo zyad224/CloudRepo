@@ -6,7 +6,6 @@ public class PaymentSystem {
     public static boolean doPayment(int userID, String price, String peanut, HttpSession session){
         boolean flag = false;
         try{
-            //TODO IF PEANUT VALUE LESS THEN PRICE, DON'T BOOK THIS EVENT
             Connection con = DatabaseConn.getConnection();
             Statement statement = con.createStatement();
 

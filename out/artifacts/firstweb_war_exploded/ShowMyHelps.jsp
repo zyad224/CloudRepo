@@ -27,6 +27,8 @@
 <% } %>
 
 <br><br><br>
+
+<body>
 <form class="example" action="">
     <input type="text" placeholder="Search Helps.." id="search">
     <!--<button type="submit"><i class="fa fa-search"></i></button>-->
@@ -126,3 +128,13 @@
         </table>
     </div>
 </section>
+
+<%
+    // for checking the session is available or not, If session dead go to Home page
+    if (session == null) {
+        session.invalidate();
+        response.sendRedirect("index.jsp");
+    }
+%>
+
+</body>

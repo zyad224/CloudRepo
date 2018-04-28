@@ -1,4 +1,3 @@
-<%@ page import="java.io.PrintWriter" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>

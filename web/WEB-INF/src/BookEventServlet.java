@@ -58,6 +58,12 @@ public class BookEventServlet extends HttpServlet {
                     "alert('You peanuts are not enough for this Event!');" +
                     "window.location.href='EventManagement.jsp';" +
                     "</script>");
+        }else if(r == 3){
+            PrintWriter out=response.getWriter();
+            out.print("<script language='javascript'>" +
+                    "alert('You can not attend this Event!');" +
+                    "window.location.href='EventManagement.jsp';" +
+                    "</script>");
         }else{
             PrintWriter out=response.getWriter();
             out.print("<script language='javascript'>" +
@@ -145,9 +151,14 @@ public class BookEventServlet extends HttpServlet {
 
             //TODO IF PEOPLE TO ATTENT EQUAL 0, DON'T SHOW THIS EVENT
             //Update events table to peopleToAttend col
-            int result = Integer.parseInt(people2Attend)-1;
-            query = "UPDATE events " + "SET peopleToAttend ="+String.valueOf(result)+" WHERE id in ("+eventID+")";
-            statement.executeUpdate(query);
+            if(Integer.parseInt(people2Attend) > 0){
+                int result = Integer.parseInt(people2Attend)-1;
+                query = "UPDATE events " + "SET peopleToAttend ="+String.valueOf(result)+" WHERE id in ("+eventID+")";
+                statement.executeUpdate(query);
+            }else{
+                return 3;
+            }
+
 
             //Insert into booking table
             query = "insert into booking (userid, firstname, lastname, eventid, eventname,place,date,time) " +

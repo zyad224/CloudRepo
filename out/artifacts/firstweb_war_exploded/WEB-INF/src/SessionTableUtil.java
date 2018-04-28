@@ -36,12 +36,12 @@ public class SessionTableUtil {
 
     }
 
-    public static void deleteUserInSessionTable(int userID){
+    public static void deleteUserInSessionTable(String sessionID){
         Connection con = null;
         try {
             con = DatabaseConn.getConnection();
             Statement statement = con.createStatement();
-            String query = "DELETE FROM sessiontable where userid = '" + userID +"';";
+            String query = "DELETE FROM sessiontable where sessionid = '" + sessionID +"';";
             statement.executeUpdate(query);
             con.close();
         }catch (Exception e){

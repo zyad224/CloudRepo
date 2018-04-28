@@ -15,10 +15,10 @@ public class LogoutServlet extends HttpServlet {
         response.setContentType("text/html");
         PrintWriter out=response.getWriter();
 
-        request.getRequestDispatcher("/login.jsp").include(request, response);
+        //request.getRequestDispatcher("/login.jsp").include(request, response);
 
         HttpSession session = request.getSession();
-        SessionTableUtil.deleteUserInSessionTable((int)session.getAttribute("userID"));
+        SessionTableUtil.deleteUserInSessionTable(session.getId());
         session.invalidate();
         out.println("<script type=\"text/javascript\">");
         out.println("alert('You are successfully logged out!');");

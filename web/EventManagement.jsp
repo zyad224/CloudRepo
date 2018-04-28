@@ -21,7 +21,7 @@
 </div>
 
 <% } %>
-
+<body>
 <br><br><br>
 <form class="example" action="">
 	<input type="text" placeholder="Search Event.." id="search">
@@ -109,4 +109,15 @@
 			<a href="/ShowMyBookings.jsp" class="button" style="vertical-align:middle"><span>My Bookings</span></a>
 	<% } %>
 
+	<%
+		// Set refresh, autoload time as 1 min
+		response.setIntHeader("Refresh", 60);
+
+		// for checking the session is available or not, If session dead go to Home page
+		if (session == null) {
+			session.invalidate();
+		}
+	%>
 </section>
+
+</body>

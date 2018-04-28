@@ -83,5 +83,12 @@
     </div>
 </div>
 <div id="dropDownSelect1"></div>
+<%
+    // for checking the session is available or not, If session dead go to Home page
+    if (session == null) {
+        session.invalidate();
+        response.sendRedirect("index.jsp");
+    }
+%>
 </body>
 </html>

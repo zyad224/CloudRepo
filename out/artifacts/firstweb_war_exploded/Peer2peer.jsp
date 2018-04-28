@@ -28,6 +28,7 @@
 <% } %>
 
 <br><br><br>
+<body>
 <form class="example" action="">
     <input type="text" placeholder="Search Event.." id="search">
     <!--<button type="submit"><i class="fa fa-search"></i></button>-->
@@ -116,3 +117,13 @@
     <a href="/ShowMyHelps.jsp" class="button" style="vertical-align:middle"><span>My Help Requests</span></a>
     <a href="/ShowMyHelpBookings.jsp" class="button" style="vertical-align:middle"><span>My Bookings</span></a>
 </section>
+
+<%
+    // for checking the session is available or not, If session dead go to Home page
+    if (session == null) {
+        session.invalidate();
+        response.sendRedirect("index.jsp");
+    }
+%>
+
+</body>
