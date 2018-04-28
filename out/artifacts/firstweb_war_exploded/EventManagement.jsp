@@ -116,11 +116,6 @@
 		// for checking the session is available or not, If session dead go to Home page
 		if (session == null) {
 			session.invalidate();
-
-			// New location to be redirected
-			String site = new String("http://localhost:8080/index.jsp");
-			response.setStatus(response.SC_MOVED_TEMPORARILY);
-			response.setHeader("Location", site);
 		}
 	%>
 </section>

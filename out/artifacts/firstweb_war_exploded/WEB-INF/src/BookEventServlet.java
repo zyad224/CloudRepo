@@ -149,35 +149,44 @@ public class BookEventServlet extends HttpServlet {
             String time = rs.getString("time");
             String price = rs.getString("price");
 
-            //TODO IF PEOPLE TO ATTENT EQUAL 0, DON'T SHOW THIS EVENT
-            //Update events table to peopleToAttend col
+            boolean priceSuitable = false;
+            boolean peopleSuitable = false;
+
+            //Check people to attend
             if(Integer.parseInt(people2Attend) > 0){
-                int result = Integer.parseInt(people2Attend)-1;
-                query = "UPDATE events " + "SET peopleToAttend ="+String.valueOf(result)+" WHERE id in ("+eventID+")";
-                statement.executeUpdate(query);
+                peopleSuitable = true;
             }else{
                 return 3;
             }
 
-
-            //Insert into booking table
-            query = "insert into booking (userid, firstname, lastname, eventid, eventname,place,date,time) " +
-                    "Values ('" + userID+ "','" + fname +"','" + lname+ "','" +
-                    eventID + "',  '" + ename + "','"+place+"','"+date+"','"+time+"');";
-            statement.executeUpdate(query);
-
             //check amount of peanut
             if(Integer.parseInt(peanut) > Integer.parseInt(price)){
+                priceSuitable = true;
+            }else{
+                return 2;
+            }
+
+            if(priceSuitable && peopleSuitable){
+
+                //Update events table to peopleToAttend col
+                int result = Integer.parseInt(people2Attend)-1;
+                query = "UPDATE events " + "SET peopleToAttend ="+String.valueOf(result)+" WHERE id in ("+eventID+")";
+                statement.executeUpdate(query);
+
                 //make payment
                 if(PaymentSystem.doPayment(userID,price,peanut,session)){
                     flag = 0;
                 }
-            }else{
-                flag = 2;
+
+                //Insert into booking table
+                query = "insert into booking (userid, firstname, lastname, eventid, eventname,place,date,time) " +
+                        "Values ('" + userID+ "','" + fname +"','" + lname+ "','" +
+                        eventID + "',  '" + ename + "','"+place+"','"+date+"','"+time+"');";
+                statement.executeUpdate(query);
+                flag = 0;
             }
 
         }catch (Exception e){
-
         }
         return flag;
     }
