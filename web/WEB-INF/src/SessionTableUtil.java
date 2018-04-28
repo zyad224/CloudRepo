@@ -20,6 +20,22 @@ public class SessionTableUtil {
         return flag;
     }
 
+    public static String getSessionID(String username, String pass){
+        String id = "";
+        try{
+            Connection conn = DatabaseConn.getConnection();
+            Statement st = conn.createStatement();
+            String userInfo = "select sessionid from sessiontable where username='"+ username + "' AND password='" + pass +"';";
+            ResultSet rs = st.executeQuery(userInfo);
+            if(rs.next()){
+                id = rs.getString("sessionid");
+            }
+            conn.close();
+        }catch (Exception e){
+        }
+        return id;
+    }
+
     public static void add2SessionTable(String userid, String username,String sessionid ,String lastname, String password, String firstname){
         Connection con = null;
         try {

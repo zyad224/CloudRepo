@@ -8,24 +8,20 @@
   <component name="ChangeListManager">
     <list default="true" id="a85e9eeb-ac51-4ccf-b92a-1e2ff32a79c6" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/firstweb_war_exploded/CreateEvent.jsp" afterPath="$PROJECT_DIR$/out/artifacts/firstweb_war_exploded/CreateEvent.jsp" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/firstweb_war_exploded/CreateHelp.jsp" afterPath="$PROJECT_DIR$/out/artifacts/firstweb_war_exploded/CreateHelp.jsp" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/firstweb_war_exploded/EventManagement.jsp" afterPath="$PROJECT_DIR$/out/artifacts/firstweb_war_exploded/EventManagement.jsp" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/firstweb_war_exploded/Peer2peer.jsp" afterPath="$PROJECT_DIR$/out/artifacts/firstweb_war_exploded/Peer2peer.jsp" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/firstweb_war_exploded/ShowMyBookings.jsp" afterPath="$PROJECT_DIR$/out/artifacts/firstweb_war_exploded/ShowMyBookings.jsp" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/firstweb_war_exploded/ShowMyEvents.jsp" afterPath="$PROJECT_DIR$/out/artifacts/firstweb_war_exploded/ShowMyEvents.jsp" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/firstweb_war_exploded/ShowMyHelpBookings.jsp" afterPath="$PROJECT_DIR$/out/artifacts/firstweb_war_exploded/ShowMyHelpBookings.jsp" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/firstweb_war_exploded/ShowMyHelps.jsp" afterPath="$PROJECT_DIR$/out/artifacts/firstweb_war_exploded/ShowMyHelps.jsp" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/firstweb_war_exploded/WEB-INF/classes/BookHelpServlet.class" afterPath="$PROJECT_DIR$/out/artifacts/firstweb_war_exploded/WEB-INF/classes/BookHelpServlet.class" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/firstweb_war_exploded/WEB-INF/classes/LoginServlet.class" afterPath="$PROJECT_DIR$/out/artifacts/firstweb_war_exploded/WEB-INF/classes/LoginServlet.class" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/firstweb_war_exploded/WEB-INF/classes/RegisterUserServlet.class" afterPath="$PROJECT_DIR$/out/artifacts/firstweb_war_exploded/WEB-INF/classes/RegisterUserServlet.class" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/firstweb_war_exploded/WEB-INF/classes/User.class" afterPath="$PROJECT_DIR$/out/artifacts/firstweb_war_exploded/WEB-INF/classes/User.class" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/firstweb_war_exploded/WEB-INF/src/LoginServlet.java" afterPath="$PROJECT_DIR$/out/artifacts/firstweb_war_exploded/WEB-INF/src/LoginServlet.java" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/firstweb_war_exploded/WEB-INF/src/RegisterUserServlet.java" afterPath="$PROJECT_DIR$/out/artifacts/firstweb_war_exploded/WEB-INF/src/RegisterUserServlet.java" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/firstweb_war_exploded/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/out/artifacts/firstweb_war_exploded/WEB-INF/web.xml" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/firstweb_war_exploded/index.jsp" afterPath="$PROJECT_DIR$/out/artifacts/firstweb_war_exploded/index.jsp" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/firstweb_war_exploded/login.jsp" afterPath="$PROJECT_DIR$/out/artifacts/firstweb_war_exploded/login.jsp" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/BookEventServlet.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/BookEventServlet.class" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/BookHelpServlet.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/BookHelpServlet.class" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/src/BookEventServlet.java" afterPath="$PROJECT_DIR$/web/WEB-INF/src/BookEventServlet.java" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/src/BookHelpServlet.java" afterPath="$PROJECT_DIR$/web/WEB-INF/src/BookHelpServlet.java" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/LoginServlet.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/LoginServlet.class" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/RegisterUserServlet.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/RegisterUserServlet.class" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/SessionTableUtil.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/SessionTableUtil.class" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/User.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/User.class" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/src/LoginServlet.java" afterPath="$PROJECT_DIR$/web/WEB-INF/src/LoginServlet.java" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/src/RegisterUserServlet.java" afterPath="$PROJECT_DIR$/web/WEB-INF/src/RegisterUserServlet.java" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/src/SessionTableUtil.java" afterPath="$PROJECT_DIR$/web/WEB-INF/src/SessionTableUtil.java" />
       <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" />
-      <change beforePath="$PROJECT_DIR$/web/index.jsp" afterPath="$PROJECT_DIR$/web/index.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -66,7 +62,39 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file leaf-file-name="LoginServlet.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/LoginServlet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="252">
+              <caret line="61" column="59" lean-forward="true" selection-start-line="61" selection-start-column="59" selection-end-line="61" selection-end-column="59" />
+              <folding>
+                <marker date="1524951597491" expanded="true" signature="3572:3643" ph="select id,pe... users" />
+                <marker date="1524951597491" expanded="true" signature="4753:4854" ph="select id, f... users" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="users" pinned="false" current-in-tab="false">
+        <entry file="das://table:/a1020241/7a591e35-feed-4f16-892e-a89ea36ca2bc/students.users">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sessiontable" pinned="false" current-in-tab="true">
+        <entry file="das://table:/a1020241/7a591e35-feed-4f16-892e-a89ea36ca2bc/students.sessiontable">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -107,9 +135,7 @@
         <option value="$PROJECT_DIR$/web/CSS/createEvent.css" />
         <option value="$PROJECT_DIR$/web/CSS/createEventUtil.css" />
         <option value="$PROJECT_DIR$/web/CSS/main.css" />
-        <option value="$PROJECT_DIR$/web/registerUser.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/src/Connection.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/src/RegisterUserServlet.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/src/CreateDB.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/ShowMyEvents.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/src/CreateEventServlet.java" />
@@ -121,8 +147,6 @@
         <option value="$PROJECT_DIR$/web/WEB-INF/src/LogoutServlet.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/src/HeartbeatServlet.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/src/SessionListener.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/src/SessionTableUtil.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/src/LoginServlet.java" />
         <option value="$PROJECT_DIR$/web/EventManagement.jsp" />
         <option value="$PROJECT_DIR$/web/CreateHelp.jsp" />
         <option value="$PROJECT_DIR$/web/CreateEvent.jsp" />
@@ -131,11 +155,15 @@
         <option value="$PROJECT_DIR$/web/ShowMyHelps.jsp" />
         <option value="$PROJECT_DIR$/web/ShowMyEvents.jsp" />
         <option value="$PROJECT_DIR$/web/Peer2peer.jsp" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/web/index.jsp" />
         <option value="$PROJECT_DIR$/web/login.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/src/BookHelpServlet.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/src/BookEventServlet.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/web/registerUser.jsp" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/src/RegisterUserServlet.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/src/SessionTableUtil.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/src/LoginServlet.java" />
       </list>
     </option>
   </component>
@@ -195,6 +223,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="AndroidView" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -224,10 +256,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -455,39 +483,51 @@
       <workItem from="1524656334550" duration="4709000" />
       <workItem from="1524916730306" duration="12141000" />
       <workItem from="1524930346137" duration="1775000" />
-      <workItem from="1524938827313" duration="5705000" />
+      <workItem from="1524938827313" duration="9440000" />
+      <workItem from="1524950315626" duration="1435000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="111240000" />
+    <option name="totallyTimeSpent" value="116410000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36716077" sideWeight="0.29001075" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32839224" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12244898" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12244898" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32839224" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32839224" sideWeight="0.49785176" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27480045" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36716077" sideWeight="0.70998925" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22771214" sideWeight="0.6898017" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1796875" sideWeight="0.3101983" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -495,7 +535,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -578,13 +617,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/CreateEvent.html" />
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/RegisterUserServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1197">
-          <caret line="67" column="41" lean-forward="true" selection-start-line="67" selection-start-column="41" selection-end-line="67" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/CSS/eventList.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="148">
@@ -628,20 +660,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/HeartbeatServlet.java" />
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/LogoutServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="28" column="3" lean-forward="true" selection-start-line="28" selection-start-column="3" selection-end-line="28" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/SessionTableUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="46" column="29" lean-forward="true" selection-start-line="46" selection-start-column="29" selection-end-line="46" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/SessionListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
@@ -651,21 +669,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/Events.xml" />
     <entry file="file://$PROJECT_DIR$/web/output.xml" />
-    <entry file="file://$PROJECT_DIR$/web/registerUser.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/LoginServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="37" column="17" lean-forward="true" selection-start-line="37" selection-start-column="17" selection-end-line="37" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/CreateHelp.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -734,14 +737,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/login.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21">
@@ -784,10 +779,6 @@
         <state relative-caret-position="171">
           <caret line="111" column="22" lean-forward="true" selection-start-line="111" selection-start-column="22" selection-end-line="111" selection-end-column="22" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#a#0;n#section#0;n#body#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#a#1;n#section#0;n#body#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#a#2;n#section#0;n#body#0;n#!!top" expanded="false" />
             <marker date="1524931928530" expanded="true" signature="3097:3115" ph="select * fro... help" />
           </folding>
         </state>
@@ -835,6 +826,74 @@
         </state>
       </provider>
     </entry>
+    <entry file="das://table:/a1020241/7a591e35-feed-4f16-892e-a89ea36ca2bc/students.help">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="15" column="44" lean-forward="true" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/registerUser.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="45" column="22" lean-forward="false" selection-start-line="45" selection-start-column="22" selection-end-line="45" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/RegisterUserServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="118" column="57" lean-forward="true" selection-start-line="118" selection-start-column="57" selection-end-line="118" selection-end-column="57" />
+          <folding>
+            <marker date="1524951070957" expanded="true" signature="5597:5888" ph="insert into users... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/LogoutServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/SessionTableUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="539">
+          <caret line="34" column="9" lean-forward="true" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
+          <folding>
+            <marker date="1524951563252" expanded="true" signature="376:462" ph="select * fro... sessiontable" />
+            <marker date="1524951563252" expanded="true" signature="932:1026" ph="select sessi... sessiontable" />
+            <marker date="1524951563252" expanded="true" signature="1585:1760" ph="insert into sessiontable... " />
+            <marker date="1524951563252" expanded="true" signature="1585:1801" ph="insert into sessiontable... " />
+            <marker date="1524951563252" expanded="true" signature="1585:1819" ph="insert into sessiontable... " />
+            <marker date="1524951563252" expanded="true" signature="1585:1838" ph="insert into sessiontable... " />
+            <marker date="1524951563252" expanded="true" signature="2237:2298" ph="DELETE FROM sessiontable... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/LoginServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="61" column="59" lean-forward="true" selection-start-line="61" selection-start-column="59" selection-end-line="61" selection-end-column="59" />
+          <folding>
+            <marker date="1524951597491" expanded="true" signature="3572:3643" ph="select id,pe... users" />
+            <marker date="1524951597491" expanded="true" signature="4753:4854" ph="select id, f... users" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="das://table:/a1020241/7a591e35-feed-4f16-892e-a89ea36ca2bc/students.users">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -843,13 +902,6 @@
       </provider>
     </entry>
     <entry file="das://table:/a1020241/7a591e35-feed-4f16-892e-a89ea36ca2bc/students.sessiontable">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/a1020241/7a591e35-feed-4f16-892e-a89ea36ca2bc/students.help">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />

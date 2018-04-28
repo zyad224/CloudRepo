@@ -47,30 +47,92 @@ public class RegisterUserServlet extends HttpServlet {
         newUser.peanut = 1000;
         newUser.username = request.getParameter("uname");
         newUser.password = request.getParameter("password");
-        String password2 = request.getParameter("password2");
+        newUser.password2 = request.getParameter("password2");
         newUser.firstname = request.getParameter("fname");
         newUser.lastname = request.getParameter("lname");
         newUser.gender = request.getParameter("gender");
 
 
-        if((!newUser.username.isEmpty()) && (!newUser.password.isEmpty())){
+        //if((!newUser.username.isEmpty()) && (!newUser.password.isEmpty())){
             response.setContentType("text/html;charset=UTF-8");
             PrintWriter out = response.getWriter();
-            if(insertData2Database(newUser)){
-                out.println("<script type=\"text/javascript\">");
-                out.println("alert('Registration is successful..');");
-                out.println("location='index.jsp';");
-                out.println("</script>");
-            }else{
-                out.println("<script type=\"text/javascript\">");
-                out.println("alert('Registration is not successful!!!');");
-                out.println("location='index.jsp';");
-                out.println("</script>");
-            }
+            int value = userInfoCorrect(newUser);
+            if(value == 0) {
+                if (insertData2Database(newUser)) {
+                    out.println("<script type=\"text/javascript\">");
+                    out.println("alert('Registration is successful..');");
+                    out.println("location='index.jsp';");
+                    out.println("</script>");
+                } else {
+                    out.println("<script type=\"text/javascript\">");
+                    out.println("alert('Registration is not successful!!!');");
+                    out.println("location='index.jsp';");
+                    out.println("</script>");
+                    }
+                }
+                if(value == 1){
+                    out.println("<script type=\"text/javascript\">");
+                    out.println("alert('Enter an username');");
+                    out.println("location='registerUser.jsp';");
+                    out.println("</script>");
+                }
+                if(value == 2){
+                    out.println("<script type=\"text/javascript\">");
+                    out.println("alert('Enter a password');");
+                    out.println("location='registerUser.jsp';");
+                    out.println("</script>");
+                }
+                if(value == 3){
+                    out.println("<script type=\"text/javascript\">");
+                    out.println("alert('Password confirmation is wrong!');");
+                    out.println("location='registerUser.jsp';");
+                    out.println("</script>");
+                }
+                if(value == 4){
+                    out.println("<script type=\"text/javascript\">");
+                    out.println("alert('Enter a First Name');");
+                    out.println("location='registerUser.jsp';");
+                    out.println("</script>");
+                }
+                if(value == 5){
+                    out.println("<script type=\"text/javascript\">");
+                    out.println("alert('Enter a Last Name');");
+                    out.println("location='registerUser.jsp';");
+                    out.println("</script>");
+                }
+                if(value == 6){
+                    out.println("<script type=\"text/javascript\">");
+                    out.println("alert('Choose a gender');");
+                    out.println("location='registerUser.jsp';");
+                    out.println("</script>");
+                }
+        //}
+    }
+
+    private int userInfoCorrect(User newUser) {
+        if (newUser.username == null || newUser.username.equals("")) {
+            return 1;
         }
+        if (newUser.password == null || newUser.password.equals("")) {
+            return 2;
+        }
+        if (!newUser.password.equals(newUser.password2)){
+            return 3;
+        }
+        if(newUser.firstname == null || newUser.firstname.equals("")){
+            return 4;
+        }
+        if(newUser.lastname == null || newUser.lastname.equals("")){
+            return 5;
+        }
+        if(newUser.gender == null || newUser.gender.equals("")){
+            return 6;
+        }
+        return 0;
     }
 
     private boolean insertData2Database(User newUser){
+
         Connection conn = null;
         Statement stmt = null;
         boolean status = false;
@@ -112,6 +174,7 @@ class User{
     public int peanut;
     public String username;
     public String password;
+    public String password2;
     public String firstname;
     public String lastname;
     public String gender;

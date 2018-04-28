@@ -31,7 +31,8 @@ public class LoginServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         // TODO Auto-generated method stub
-        response.getWriter().append("Served at: ").append(request.getContextPath());
+       // response.getWriter().append("Served at: ").append(request.getContextPath());
+        request.getRequestDispatcher("/login.jsp").forward(request, response);
     }
 
     /**
@@ -47,12 +48,21 @@ public class LoginServlet extends HttpServlet {
         String email = request.getParameter("email");
         String pass = request.getParameter("password");
 
+        /*
+        HttpSession session = request.getSession(false);
+        if (session == null || session.getAttribute("loggedInUser") == null) {
+            // user is not logged in, do something about it
+        } else {
+            // user IS logged in, do something: set model or do whatever you need
+        }*/
+
+
         if(SessionTableUtil.checkSessionTable(email,pass)){
-            if(session.getId().equals("")){
+
+            if(session.getId().equals(SessionTableUtil.getSessionID(email,pass))){
                 request.getRequestDispatcher("/login.jsp").forward(request, response);
             }else{
                 response.setContentType("text/html");
-                String path = "/EventManagement.jsp";
                 PrintWriter output = response.getWriter();
                 output.println("<!DOCTYPE html>\n" + "<html>\n" + "<body>");
                 output.println("<h2>This session is already open !!</h2>");
