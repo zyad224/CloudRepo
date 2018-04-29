@@ -43,25 +43,25 @@ public class BookEventServlet extends HttpServlet {
         if(r == 0){
             PrintWriter out=response.getWriter();
             out.print("<script language='javascript'>" +
-                    "alert('You booked an Event and your payment is successful !');" +
+                    "alert('You booked an Study Group and your payment is successful !');" +
                     "window.location.href='EventManagement.jsp';" +
                     "</script>");
         }else if(r == 1){
             PrintWriter out=response.getWriter();
             out.print("<script language='javascript'>" +
-                    "alert('You already booked this Event!');" +
+                    "alert('You already booked this Study Group!');" +
                     "window.location.href='EventManagement.jsp';" +
                     "</script>");
         }else if(r == 2){
             PrintWriter out=response.getWriter();
             out.print("<script language='javascript'>" +
-                    "alert('You peanuts are not enough for this Event!');" +
+                    "alert('You peanuts are not enough for this Study Group!');" +
                     "window.location.href='EventManagement.jsp';" +
                     "</script>");
         }else if(r == 3){
             PrintWriter out=response.getWriter();
             out.print("<script language='javascript'>" +
-                    "alert('You can not attend this Event!');" +
+                    "alert('You can not attend this Study Group!');" +
                     "window.location.href='EventManagement.jsp';" +
                     "</script>");
         }else{

@@ -24,23 +24,23 @@
 <body>
 <br><br><br>
 <form class="example" action="">
-	<input type="text" placeholder="Search Event.." id="search">
+	<input type="text" placeholder="Search Study Group.." id="search">
 	<!--<button type="submit"><i class="fa fa-search"></i></button>-->
 </form>
 
 <section>
 	<!--for demo wrap-->
-	<h1>Event List</h1>
+	<h1>Study List</h1>
 	<div class="tbl-header">
 		<table cellpadding="0" cellspacing="0" border="0">
 			<thead>
 			<tr>
-				<th>Event Title</th>
-				<th>Event Place</th>
-				<th>Event Date</th>
-				<th>Event Time</th>
-				<th>People</th>
-				<th>Event Price</th>
+				<th>Study Title</th>
+				<th>Study Place</th>
+				<th>Study Date</th>
+				<th>Study Time</th>
+				<th>People To Attend</th>
+				<th>Study Price</th>
 				<th>Booking</th>
 			</tr>
 			</thead>
@@ -69,7 +69,7 @@
 				try {
 					Class.forName("com.mysql.cj.jdbc.Driver");
 					String url = "jdbc:mysql://localhost:3306/STUDENTS?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-					Connection conn = DriverManager.getConnection(url, "root", "");
+					Connection conn = DriverManager.getConnection(url, "root", "123");
 
 					Statement st = conn.createStatement();
 					String query = "select * from events";
@@ -104,8 +104,8 @@
 	<% if (session.getAttribute("email") == null) { %>
 
 	<% } else {%>
-			<a href="/CreateEvent.jsp" class="button" style="vertical-align:middle"><span>Create Event</span></a>
-			<a href="/ShowMyEvents.jsp" class="button" style="vertical-align:middle"><span>My Events</span></a>
+			<a href="/CreateEvent.jsp" class="button" style="vertical-align:middle"><span>Create Study</span></a>
+			<a href="/ShowMyEvents.jsp" class="button" style="vertical-align:middle"><span>My Studies</span></a>
 			<a href="/ShowMyBookings.jsp" class="button" style="vertical-align:middle"><span>My Bookings</span></a>
 	<% } %>
 

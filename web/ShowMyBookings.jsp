@@ -35,16 +35,16 @@
 
 <section>
     <!--for demo wrap-->
-    <h1>${email} Event Bookings</h1>
+    <h1>${email} Study Bookings</h1>
     <div class="tbl-header">
         <table cellpadding="0" cellspacing="0" border="0">
             <thead>
             <tr>
-                <th>Event ID</th>
-                <th>Event Name</th>
-                <th>Event Place</th>
-                <th>Event Date</th>
-                <th>Event Time</th>
+                <th>Study ID</th>
+                <th>Study Name</th>
+                <th>Study Place</th>
+                <th>Study Date</th>
+                <th>Study Time</th>
             </tr>
             </thead>
         </table>
@@ -74,7 +74,7 @@
 
                     Class.forName("com.mysql.cj.jdbc.Driver");
                     String url = "jdbc:mysql://localhost:3306/STUDENTS?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-                    Connection conn = DriverManager.getConnection(url, "root", "");
+                    Connection conn = DriverManager.getConnection(url, "root", "123");
 
                     String s = (String)session.getAttribute("email");
                     String p=(String) session.getAttribute("password");
