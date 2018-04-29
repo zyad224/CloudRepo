@@ -34,7 +34,7 @@ public class DeleteEvent extends HttpServlet {
         int eventID=Integer.parseInt(request.getParameter("Id"));
         deleteEvent(eventID);
         PrintWriter out=response.getWriter();
-        out.print("<script language='javascript'>alert('Event has been deleted!');window.location.href='ShowMyEvents.jsp';</script>");    }
+        out.print("<script language='javascript'>alert('Study Group has been deleted!');window.location.href='ShowMyEvents.jsp';</script>");    }
 
     /**
      * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

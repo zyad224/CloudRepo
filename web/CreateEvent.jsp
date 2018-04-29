@@ -30,42 +30,42 @@
     <div class="wrap-contact100">
         <form class="contact100-form validate-form" action="CreateEventServlet" method="post">
             <span class="contact100-form-title">
-               Create Your Event
+               Create Your Study Group
             </span>
 
             <div class="wrap-input100 validate-input" data-validate="Event title is required">
-                <span class="label-input100">Event Name</span>
-                <input class="input100" type="text" name="Title" placeholder="Enter your event title">
+                <span class="label-input100">Study Name</span>
+                <input class="input100" type="text" name="Title" placeholder="Enter your study title">
                 <span class="focus-input100"></span>
             </div>
 
             <div class="wrap-input100 validate-input" data-validate = "Event place is required">
-                <span class="label-input100">Event Place</span>
-                <input class="input100" type="text" name="Place" placeholder="Enter your event addess">
+                <span class="label-input100">Study Place</span>
+                <input class="input100" type="text" name="Place" placeholder="Enter your study place">
                 <span class="focus-input100"></span>
             </div>
 
             <div class="wrap-input100 validate-input" data-validate="Event date is required">
-                <span class="label-input100">Event date</span>
-                <input class="input100" type="text" name="Date" placeholder="Enter your event date">
+                <span class="label-input100">Study date</span>
+                <input class="input100" type="text" name="Date" placeholder="Enter your study date">
                 <span class="focus-input100"></span>
             </div>
 
             <div class="wrap-input100 validate-input" data-validate = "Event place is required">
-                <span class="label-input100">Event Time</span>
-                <input class="input100" type="text" name="Time" placeholder="Enter your event addess">
+                <span class="label-input100">Study Time</span>
+                <input class="input100" type="text" name="Time" placeholder="Enter your study time">
                 <span class="focus-input100"></span>
             </div>
 
             <div class="wrap-input100 validate-input" data-validate = "Price is required">
                 <span class="label-input100">People to attend</span>
-                <input class="input100" name="People to attend" placeholder="What is your event price?"></input>
+                <input class="input100" name="People to attend" placeholder="How many people can attend?"></input>
                 <span class="focus-input100"></span>
             </div>
 
             <div class="wrap-input100 validate-input" data-validate = "Price is required">
                 <span class="label-input100">Price</span>
-                <input class="input100" name="Price" placeholder="What is your event price?"></input>
+                <input class="input100" name="Price" placeholder="What is your study price?"></input>
                 <span class="focus-input100"></span>
             </div>
 
