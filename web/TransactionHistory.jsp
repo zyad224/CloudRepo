@@ -1,14 +1,20 @@
 <%--
   Created by IntelliJ IDEA.
-  User: Zeyad
-  Date: 4/26/2018
-  Time: 11:56 PM
+  User: pegas
+  Date: 4/29/2018
+  Time: 3:43 PM
   To change this template use File | Settings | File Templates.
 --%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="java.sql.*" %>
-<link rel="stylesheet" type="text/css" href="CSS\eventList.css">
-<link rel="stylesheet" type="text/css" href="CSS\EventListSearch.css">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="CSS\eventList.css">
+    <link rel="stylesheet" type="text/css" href="CSS\EventListSearch.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
 
 <% if (session.getAttribute("email") == null) { %>
 
@@ -24,31 +30,28 @@
         </div>
     </div>
 </div>
+
 <% } %>
 
-<br><br><br>
-
 <body>
+
+<br><br><br>
 <form class="example" action="">
-    <input type="text" placeholder="Search Bookings.." id="search">
+    <input type="text" placeholder="Search Transaction.." id="search">
     <!--<button type="submit"><i class="fa fa-search"></i></button>-->
 </form>
 
 <section>
     <!--for demo wrap-->
-    <h1>${email} Help Bookings</h1>
+    <h1>Transaction History</h1>
     <div class="tbl-header">
         <table cellpadding="0" cellspacing="0" border="0">
             <thead>
             <tr>
-                <th>Help ID</th>
-                <th>Help Name</th>
-                <th>Help Place</th>
-                <th>Help Date</th>
-                <th>Help Time</th>
-                <th>Help Topic</th>
-                <th>Help Price</th>
-                <th>Peer Mobile</th>
+                <th>Transaction Amount</th>
+                <th>Transaction Type</th>
+                <th>Transaction Date/Time</th>
+                <th>Application Name</th>
             </tr>
             </thead>
         </table>
@@ -61,8 +64,7 @@
             $("#search").keyup(function(){
                 _this = this;
                 // Show only matching TR, hide rest of them
-                $.each($("#ShowMyHelpBook tbody").find("tr"), function() {
-
+                $.each($("#table tbody").find("tr"), function() {
                     if($(this).find('td').text().toLowerCase().indexOf($(_this).val().toLowerCase()) == -1)
                         $(this).hide();
                     else
@@ -70,58 +72,48 @@
                 });
             });
         </script>
-        <table cellpadding="0" cellspacing="0" border="0" id="ShowMyHelpBook">
+        <table cellpadding="0" cellspacing="0" border="0" id="table">
             <tbody>
+
             <%
                 try {
                     Class.forName("com.mysql.cj.jdbc.Driver");
                     String url = "jdbc:mysql://localhost:3306/STUDENTS?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
                     Connection conn = DriverManager.getConnection(url, "root", "");
-                    String s = (String)session.getAttribute("email");
-                    String p=(String) session.getAttribute("password");
+
                     Statement st = conn.createStatement();
-                    String query2="select id from users where username='"+s + "' AND password='" + p +"';";
-                    ResultSet rs = st.executeQuery(query2);
-                    rs.next();
-                    int id= rs.getInt("id");
-                    System.out.println(rs.getInt("id"));
-                    String query3= "select * from bookinghelp where userid='" + id +"';";
-                    ResultSet rs2=st.executeQuery(query3);
-                    while (rs2.next()) {
-                        System.out.println(rs2.getString("helpname"));
+
+                    String query = "select * from peanuttransaction where userid='" +session.getAttribute("userID")+"';";
+                    System.out.println(query);
+                    ResultSet rs = st.executeQuery(query);
+
+                    while (rs.next()) {
             %>
             <tr>
-                <td><%=rs2.getString("helpid")%></td>
-                <td><%=rs2.getString("helpname")%></td>
-                <td><%=rs2.getString("place")%></td>
-                <td><%=rs2.getString("date")%></td>
-                <td><%=rs2.getString("time")%></td>
-                <td><%=rs2.getString("topic")%></td>
-                <td><%=rs2.getString("price")%></td>
-                <td><%=rs2.getString("mobile")%></td>
-                <%--<td><%=s%></td>--%>
+                <td><%=rs.getString("transaction_amount")%></td>
+                <td><% if(rs.getBoolean("payment")){%>(-)PAYMENT
+                <%}else{%>(+)EARNING<%}%></td>
+                <td><%=rs.getString("date_time")%></td>
+                <td><%=rs.getString("appname")%></td>
                 </td>
             </tr>
 
             <%}
+                conn.close();
             }catch (Exception e){
             }
             %>
-
-            <%--<%--%>
-            <%--}--%>
-            <%--%>--%>
             </tbody>
         </table>
     </div>
+
+    <%
+
+        // for checking the session is available or not, If session dead go to Home page
+        if (session == null) {
+            session.invalidate();
+        }
+    %>
 </section>
-
-<%
-
-    // for checking the session is available or not, If session dead go to Home page
-    if (session == null) {
-        session.invalidate();
-    }
-%>
-
 </body>
+</html>

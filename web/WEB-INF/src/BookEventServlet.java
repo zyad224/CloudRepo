@@ -131,12 +131,13 @@ public class BookEventServlet extends HttpServlet {
             Statement statement = con.createStatement();
 
             //get user data from users table
-            String query = "SELECT peanut,firstname, lastname FROM users where id='" + userID +"';";
+            String query = "SELECT peanut,firstname, lastname,usertype FROM users where id='" + userID +"';";
             ResultSet rs = statement.executeQuery(query);
             rs.next();
             String fname = rs.getString("firstname");
             String lname = rs.getString("lastname");
             String peanut = rs.getString("peanut");
+            String userType = rs.getString("usertype");
 
             //get event data from events table
             query = "SELECT eventName,place,date,time,peopleToAttend,price FROM events where id='" + eventID +"';";
@@ -174,7 +175,7 @@ public class BookEventServlet extends HttpServlet {
                 statement.executeUpdate(query);
 
                 //make payment
-                if(PaymentSystem.doPayment(userID,price,peanut,session)){
+                if(PaymentSystem.doPayment(userID,price,peanut,userType,session)){
                     flag = 0;
                 }
 

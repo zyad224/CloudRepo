@@ -48,14 +48,6 @@ public class LoginServlet extends HttpServlet {
         String email = request.getParameter("email");
         String pass = request.getParameter("password");
 
-        /*
-        HttpSession session = request.getSession(false);
-        if (session == null || session.getAttribute("loggedInUser") == null) {
-            // user is not logged in, do something about it
-        } else {
-            // user IS logged in, do something: set model or do whatever you need
-        }*/
-
 
         if(SessionTableUtil.checkSessionTable(email,pass)){
             if(session.getId().equals(SessionTableUtil.getSessionID(email,pass))){
@@ -66,7 +58,6 @@ public class LoginServlet extends HttpServlet {
                 out.println("</script>");
                 request.getRequestDispatcher("login.jsp").forward(request, response);
                 System.out.println("same session");
-                //request.getRequestDispatcher("/login.jsp").forward(request, response);
             }else{
                 response.setContentType("text/html");
                 PrintWriter output = response.getWriter();
@@ -83,11 +74,9 @@ public class LoginServlet extends HttpServlet {
                 SessionTableUtil.add2SessionTable(user.get(0),email,session.getId(),user.get(2),pass,user.get(1));
                 request.getRequestDispatcher("/login.jsp").forward(request, response);
                 System.out.println("new session");
-                //response.sendRedirect("login.jsp");
             } else {
                 System.out.println("not registered user");
                 request.getRequestDispatcher("/loginError.jsp").forward(request, response);
-                //response.sendRedirect("loginError.jsp");
             }
         }
     }
