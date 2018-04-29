@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -43,7 +44,6 @@ public class RegisterUserServlet extends HttpServlet {
         //response.getWriter().append("Served at: ").append(request.getContextPath());
         User newUser = new User();
 
-        newUser.ID = newUser.hashCode()/1000;
         newUser.peanut = 1000;
         newUser.username = request.getParameter("uname");
         newUser.password = request.getParameter("password");
@@ -51,11 +51,21 @@ public class RegisterUserServlet extends HttpServlet {
         newUser.firstname = request.getParameter("fname");
         newUser.lastname = request.getParameter("lname");
         newUser.gender = request.getParameter("gender");
+        newUser.userType = request.getParameter("UserType");
 
 
-        //if((!newUser.username.isEmpty()) && (!newUser.password.isEmpty())){
-            response.setContentType("text/html;charset=UTF-8");
-            PrintWriter out = response.getWriter();
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+
+        //Check whether is exist on database
+        if(userExist(newUser)){
+            out.println("<script type=\"text/javascript\">");
+            out.println("alert('This user is already registered !!');");
+            out.println("location='index.jsp';");
+            out.println("</script>");
+            out.close();
+        }else{
+            //If user does not exist in DB check the information given
             int value = userInfoCorrect(newUser);
             if(value == 0) {
                 if (insertData2Database(newUser)) {
@@ -68,45 +78,94 @@ public class RegisterUserServlet extends HttpServlet {
                     out.println("alert('Registration is not successful!!!');");
                     out.println("location='index.jsp';");
                     out.println("</script>");
-                    }
                 }
-                if(value == 1){
-                    out.println("<script type=\"text/javascript\">");
-                    out.println("alert('Enter an username');");
-                    out.println("location='registerUser.jsp';");
-                    out.println("</script>");
-                }
-                if(value == 2){
-                    out.println("<script type=\"text/javascript\">");
-                    out.println("alert('Enter a password');");
-                    out.println("location='registerUser.jsp';");
-                    out.println("</script>");
-                }
-                if(value == 3){
-                    out.println("<script type=\"text/javascript\">");
-                    out.println("alert('Password confirmation is wrong!');");
-                    out.println("location='registerUser.jsp';");
-                    out.println("</script>");
-                }
-                if(value == 4){
-                    out.println("<script type=\"text/javascript\">");
-                    out.println("alert('Enter a First Name');");
-                    out.println("location='registerUser.jsp';");
-                    out.println("</script>");
-                }
-                if(value == 5){
-                    out.println("<script type=\"text/javascript\">");
-                    out.println("alert('Enter a Last Name');");
-                    out.println("location='registerUser.jsp';");
-                    out.println("</script>");
-                }
-                if(value == 6){
-                    out.println("<script type=\"text/javascript\">");
-                    out.println("alert('Choose a gender');");
-                    out.println("location='registerUser.jsp';");
-                    out.println("</script>");
-                }
-        //}
+            }
+            if(value == 1){
+                out.println("<script type=\"text/javascript\">");
+                out.println("alert('Enter an username!');");
+                out.println("location='registerUser.jsp';");
+                out.println("</script>");
+            }
+            if(value == 2){
+                out.println("<script type=\"text/javascript\">");
+                out.println("alert('Enter a password');");
+                out.println("location='registerUser.jsp';");
+                out.println("</script>");
+            }
+            if(value == 3){
+                out.println("<script type=\"text/javascript\">");
+                out.println("alert('Password confirmation is wrong!');");
+                out.println("location='registerUser.jsp';");
+                out.println("</script>");
+            }
+            if(value == 4){
+                out.println("<script type=\"text/javascript\">");
+                out.println("alert('Enter a First Name');");
+                out.println("location='registerUser.jsp';");
+                out.println("</script>");
+            }
+            if(value == 5){
+                out.println("<script type=\"text/javascript\">");
+                out.println("alert('Enter a Last Name');");
+                out.println("location='registerUser.jsp';");
+                out.println("</script>");
+            }
+            if(value == 6){
+                out.println("<script type=\"text/javascript\">");
+                out.println("alert('Choose a gender please!');");
+                out.println("location='registerUser.jsp';");
+                out.println("</script>");
+            }
+            if(value == 7){
+                out.println("<script type=\"text/javascript\">");
+                out.println("alert('Choose a user type please!');");
+                out.println("location='registerUser.jsp';");
+                out.println("</script>");
+            }
+            if(value == 8){
+                out.println("<script type=\"text/javascript\">");
+                out.println("alert('Username format is not suitable!');");
+                out.println("location='registerUser.jsp';");
+                out.println("</script>");
+            }
+        }
+    }
+
+    private boolean userExist(User newUser) {
+        Connection conn = null;
+        Statement stmt = null;
+
+        boolean status = false;
+        try{
+            conn = DatabaseConn.getConnection();
+            stmt = conn.createStatement();
+
+            String query = "SELECT password FROM students.users where username='" + newUser.username +"';";
+            ResultSet rs = stmt.executeQuery(query);
+            if(rs.next()){
+                status = true;
+            }
+        }catch(SQLException se){
+            //Handle errors for JDBC
+            se.printStackTrace();
+        }catch(Exception e){
+            //Handle errors for Class.forName
+            e.printStackTrace();
+        }finally{
+            //finally block used to close resources
+            try{
+                if(stmt!=null)
+                    conn.close();
+            }catch(SQLException se){
+            }// do nothing
+            try{
+                if(conn!=null)
+                    conn.close();
+            }catch(SQLException se){
+                se.printStackTrace();
+            }//end finally try
+        }//end try
+        return status;
     }
 
     private int userInfoCorrect(User newUser) {
@@ -128,6 +187,12 @@ public class RegisterUserServlet extends HttpServlet {
         if(newUser.gender == null || newUser.gender.equals("")){
             return 6;
         }
+        if(newUser.userType == null || newUser.userType.equals("")){
+            return 7;
+        }
+        if(!StringUtils.checkUsername(newUser.username)){
+            return 8;
+        }
         return 0;
     }
 
@@ -140,11 +205,50 @@ public class RegisterUserServlet extends HttpServlet {
             conn = DatabaseConn.getConnection();
             stmt = conn.createStatement();
 
-            String sql = "insert into users (peanut, username, password, firstname, lastname, gender) " +
+            String sql = "insert into users (peanut, username, password, firstname, lastname, gender, usertype) " +
                     "Values ('" + newUser.peanut + "','" + newUser.username +"','" + newUser.password + "', '" +
-                    newUser.firstname + "',  '" + newUser.lastname + "', '" + newUser.gender + "');";
+                    newUser.firstname + "',  '" + newUser.lastname + "', '" + newUser.gender + "','"+newUser.userType+"');";
             stmt.executeUpdate(sql);
             status = true;
+
+            PaymentSystem.saveTransaction(String.valueOf(newUser.peanut),false,String.valueOf(getUserID(newUser)),newUser.userType,"Registration");
+        }catch(SQLException se){
+            //Handle errors for JDBC
+            se.printStackTrace();
+        }catch(Exception e){
+            //Handle errors for Class.forName
+            e.printStackTrace();
+        }finally{
+            //finally block used to close resources
+            try{
+                if(stmt!=null)
+                    conn.close();
+            }catch(SQLException se){
+            }// do nothing
+            try{
+                if(conn!=null)
+                    conn.close();
+            }catch(SQLException se){
+                se.printStackTrace();
+            }//end finally try
+        }//end try
+        return status;
+    }
+
+    private int getUserID(User newUser) {
+        Connection conn = null;
+        Statement stmt = null;
+
+        int status=0;
+        try{
+            conn = DatabaseConn.getConnection();
+            stmt = conn.createStatement();
+
+            String query = "SELECT id FROM students.users where username='" + newUser.username +"';";
+            ResultSet rs = stmt.executeQuery(query);
+            if(rs.next()){
+                status = rs.getInt("id");
+            }
         }catch(SQLException se){
             //Handle errors for JDBC
             se.printStackTrace();
@@ -178,4 +282,5 @@ class User{
     public String firstname;
     public String lastname;
     public String gender;
+    public String userType;
 }

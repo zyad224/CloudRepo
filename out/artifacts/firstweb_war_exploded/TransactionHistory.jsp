@@ -51,7 +51,7 @@
                 <th>Transaction Amount</th>
                 <th>Transaction Type</th>
                 <th>Transaction Date/Time</th>
-                <th>Application Name</th>
+                <th>Source / Application Name</th>
             </tr>
             </thead>
         </table>
@@ -84,7 +84,6 @@
                     Statement st = conn.createStatement();
 
                     String query = "select * from peanuttransaction where userid='" +session.getAttribute("userID")+"';";
-                    System.out.println(query);
                     ResultSet rs = st.executeQuery(query);
 
                     while (rs.next()) {

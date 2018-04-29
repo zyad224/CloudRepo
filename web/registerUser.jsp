@@ -34,8 +34,15 @@
                 <div class="wrap-input100 validate-input m-b-16" data-validate="Please enter your last name ">
                     <input class="input100" type="text" name="lname" placeholder="Last Name"> <span class="focus-input100"></span>
                 </div>
-
                 <center>
+                <select name="UserType">
+                    <option value="">Please select your type</option>
+                    <option value="regular">Regular User</option>
+                    <option value="application">Application Provide</option>
+                    <option value="microservice">Micro Service Provide</option>
+                </select><br><br>
+
+
                 <input type="radio" name="gender" value="male"> Male
                 <input type="radio" name="gender" value="female"> Female
                 <input type="radio" name="gender" value="other"> Other</center><br>

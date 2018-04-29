@@ -175,7 +175,7 @@ public class BookHelpServlet extends HttpServlet {
                 statement.executeUpdate(query);
 
                 //make payment
-                if(PaymentSystem.doPayment(userID,price,peanut,userType,session)){
+                if(PaymentSystem.doPayment(userID,price,peanut,userType,"Peer2Peer",session)){
                     flag = 0;
                 }
 

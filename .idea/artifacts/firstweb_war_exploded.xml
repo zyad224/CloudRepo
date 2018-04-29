@@ -8,6 +8,7 @@
           <element id="module-output" name="firstweb" />
         </element>
       </element>
+      <element id="archive" name="team01.war" />
     </root>
   </artifact>
 </component>

@@ -175,7 +175,7 @@ public class BookEventServlet extends HttpServlet {
                 statement.executeUpdate(query);
 
                 //make payment
-                if(PaymentSystem.doPayment(userID,price,peanut,userType,session)){
+                if(PaymentSystem.doPayment(userID,price,peanut,userType,"Event Study",session)){
                     flag = 0;
                 }
 

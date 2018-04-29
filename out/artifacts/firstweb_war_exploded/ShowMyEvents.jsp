@@ -29,23 +29,23 @@
 <br><br><br>
 <body>
 <form class="example" action="">
-    <input type="text" placeholder="Search Event.." id="search">
+    <input type="text" placeholder="Search Study Group.." id="search">
     <!--<button type="submit"><i class="fa fa-search"></i></button>-->
 </form>
 
 <section>
     <!--for demo wrap-->
-    <h1>${email} Event List</h1>
+    <h1>${email} Study List</h1>
     <div class="tbl-header">
         <table cellpadding="0" cellspacing="0" border="0">
             <thead>
             <tr>
-                <th>Event Title</th>
-                <th>Event Place</th>
-                <th>Event Date</th>
-                <th>Event Time</th>
-                <th>People</th>
-                <th>Event Price</th>
+                <th>Study Title</th>
+                <th>Study Place</th>
+                <th>Study Date</th>
+                <th>Study Time</th>
+                <th>People to Attend</th>
+                <th>Study Price</th>
                 <th>User</th>
                 <th>Delete</th>
             </tr>
@@ -77,7 +77,7 @@
                     Class.forName("com.mysql.cj.jdbc.Driver");
                     String url = "jdbc:mysql://localhost:3306/STUDENTS?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 
-                    Connection conn = DriverManager.getConnection(url, "root", "");
+                    Connection conn = DriverManager.getConnection(url, "root", "123");
                     String s = (String)session.getAttribute("email");
                     String p=(String) session.getAttribute("password");
                     System.out.println(s+""+p);

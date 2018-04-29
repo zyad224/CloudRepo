@@ -50,6 +50,7 @@
                 <th>Mobile</th>
                 <th>Price</th>
                 <th>User</th>
+                <th>People</th>
                 <th>Delete</th>
             </tr>
             </thead>
@@ -80,7 +81,7 @@
 
                     Class.forName("com.mysql.cj.jdbc.Driver");
                     String url = "jdbc:mysql://localhost:3306/STUDENTS?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
-                    Connection conn = DriverManager.getConnection(url, "root", "");
+                    Connection conn = DriverManager.getConnection(url, "root", "123");
 
                     String s = (String)session.getAttribute("email");
                     String p=(String) session.getAttribute("password");
@@ -109,6 +110,8 @@
                 <td><%=rs2.getString("mobile")%></td>
                 <td><%=rs2.getString("price")%></td>
                 <td><%=s%></td>
+                <td><%=rs2.getString("peopleToAttend")%></td>
+
 
                 <td><a href="DeleteHelp?Id=<%=rs2.getInt("id") %>" class="button2">Delete</a></td>
 
