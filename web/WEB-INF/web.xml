@@ -15,6 +15,11 @@
         <servlet-name>Login</servlet-name>
         <servlet-class>LoginServlet</servlet-class>
     </servlet>
+
+    <servlet>
+        <servlet-name>UploadServlet</servlet-name>
+        <servlet-class>UploadServlet</servlet-class>
+    </servlet>
     <servlet>
         <servlet-name>DeleteEvent</servlet-name>
         <servlet-class>DeleteEvent</servlet-class>
@@ -61,6 +66,11 @@
     <servlet-mapping>
         <servlet-name>BookEvent</servlet-name>
         <url-pattern>/EventManagement</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>UploadServlet</servlet-name>
+        <url-pattern>/UploadServlet</url-pattern>
     </servlet-mapping>
 
     <servlet-mapping>
