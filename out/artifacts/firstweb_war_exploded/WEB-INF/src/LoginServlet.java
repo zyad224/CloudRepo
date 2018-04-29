@@ -58,15 +58,22 @@ public class LoginServlet extends HttpServlet {
 
 
         if(SessionTableUtil.checkSessionTable(email,pass)){
-
             if(session.getId().equals(SessionTableUtil.getSessionID(email,pass))){
-                request.getRequestDispatcher("/login.jsp").forward(request, response);
+                response.setContentType("text/html");
+                PrintWriter out=response.getWriter();
+                out.println("<script type=\"text/javascript\">");
+                out.println("alert('Welcome to the same session !!');");
+                out.println("</script>");
+                request.getRequestDispatcher("login.jsp").forward(request, response);
+                System.out.println("same session");
+                //request.getRequestDispatcher("/login.jsp").forward(request, response);
             }else{
                 response.setContentType("text/html");
                 PrintWriter output = response.getWriter();
                 output.println("<!DOCTYPE html>\n" + "<html>\n" + "<body>");
                 output.println("<h2>This session is already open !!</h2>");
                 output.println("</body>" + "</html>\n");
+                System.out.println("opened session, try different browser");
             }
         }else{
             if (checkUserFromDB(email, pass, session)) {
@@ -75,8 +82,10 @@ public class LoginServlet extends HttpServlet {
                 List<String> user = getUserInfo(email,pass);
                 SessionTableUtil.add2SessionTable(user.get(0),email,session.getId(),user.get(2),pass,user.get(1));
                 request.getRequestDispatcher("/login.jsp").forward(request, response);
+                System.out.println("new session");
                 //response.sendRedirect("login.jsp");
             } else {
+                System.out.println("not registered user");
                 request.getRequestDispatcher("/loginError.jsp").forward(request, response);
                 //response.sendRedirect("loginError.jsp");
             }

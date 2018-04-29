@@ -48,25 +48,23 @@ public class LoginServlet extends HttpServlet {
         String email = request.getParameter("email");
         String pass = request.getParameter("password");
 
-        /*
-        HttpSession session = request.getSession(false);
-        if (session == null || session.getAttribute("loggedInUser") == null) {
-            // user is not logged in, do something about it
-        } else {
-            // user IS logged in, do something: set model or do whatever you need
-        }*/
-
 
         if(SessionTableUtil.checkSessionTable(email,pass)){
-
             if(session.getId().equals(SessionTableUtil.getSessionID(email,pass))){
-                request.getRequestDispatcher("/login.jsp").forward(request, response);
+                response.setContentType("text/html");
+                PrintWriter out=response.getWriter();
+                out.println("<script type=\"text/javascript\">");
+                out.println("alert('Welcome to the same session !!');");
+                out.println("</script>");
+                request.getRequestDispatcher("login.jsp").forward(request, response);
+                System.out.println("same session");
             }else{
                 response.setContentType("text/html");
                 PrintWriter output = response.getWriter();
                 output.println("<!DOCTYPE html>\n" + "<html>\n" + "<body>");
                 output.println("<h2>This session is already open !!</h2>");
                 output.println("</body>" + "</html>\n");
+                System.out.println("opened session, try different browser");
             }
         }else{
             if (checkUserFromDB(email, pass, session)) {
@@ -75,10 +73,10 @@ public class LoginServlet extends HttpServlet {
                 List<String> user = getUserInfo(email,pass);
                 SessionTableUtil.add2SessionTable(user.get(0),email,session.getId(),user.get(2),pass,user.get(1));
                 request.getRequestDispatcher("/login.jsp").forward(request, response);
-                //response.sendRedirect("login.jsp");
+                System.out.println("new session");
             } else {
+                System.out.println("not registered user");
                 request.getRequestDispatcher("/loginError.jsp").forward(request, response);
-                //response.sendRedirect("loginError.jsp");
             }
         }
     }
