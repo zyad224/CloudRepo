@@ -54,7 +54,7 @@ public class CreateEventServlet extends HttpServlet {
     protected void createDynamicPage(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html");
-        String path = "/EventManagement.jsp";
+        String path = "EventManagement.jsp";
         PrintWriter output = response.getWriter();
         output.println("<!DOCTYPE html>\n" + "<html>\n" + "<body>");
         output.println("<h2>You create an Event !!</h2>");

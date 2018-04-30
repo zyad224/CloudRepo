@@ -8,7 +8,6 @@ public class StringUtils {
         Pattern pattern = Pattern.compile(patternString);
         Matcher matcher = pattern.matcher(username);
         boolean suitability = matcher.matches();
-        System.out.println(suitability);
         return suitability;
     }
 }

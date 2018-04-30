@@ -68,7 +68,7 @@
 			<%
 				try {
 					Class.forName("com.mysql.cj.jdbc.Driver");
-					String url = "jdbc:mysql://localhost:3306/STUDENTS?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+					String url = "jdbc:mysql://localhost:3306/students";
 					Connection conn = DriverManager.getConnection(url, "root", "123");
 
 					Statement st = conn.createStatement();
@@ -104,9 +104,9 @@
 	<% if (session.getAttribute("email") == null) { %>
 
 	<% } else {%>
-			<a href="/CreateEvent.jsp" class="button" style="vertical-align:middle"><span>Create Study</span></a>
-			<a href="/ShowMyEvents.jsp" class="button" style="vertical-align:middle"><span>My Studies</span></a>
-			<a href="/ShowMyBookings.jsp" class="button" style="vertical-align:middle"><span>My Bookings</span></a>
+			<a href="CreateEvent.jsp" class="button" style="vertical-align:middle"><span>Create Study</span></a>
+			<a href="ShowMyEvents.jsp" class="button" style="vertical-align:middle"><span>My Studies</span></a>
+			<a href="ShowMyBookings.jsp" class="button" style="vertical-align:middle"><span>My Bookings</span></a>
 	<% } %>
 
 	<%

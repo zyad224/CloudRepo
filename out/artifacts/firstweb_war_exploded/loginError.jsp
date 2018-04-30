@@ -16,7 +16,7 @@
 		<code>file</code>
 		realm and has been assigned to the <em>group</em> of
 		<code>user</code>
-		. Click here to <a href="/index.jsp">Try Again</a>
+		. Click here to <a href="index.jsp">Try Again</a>
 	</p>
 </body>
 </html>

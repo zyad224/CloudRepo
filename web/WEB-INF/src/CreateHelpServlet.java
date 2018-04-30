@@ -57,7 +57,7 @@ public class CreateHelpServlet extends HttpServlet {
     protected void createDynamicPage(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html");
-        String path = "/Peer2peer.jsp";
+        String path = "Peer2peer.jsp";
         PrintWriter output = response.getWriter();
         output.println("<!DOCTYPE html>\n" + "<html>\n" + "<body>");
         output.println("<h2>You create a help request !!</h2>");

@@ -72,11 +72,11 @@ public class LoginServlet extends HttpServlet {
                 session.setAttribute("password", pass);
                 List<String> user = getUserInfo(email,pass);
                 SessionTableUtil.add2SessionTable(user.get(0),email,session.getId(),user.get(2),pass,user.get(1));
-                request.getRequestDispatcher("/login.jsp").forward(request, response);
+                request.getRequestDispatcher("login.jsp").forward(request, response);
                 System.out.println("new session");
             } else {
                 System.out.println("not registered user");
-                request.getRequestDispatcher("/loginError.jsp").forward(request, response);
+                request.getRequestDispatcher("loginError.jsp").forward(request, response);
             }
         }
     }
