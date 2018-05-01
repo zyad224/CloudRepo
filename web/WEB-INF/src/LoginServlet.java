@@ -70,7 +70,7 @@ public class LoginServlet extends HttpServlet {
             if (checkUserFromDB(email, pass, session)) {
                 session.setAttribute("email", email);
                 session.setAttribute("password", pass);
-                List<String> user = getUserInfo(email,pass);
+                List<String> user = UserTableUtils.getUserInfo(email,pass);
                 SessionTableUtil.add2SessionTable(user.get(0),email,session.getId(),user.get(2),pass,user.get(1));
                 request.getRequestDispatcher("login.jsp").forward(request, response);
                 System.out.println("new session");
@@ -112,25 +112,5 @@ public class LoginServlet extends HttpServlet {
             e.printStackTrace();
         }
         return flag;
-    }
-
-
-    private List<String> getUserInfo(String username, String pass){
-        List<String> data = new ArrayList<String>();
-        try{
-            Connection conn = DatabaseConn.getConnection();
-            Statement st = conn.createStatement();
-            String userID = "select id, firstname, lastname from users where username='"+ username + "' AND password='" + pass +"';";
-            ResultSet rs = st.executeQuery(userID);
-            rs.next();
-            int id = rs.getInt("id");
-            String fname = rs.getString("firstname");
-            String lname = rs.getString("lastname");
-            data.add(String.valueOf(id));
-            data.add(fname);
-            data.add(lname);
-        }catch (Exception e){
-        }
-        return data;
     }
 }

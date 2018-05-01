@@ -3,10 +3,22 @@
 <html lang="en">
 <head>
 <title>Login Page</title>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="CSS\util.css">
 <link rel="stylesheet" type="text/css" href="CSS\main.css">
 </head>
+<div id="myDiv" class="w3-top">
+	<div class="w3-bar w3-white w3-padding w3-card myDiv2" style="letter-spacing:4px;">
+		<!-- Right-sided navbar links. Hide them on small screens -->
+		<div class="w3-right w3-hide-small">
+			<a href="login.jsp" class="w3-bar-item w3-button">Applications</a>
+			<a href="EventManagement.jsp" class="w3-bar-item w3-button">Event Studies</a>
+			<a href="Peer2peer.jsp" class="w3-bar-item w3-button">Peer to Peer</a>
+		</div>
+	</div>
+</div>
 <body>
 	<div class="limiter">
 		<div class="container-login100">
@@ -28,18 +40,18 @@
 					</div>
 
 					<div class="text-right p-t-13 p-b-23">
-						<span class="txt1"> Forgot </span> <a href="#" class="txt2">
-							Username / Password? </a>
+						<span class="txt1"> Forgot </span> <a href="logout.jsp" class="txt2">
+							Logout? </a>
 					</div>
 
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn" type="submit">Sign In</button>
 					</div>
-
-					<div class="flex-col-c p-t-170 p-b-40">
-						<span class="txt1"> Do not have an account ? </span> <a href="registerUser.jsp" class="txt2">
-						Sing Up </a>
-					</div>
+					<br><br>
+					<center>
+					<span class="txt1"> Do not have an account ? </span> <a href="registerUser.jsp" class="txt2">
+					Sing Up </a>
+					</center>
 				</form>
 			</div>
 		</div>

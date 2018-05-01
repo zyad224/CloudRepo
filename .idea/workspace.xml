@@ -2,39 +2,44 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="firstweb:war" />
+      <artifact name="firstweb:war exploded" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a85e9eeb-ac51-4ccf-b92a-1e2ff32a79c6" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/firstweb_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/firstweb_war_exploded.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/firstweb_war_exploded/CSS/eventList.css" afterPath="$PROJECT_DIR$/out/artifacts/firstweb_war_exploded/CSS/eventList.css" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/firstweb_war_exploded/CreateEvent.jsp" afterPath="$PROJECT_DIR$/out/artifacts/firstweb_war_exploded/CreateEvent.jsp" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/firstweb_war_exploded/CreateHelp.jsp" afterPath="$PROJECT_DIR$/out/artifacts/firstweb_war_exploded/CreateHelp.jsp" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/firstweb_war_exploded/EventManagement.jsp" afterPath="$PROJECT_DIR$/out/artifacts/firstweb_war_exploded/EventManagement.jsp" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/firstweb_war_exploded/Peer2peer.jsp" afterPath="$PROJECT_DIR$/out/artifacts/firstweb_war_exploded/Peer2peer.jsp" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/firstweb_war_exploded/ShowMyBookings.jsp" afterPath="$PROJECT_DIR$/out/artifacts/firstweb_war_exploded/ShowMyBookings.jsp" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/firstweb_war_exploded/ShowMyEvents.jsp" afterPath="$PROJECT_DIR$/out/artifacts/firstweb_war_exploded/ShowMyEvents.jsp" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/firstweb_war_exploded/ShowMyHelpBookings.jsp" afterPath="$PROJECT_DIR$/out/artifacts/firstweb_war_exploded/ShowMyHelpBookings.jsp" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/firstweb_war_exploded/ShowMyHelps.jsp" afterPath="$PROJECT_DIR$/out/artifacts/firstweb_war_exploded/ShowMyHelps.jsp" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/firstweb_war_exploded/TransactionHistory.jsp" afterPath="$PROJECT_DIR$/out/artifacts/firstweb_war_exploded/TransactionHistory.jsp" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/firstweb_war_exploded/WEB-INF/classes/CreateDB.class" afterPath="" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/firstweb_war_exploded/WEB-INF/classes/DatabaseConn.class" afterPath="$PROJECT_DIR$/out/artifacts/firstweb_war_exploded/WEB-INF/classes/DatabaseConn.class" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/firstweb_war_exploded/WEB-INF/src/CreateDB.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/firstweb_war_exploded/WEB-INF/src/CreateHelpServlet.java" afterPath="$PROJECT_DIR$/out/artifacts/firstweb_war_exploded/WEB-INF/src/CreateHelpServlet.java" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/firstweb_war_exploded/WEB-INF/src/DatabaseConn.java" afterPath="$PROJECT_DIR$/out/artifacts/firstweb_war_exploded/WEB-INF/src/DatabaseConn.java" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/firstweb_war_exploded/index.jsp" afterPath="$PROJECT_DIR$/out/artifacts/firstweb_war_exploded/index.jsp" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/firstweb_war_exploded/login.jsp" afterPath="$PROJECT_DIR$/out/artifacts/firstweb_war_exploded/login.jsp" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/firstweb_war_exploded/loginError.jsp" afterPath="$PROJECT_DIR$/out/artifacts/firstweb_war_exploded/loginError.jsp" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/firstweb_war_exploded/registerUser.jsp" afterPath="$PROJECT_DIR$/out/artifacts/firstweb_war_exploded/registerUser.jsp" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/CreateDB.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/CreateEventServlet.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/CreateEventServlet.class" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/CreateHelpServlet.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/CreateHelpServlet.class" />
+      <change beforePath="$PROJECT_DIR$/web/CSS/main.css" afterPath="$PROJECT_DIR$/web/CSS/main.css" />
+      <change beforePath="$PROJECT_DIR$/web/CreateEvent.jsp" afterPath="$PROJECT_DIR$/web/CreateEvent.jsp" />
+      <change beforePath="$PROJECT_DIR$/web/CreateHelp.jsp" afterPath="$PROJECT_DIR$/web/CreateHelp.jsp" />
+      <change beforePath="$PROJECT_DIR$/web/EventManagement.jsp" afterPath="$PROJECT_DIR$/web/EventManagement.jsp" />
+      <change beforePath="$PROJECT_DIR$/web/Peer2peer.jsp" afterPath="$PROJECT_DIR$/web/Peer2peer.jsp" />
+      <change beforePath="$PROJECT_DIR$/web/ShowMyBookings.jsp" afterPath="$PROJECT_DIR$/web/ShowMyBookings.jsp" />
+      <change beforePath="$PROJECT_DIR$/web/ShowMyEvents.jsp" afterPath="$PROJECT_DIR$/web/ShowMyEvents.jsp" />
+      <change beforePath="$PROJECT_DIR$/web/ShowMyHelpBookings.jsp" afterPath="$PROJECT_DIR$/web/ShowMyHelpBookings.jsp" />
+      <change beforePath="$PROJECT_DIR$/web/ShowMyHelps.jsp" afterPath="$PROJECT_DIR$/web/ShowMyHelps.jsp" />
+      <change beforePath="$PROJECT_DIR$/web/TransactionHistory.jsp" afterPath="$PROJECT_DIR$/web/TransactionHistory.jsp" />
       <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/DatabaseConn.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/DatabaseConn.class" />
       <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/LoginServlet.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/LoginServlet.class" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/StringUtils.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/StringUtils.class" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/src/CreateEventServlet.java" afterPath="$PROJECT_DIR$/web/WEB-INF/src/CreateEventServlet.java" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/src/CreateHelpServlet.java" afterPath="$PROJECT_DIR$/web/WEB-INF/src/CreateHelpServlet.java" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/LogoutServlet.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/LogoutServlet.class" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/RegisterUserServlet.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/RegisterUserServlet.class" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/SessionTableUtil.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/SessionTableUtil.class" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/User.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/User.class" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/src/DatabaseConn.java" afterPath="$PROJECT_DIR$/web/WEB-INF/src/DatabaseConn.java" />
       <change beforePath="$PROJECT_DIR$/web/WEB-INF/src/LoginServlet.java" afterPath="$PROJECT_DIR$/web/WEB-INF/src/LoginServlet.java" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/src/StringUtils.java" afterPath="$PROJECT_DIR$/web/WEB-INF/src/StringUtils.java" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/src/LogoutServlet.java" afterPath="$PROJECT_DIR$/web/WEB-INF/src/LogoutServlet.java" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/src/RegisterUserServlet.java" afterPath="$PROJECT_DIR$/web/WEB-INF/src/RegisterUserServlet.java" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/src/SessionTableUtil.java" afterPath="$PROJECT_DIR$/web/WEB-INF/src/SessionTableUtil.java" />
+      <change beforePath="$PROJECT_DIR$/web/index.jsp" afterPath="$PROJECT_DIR$/web/index.jsp" />
+      <change beforePath="$PROJECT_DIR$/web/login.jsp" afterPath="$PROJECT_DIR$/web/login.jsp" />
+      <change beforePath="$PROJECT_DIR$/web/loginError.jsp" afterPath="$PROJECT_DIR$/web/loginError.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -90,6 +95,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>stmt</find>
+      <find>conta</find>
       <find>limi</find>
     </findStrings>
   </component>
@@ -106,7 +112,6 @@
       <list>
         <option value="$PROJECT_DIR$/src/LoginServlet.java" />
         <option value="$PROJECT_DIR$/src/CreateEvent.java" />
-        <option value="$PROJECT_DIR$/web/loginError.jsp" />
         <option value="$PROJECT_DIR$/src/CreateEventServlet.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/src/Event.java" />
         <option value="$PROJECT_DIR$/web/Events.xml" />
@@ -115,41 +120,44 @@
         <option value="$PROJECT_DIR$/web/EventList.jsp" />
         <option value="$PROJECT_DIR$/web/CSS/createEvent.css" />
         <option value="$PROJECT_DIR$/web/CSS/createEventUtil.css" />
-        <option value="$PROJECT_DIR$/web/CSS/main.css" />
         <option value="$PROJECT_DIR$/web/WEB-INF/src/Connection.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/src/CreateDB.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/ShowMyEvents.jsp" />
         <option value="$PROJECT_DIR$/web/CreateEvent.html" />
         <option value="$PROJECT_DIR$/web/CSS/eventList.css" />
         <option value="$PROJECT_DIR$/web/WEB-INF/src/PaymentServlet.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/src/LogoutServlet.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/src/HeartbeatServlet.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/src/SessionListener.java" />
-        <option value="$PROJECT_DIR$/web/index.jsp" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/src/SessionTableUtil.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/TransactionHistory.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/src/TransactionHistoryServlet.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/web/CreateEvent.jsp" />
-        <option value="$PROJECT_DIR$/web/CreateHelp.jsp" />
-        <option value="$PROJECT_DIR$/web/login.jsp" />
         <option value="$PROJECT_DIR$/web/registerUser.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/src/PaymentSystem.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/src/BookEventServlet.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/src/BookHelpServlet.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/src/RegisterUserServlet.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/src/CreateEventServlet.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/src/CreateHelpServlet.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/src/StringUtils.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/src/DatabaseConn.java" />
+        <option value="$PROJECT_DIR$/web/CSS/main.css" />
+        <option value="$PROJECT_DIR$/web/loginError.jsp" />
+        <option value="$PROJECT_DIR$/web/CreateHelp.jsp" />
+        <option value="$PROJECT_DIR$/web/CreateEvent.jsp" />
         <option value="$PROJECT_DIR$/web/EventManagement.jsp" />
+        <option value="$PROJECT_DIR$/web/index.jsp" />
+        <option value="$PROJECT_DIR$/web/login.jsp" />
+        <option value="$PROJECT_DIR$/web/logout.jsp" />
         <option value="$PROJECT_DIR$/web/Peer2peer.jsp" />
         <option value="$PROJECT_DIR$/web/ShowMyBookings.jsp" />
         <option value="$PROJECT_DIR$/web/ShowMyEvents.jsp" />
         <option value="$PROJECT_DIR$/web/ShowMyHelpBookings.jsp" />
         <option value="$PROJECT_DIR$/web/ShowMyHelps.jsp" />
         <option value="$PROJECT_DIR$/web/TransactionHistory.jsp" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/src/CreateEventServlet.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/src/CreateHelpServlet.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/src/RegisterUserServlet.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/src/UserTableUtils.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/src/LoginServlet.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/src/StringUtils.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/src/SessionTableUtil.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/src/LogoutServlet.java" />
       </list>
     </option>
   </component>
@@ -167,8 +175,8 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
+    <option name="x" value="637" />
+    <option name="y" value="30" />
     <option name="width" value="1400" />
     <option name="height" value="990" />
   </component>
@@ -209,16 +217,34 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="CloudRepo" type="b2602c69:ProjectViewProjectNode" />
               <item name="CloudRepo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CloudRepo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CloudRepo" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CloudRepo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CloudRepo" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CloudRepo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CloudRepo" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -239,16 +265,17 @@
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\pegas\Desktop\CloudRepo\CloudRepo\web" />
-      <recent name="C:\Users\pegas\IdeaProjects\firstweb\web\WEB-INF" />
-      <recent name="C:\Users\pegas\IdeaProjects\firstweb\web\Images" />
-      <recent name="C:\Users\pegas\IdeaProjects\firstweb\web" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\pegas\IdeaProjects\firstweb\web\WEB-INF\CSS" />
       <recent name="C:\Users\pegas\IdeaProjects\firstweb\web\WEB-INF" />
       <recent name="C:\Users\pegas\IdeaProjects\firstweb\src" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\pegas\Desktop\CloudRepo\CloudRepo\web\Images" />
+      <recent name="C:\Users\pegas\Desktop\CloudRepo\CloudRepo\web" />
+      <recent name="C:\Users\pegas\IdeaProjects\firstweb\web\WEB-INF" />
+      <recent name="C:\Users\pegas\IdeaProjects\firstweb\web\Images" />
+      <recent name="C:\Users\pegas\IdeaProjects\firstweb\web" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -456,11 +483,12 @@
       <workItem from="1525004432644" duration="10211000" />
       <workItem from="1525015319408" duration="648000" />
       <workItem from="1525020095645" duration="9059000" />
+      <workItem from="1525131485749" duration="6341000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="138058000" />
+    <option name="totallyTimeSpent" value="145858000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -481,7 +509,7 @@
       <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16863587" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16863587" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -492,44 +520,19 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.49785176" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.020524515" sideWeight="0.7046187" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.40478906" sideWeight="0.7046187" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27658433" sideWeight="0.6898017" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19011815" sideWeight="0.6898017" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1796875" sideWeight="0.3101983" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38654503" sideWeight="0.2953813" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32839224" sideWeight="0.49785176" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16863587" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.49785176" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32839224" sideWeight="0.49785176" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.49785176" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40478906" sideWeight="0.7046187" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27658433" sideWeight="0.6898017" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1796875" sideWeight="0.3101983" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -578,24 +581,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/CSS/eventList.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="89" column="14" lean-forward="true" selection-start-line="89" selection-start-column="14" selection-end-line="89" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/HeartbeatServlet.java" />
-    <entry file="file://$PROJECT_DIR$/web/Events.xml" />
-    <entry file="file://$PROJECT_DIR$/web/output.xml" />
-    <entry file="file://$PROJECT_DIR$/web/loginError.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="11" column="7" lean-forward="true" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://table:/a1020241/7a591e35-feed-4f16-892e-a89ea36ca2bc/students.peanutbank">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -617,43 +602,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="7" column="59" lean-forward="true" selection-start-line="7" selection-start-column="59" selection-end-line="7" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/TransactionHistoryServlet.java" />
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="301">
           <caret line="58" column="14" lean-forward="false" selection-start-line="58" selection-start-column="14" selection-end-line="58" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/CreateEvent.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="20" column="43" lean-forward="false" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/CreateHelp.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="19" column="50" lean-forward="true" selection-start-line="19" selection-start-column="50" selection-end-line="19" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/login.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="43" lean-forward="false" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
           <folding />
         </state>
       </provider>
@@ -721,32 +674,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/BookHelpServlet.java">
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/SessionListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
-          <caret line="181" column="43" lean-forward="true" selection-start-line="181" selection-start-column="43" selection-end-line="181" selection-end-column="43" />
-          <folding>
-            <marker date="1525029022401" expanded="true" signature="3446:3505" ph="SELECT helpi... bookinghelp" />
-            <marker date="1525029022401" expanded="true" signature="4900:4979" ph="SELECT peanu... users" />
-            <marker date="1525029022401" expanded="true" signature="5347:5447" ph="SELECT helpN... " />
-            <marker date="1525029022401" expanded="true" signature="6616:6704" ph="UPDATE help... " />
-            <marker date="1525029022401" expanded="true" signature="7000:7320" ph="insert into bookinghelp... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/registerUser.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="39" column="48" lean-forward="true" selection-start-line="39" selection-start-column="48" selection-end-line="39" selection-end-column="48" />
+        <state relative-caret-position="42">
+          <caret line="3" column="59" lean-forward="false" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="59" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="das://table:/a1020241/7a591e35-feed-4f16-892e-a89ea36ca2bc/students.users">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/StringUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/UploadServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-309">
+          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/PaymentSystem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="756">
+          <caret line="41" column="61" lean-forward="false" selection-start-line="41" selection-start-column="55" selection-end-line="41" selection-end-column="61" />
+          <folding>
+            <marker date="1525028780278" expanded="true" signature="699:784" ph="UPDATE users... " />
+            <marker date="1525028780278" expanded="true" signature="1495:1580" ph="UPDATE users... " />
+            <marker date="1525028780278" expanded="true" signature="2202:2441" ph="insert into peanuttransaction... " />
+            <marker date="1525028780278" expanded="true" signature="2202:2467" ph="insert into peanuttransaction... " />
+            <marker date="1525028780278" expanded="true" signature="2202:2481" ph="insert into peanuttransaction... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/PaymentServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="44" column="28" lean-forward="false" selection-start-line="44" selection-start-column="28" selection-end-line="44" selection-end-column="28" />
+          <folding>
+            <marker date="1524918408584" expanded="true" signature="938:1026" ph="select id, p... users" />
+            <marker date="1524918408584" expanded="true" signature="3568:3629" ph="UPDATE users... " />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -757,62 +729,138 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://table:/a1020241/7a591e35-feed-4f16-892e-a89ea36ca2bc/students.sessiontable">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
+    <entry file="file://$PROJECT_DIR$/web/CSS/util.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="2760" column="11" lean-forward="false" selection-start-line="2760" selection-start-column="11" selection-end-line="2760" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/CSS/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="34" column="13" lean-forward="true" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/DatabaseConn.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/registerUser.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="39" column="48" lean-forward="true" selection-start-line="39" selection-start-column="48" selection-end-line="39" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/CreateEvent.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="30" column="78" lean-forward="false" selection-start-line="30" selection-start-column="78" selection-end-line="30" selection-end-column="78" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/CreateHelp.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="37" column="78" lean-forward="false" selection-start-line="37" selection-start-column="78" selection-end-line="37" selection-end-column="78" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/EventManagement.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="69" column="62" lean-forward="false" selection-start-line="69" selection-start-column="62" selection-end-line="69" selection-end-column="62" />
+        <state relative-caret-position="273">
+          <caret line="25" column="78" lean-forward="false" selection-start-line="25" selection-start-column="78" selection-end-line="25" selection-end-column="78" />
           <folding>
-            <marker date="1525122918969" expanded="true" signature="2609:2629" ph="select * fro... events" />
+            <marker date="1525136031269" expanded="true" signature="3363:3383" ph="select * fro... events" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="15" column="78" lean-forward="false" selection-start-line="15" selection-start-column="78" selection-end-line="15" selection-end-column="78" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="20" column="78" lean-forward="false" selection-start-line="20" selection-start-column="78" selection-end-line="20" selection-end-column="78" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/loginError.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-418">
+          <caret line="12" column="25" lean-forward="false" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/Peer2peer.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="80" column="62" lean-forward="false" selection-start-line="80" selection-start-column="62" selection-end-line="80" selection-end-column="62" />
+        <state relative-caret-position="273">
+          <caret line="31" column="78" lean-forward="false" selection-start-line="31" selection-start-column="78" selection-end-line="31" selection-end-column="78" />
           <folding>
-            <marker date="1525122931956" expanded="true" signature="3030:3048" ph="select * fro... help" />
+            <marker date="1525136098668" expanded="true" signature="3869:3887" ph="select * fro... help" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/ShowMyBookings.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="74" column="62" lean-forward="false" selection-start-line="74" selection-start-column="62" selection-end-line="74" selection-end-column="62" />
+        <state relative-caret-position="315">
+          <caret line="30" column="78" lean-forward="false" selection-start-line="30" selection-start-column="78" selection-end-line="30" selection-end-column="78" />
           <folding>
-            <marker date="1525122942461" expanded="true" signature="3009:3078" ph="select id fr... users" />
-            <marker date="1525122942461" expanded="true" signature="3311:3357" ph="select * fro... booking" />
+            <marker date="1525136116328" expanded="true" signature="3848:3917" ph="select id fr... users" />
+            <marker date="1525136116328" expanded="true" signature="4150:4196" ph="select * fro... booking" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/ShowMyEvents.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="30" column="78" lean-forward="false" selection-start-line="30" selection-start-column="78" selection-end-line="30" selection-end-column="78" />
+          <folding>
+            <marker date="1525136129439" expanded="true" signature="3984:4053" ph="select id fr... users" />
+            <marker date="1525136129439" expanded="true" signature="4229:4274" ph="select * fro... events" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/ShowMyHelpBookings.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="76" column="62" lean-forward="false" selection-start-line="76" selection-start-column="62" selection-end-line="76" selection-end-column="62" />
+        <state relative-caret-position="315">
+          <caret line="30" column="78" lean-forward="false" selection-start-line="30" selection-start-column="78" selection-end-line="30" selection-end-column="78" />
           <folding>
-            <marker date="1525122979119" expanded="true" signature="3110:3179" ph="select id fr... users" />
-            <marker date="1525122979119" expanded="true" signature="3412:3462" ph="select * fro... bookinghelp" />
+            <marker date="1525136141426" expanded="true" signature="3949:4018" ph="select id fr... users" />
+            <marker date="1525136141426" expanded="true" signature="4251:4301" ph="select * fro... bookinghelp" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/ShowMyHelps.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="81" column="62" lean-forward="false" selection-start-line="81" selection-start-column="62" selection-end-line="81" selection-end-column="62" />
+        <state relative-caret-position="252">
+          <caret line="30" column="78" lean-forward="false" selection-start-line="30" selection-start-column="78" selection-end-line="30" selection-end-column="78" />
           <folding>
-            <marker date="1525122986387" expanded="true" signature="3194:3263" ph="select id fr... users" />
-            <marker date="1525122986387" expanded="true" signature="3496:3539" ph="select * fro... help" />
+            <marker date="1525136152802" expanded="true" signature="4033:4102" ph="select id fr... users" />
+            <marker date="1525136152802" expanded="true" signature="4335:4378" ph="select * fro... help" />
           </folding>
         </state>
       </provider>
@@ -827,18 +875,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/TransactionHistory.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="84" column="33" lean-forward="true" selection-start-line="84" selection-start-column="33" selection-end-line="84" selection-end-column="33" />
+        <state relative-caret-position="168">
+          <caret line="26" column="78" lean-forward="false" selection-start-line="26" selection-start-column="78" selection-end-line="26" selection-end-column="78" />
           <folding>
-            <marker date="1525123017126" expanded="true" signature="3145:3227" ph="select * fro... peanuttransaction" />
+            <marker date="1525136163189" expanded="true" signature="3397:3479" ph="select * fro... peanuttransaction" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/BookEventServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="173" column="80" lean-forward="true" selection-start-line="173" selection-start-column="80" selection-end-line="173" selection-end-column="80" />
+        <state relative-caret-position="2105">
+          <caret line="178" column="29" lean-forward="false" selection-start-line="178" selection-start-column="29" selection-end-line="178" selection-end-column="29" />
           <folding>
             <marker date="1525028997075" expanded="true" signature="3567:3623" ph="SELECT event... booking" />
             <marker date="1525028997075" expanded="true" signature="5071:5149" ph="SELECT peanu... users" />
@@ -849,28 +897,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/DatabaseConn.java">
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/BookHelpServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/ShowMyEvents.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1407">
-          <caret line="82" column="39" lean-forward="true" selection-start-line="82" selection-start-column="39" selection-end-line="82" selection-end-column="39" />
+        <state relative-caret-position="26">
+          <caret line="181" column="43" lean-forward="true" selection-start-line="181" selection-start-column="43" selection-end-line="181" selection-end-column="43" />
           <folding>
-            <marker date="1525122969307" expanded="true" signature="3145:3214" ph="select id fr... users" />
-            <marker date="1525122969307" expanded="true" signature="3390:3435" ph="select * fro... events" />
+            <marker date="1525029022401" expanded="true" signature="3446:3505" ph="SELECT helpi... bookinghelp" />
+            <marker date="1525029022401" expanded="true" signature="4900:4979" ph="SELECT peanu... users" />
+            <marker date="1525029022401" expanded="true" signature="5347:5447" ph="SELECT helpN... " />
+            <marker date="1525029022401" expanded="true" signature="6616:6704" ph="UPDATE help... " />
+            <marker date="1525029022401" expanded="true" signature="7000:7320" ph="insert into bookinghelp... " />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/CreateEventServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
+        <state relative-caret-position="1050">
           <caret line="60" column="59" lean-forward="false" selection-start-line="60" selection-start-column="59" selection-end-line="60" selection-end-column="59" />
           <folding>
             <marker date="1525124754339" expanded="true" signature="2745:3069" ph="insert into events... " />
@@ -880,7 +923,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/CreateHelpServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6">
+        <state relative-caret-position="-294">
           <caret line="59" column="23" lean-forward="false" selection-start-line="59" selection-start-column="23" selection-end-line="59" selection-end-column="23" />
           <folding>
             <marker date="1525124771782" expanded="true" signature="3376:3772" ph="insert into help... " />
@@ -890,7 +933,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/DeleteEvent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-246">
+        <state relative-caret-position="-583">
           <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
           <folding>
             <marker date="1525015291896" expanded="true" signature="1756:1802" ph="DELETE FROM events... " />
@@ -900,106 +943,89 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/DeleteHelp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1000">
-          <caret line="59" column="0" lean-forward="true" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/LoginServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-210">
-          <caret line="15" column="14" lean-forward="true" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
+        <state relative-caret-position="-441">
+          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
           <folding>
-            <marker date="1525125124262" expanded="true" signature="3664:3735" ph="select id,pe... users" />
-            <marker date="1525125124262" expanded="true" signature="4845:4946" ph="select id, f... users" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/LogoutServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="26" column="20" lean-forward="true" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/PaymentServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="44" column="28" lean-forward="true" selection-start-line="44" selection-start-column="28" selection-end-line="44" selection-end-column="28" />
-          <folding>
-            <marker date="1524918408584" expanded="true" signature="938:1026" ph="select id, p... users" />
-            <marker date="1524918408584" expanded="true" signature="3568:3629" ph="UPDATE users... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/PaymentSystem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1029">
-          <caret line="54" column="57" lean-forward="false" selection-start-line="54" selection-start-column="51" selection-end-line="54" selection-end-column="57" />
-          <folding>
-            <marker date="1525028780278" expanded="true" signature="699:784" ph="UPDATE users... " />
-            <marker date="1525028780278" expanded="true" signature="1495:1580" ph="UPDATE users... " />
-            <marker date="1525028780278" expanded="true" signature="2202:2441" ph="insert into peanuttransaction... " />
-            <marker date="1525028780278" expanded="true" signature="2202:2467" ph="insert into peanuttransaction... " />
-            <marker date="1525028780278" expanded="true" signature="2202:2481" ph="insert into peanuttransaction... " />
+            <marker date="1524786537529" expanded="true" signature="1748:1791" ph="DELETE FROM help... " />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/RegisterUserServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5061">
-          <caret line="252" column="36" lean-forward="true" selection-start-line="252" selection-start-column="36" selection-end-line="252" selection-end-column="36" />
+        <state relative-caret-position="1097">
+          <caret line="214" column="90" lean-forward="false" selection-start-line="214" selection-start-column="90" selection-end-line="214" selection-end-column="90" />
           <folding>
-            <marker date="1525029879142" expanded="true" signature="5709:5785" ph="SELECT FROM users" />
-            <marker date="1525029879142" expanded="true" signature="7723:8000" ph="insert into users... " />
-            <marker date="1525029879142" expanded="true" signature="7723:8025" ph="insert into users... " />
-            <marker date="1525029879142" expanded="true" signature="7723:8047" ph="insert into users... " />
-            <marker date="1525029879142" expanded="true" signature="9191:9261" ph="SELECT id FR... users" />
+            <marker date="1525136908344" expanded="true" signature="5732:5808" ph="SELECT FROM users" />
+            <marker date="1525136908344" expanded="true" signature="7746:8023" ph="insert into users... " />
+            <marker date="1525136908344" expanded="true" signature="7746:8048" ph="insert into users... " />
+            <marker date="1525136908344" expanded="true" signature="7746:8070" ph="insert into users... " />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/SessionListener.java">
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/UserTableUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="3" column="59" lean-forward="false" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="59" />
+        <state relative-caret-position="315">
+          <caret line="15" column="22" lean-forward="true" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1525136915682" expanded="true" signature="445:546" ph="select id, f... users" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/a1020241/7a591e35-feed-4f16-892e-a89ea36ca2bc/students.users">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/logout.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="30" column="67" lean-forward="false" selection-start-line="30" selection-start-column="62" selection-end-line="30" selection-end-column="67" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/LoginServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="38" column="21" lean-forward="false" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
+          <folding>
+            <marker date="1525137380054" expanded="true" signature="3679:3750" ph="select id,pe... users" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/SessionTableUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-21">
-          <caret line="34" column="9" lean-forward="true" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
+        <state relative-caret-position="343">
+          <caret line="76" column="32" lean-forward="true" selection-start-line="76" selection-start-column="32" selection-end-line="76" selection-end-column="32" />
           <folding>
-            <marker date="1524951563252" expanded="true" signature="376:462" ph="select * fro... sessiontable" />
-            <marker date="1524951563252" expanded="true" signature="932:1026" ph="select sessi... sessiontable" />
-            <marker date="1524951563252" expanded="true" signature="1585:1838" ph="insert into sessiontable... " />
-            <marker date="1524951563252" expanded="true" signature="2237:2298" ph="DELETE FROM sessiontable... " />
+            <marker date="1525137753382" expanded="true" signature="376:462" ph="select * fro... sessiontable" />
+            <marker date="1525137753382" expanded="true" signature="932:1026" ph="select sessi... sessiontable" />
+            <marker date="1525137753382" expanded="true" signature="1585:1838" ph="insert into sessiontable... " />
+            <marker date="1525137753382" expanded="true" signature="2237:2298" ph="DELETE FROM sessiontable... " />
+            <marker date="1525137753382" expanded="true" signature="2697:2770" ph="DELETE FROM sessiontable... " />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/StringUtils.java">
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/LogoutServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/src/UploadServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-309">
-          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        <state relative-caret-position="231">
+          <caret line="37" column="42" lean-forward="false" selection-start-line="37" selection-start-column="42" selection-end-line="37" selection-end-column="42" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/a1020241/7a591e35-feed-4f16-892e-a89ea36ca2bc/students.sessiontable">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>

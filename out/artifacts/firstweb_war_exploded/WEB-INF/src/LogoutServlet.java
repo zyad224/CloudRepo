@@ -1,5 +1,6 @@
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -18,8 +19,25 @@ public class LogoutServlet extends HttpServlet {
         //request.getRequestDispatcher("/login.jsp").include(request, response);
 
         HttpSession session = request.getSession();
-        SessionTableUtil.deleteUserInSessionTable(session.getId());
-        session.invalidate();
+        if(session != null){
+            SessionTableUtil.deleteUserInSessionTable(session.getId());
+            session.invalidate();
+            out.println("<script type=\"text/javascript\">");
+            out.println("alert('You are successfully logged out!');");
+            out.println("location='index.jsp';");
+            out.println("</script>");
+            out.close();
+        }
+    }
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        String username = request.getParameter("email");
+        String pass = request.getParameter("password");
+        List<String> userData = UserTableUtils.getUserInfo(username,pass);
+        SessionTableUtil.deleteUserInSessionTableByID(userData.get(0));
+        response.setContentType("text/html");
+        PrintWriter out=response.getWriter();
         out.println("<script type=\"text/javascript\">");
         out.println("alert('You are successfully logged out!');");
         out.println("location='index.jsp';");

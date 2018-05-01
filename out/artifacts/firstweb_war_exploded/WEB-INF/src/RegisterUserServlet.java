@@ -10,6 +10,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.List;
 
 /**
  * Servlet implementation class LoginCheck
@@ -210,8 +211,8 @@ public class RegisterUserServlet extends HttpServlet {
                     newUser.firstname + "',  '" + newUser.lastname + "', '" + newUser.gender + "','"+newUser.userType+"');";
             stmt.executeUpdate(sql);
             status = true;
-
-            PaymentSystem.saveTransaction(String.valueOf(newUser.peanut),false,String.valueOf(getUserID(newUser)),newUser.userType,"Registration");
+            List<String> user = UserTableUtils.getUserInfo(newUser.username,newUser.password);
+            PaymentSystem.saveTransaction(String.valueOf(newUser.peanut),false,user.get(0),newUser.userType,"Registration");
         }catch(SQLException se){
             //Handle errors for JDBC
             se.printStackTrace();
@@ -235,42 +236,7 @@ public class RegisterUserServlet extends HttpServlet {
         return status;
     }
 
-    private int getUserID(User newUser) {
-        Connection conn = null;
-        Statement stmt = null;
 
-        int status=0;
-        try{
-            conn = DatabaseConn.getConnection();
-            stmt = conn.createStatement();
-
-            String query = "SELECT id FROM students.users where username='" + newUser.username +"';";
-            ResultSet rs = stmt.executeQuery(query);
-            if(rs.next()){
-                status = rs.getInt("id");
-            }
-        }catch(SQLException se){
-            //Handle errors for JDBC
-            se.printStackTrace();
-        }catch(Exception e){
-            //Handle errors for Class.forName
-            e.printStackTrace();
-        }finally{
-            //finally block used to close resources
-            try{
-                if(stmt!=null)
-                    conn.close();
-            }catch(SQLException se){
-            }// do nothing
-            try{
-                if(conn!=null)
-                    conn.close();
-            }catch(SQLException se){
-                se.printStackTrace();
-            }//end finally try
-        }//end try
-        return status;
-    }
 }
 
 class User{

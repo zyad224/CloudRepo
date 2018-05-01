@@ -64,4 +64,17 @@ public class SessionTableUtil {
             e.printStackTrace();
         }
     }
+
+    public static void deleteUserInSessionTableByID(String userID){
+        Connection con = null;
+        try {
+            con = DatabaseConn.getConnection();
+            Statement statement = con.createStatement();
+            String query = "DELETE FROM sessiontable where userid = '" + Integer.parseInt(userID) +"';";
+            statement.executeUpdate(query);
+            con.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 }
