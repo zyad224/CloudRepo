@@ -161,7 +161,7 @@ public class BookEventServlet extends HttpServlet {
             }
 
             //check amount of peanut
-            if(Integer.parseInt(peanut) > Integer.parseInt(price)){
+            if(Integer.parseInt(peanut) >=5){
                 priceSuitable = true;
             }else{
                 return 2;
@@ -175,8 +175,9 @@ public class BookEventServlet extends HttpServlet {
                 statement.executeUpdate(query);
 
                 //make payment
-                if(PaymentSystem.doPayment(userID,price,peanut,userType,"Event Study",session)){
+                if(PaymentSystem.doPayment(userID,price,peanut,userType,AppNames.EventStudy,session)){
                     flag = 0;
+
                 }
 
                 //Insert into booking table
