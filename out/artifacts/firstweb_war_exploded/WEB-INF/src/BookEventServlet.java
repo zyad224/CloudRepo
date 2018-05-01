@@ -34,42 +34,51 @@ public class BookEventServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         HttpSession session = request.getSession();
-        int eventID = Integer.parseInt(request.getParameter("Id"));
-        int userID =(int)request.getSession().getAttribute("userID");
-        System.out.println(eventID +","+ userID + " Click the book button");
 
-        //try to book event
-        int r = bookEvent(eventID, userID,session);
-        if(r == 0){
+        if(session.getAttribute("userID") == null){
             PrintWriter out=response.getWriter();
             out.print("<script language='javascript'>" +
-                    "alert('You booked an Study Group and your payment is successful !');" +
-                    "window.location.href='EventManagement.jsp';" +
-                    "</script>");
-        }else if(r == 1){
-            PrintWriter out=response.getWriter();
-            out.print("<script language='javascript'>" +
-                    "alert('You already booked this Study Group!');" +
-                    "window.location.href='EventManagement.jsp';" +
-                    "</script>");
-        }else if(r == 2){
-            PrintWriter out=response.getWriter();
-            out.print("<script language='javascript'>" +
-                    "alert('You peanuts are not enough for this Study Group!');" +
-                    "window.location.href='EventManagement.jsp';" +
-                    "</script>");
-        }else if(r == 3){
-            PrintWriter out=response.getWriter();
-            out.print("<script language='javascript'>" +
-                    "alert('You can not attend this Study Group!');" +
+                    "alert('Please Login for booking Study Group!');" +
                     "window.location.href='EventManagement.jsp';" +
                     "</script>");
         }else{
-            PrintWriter out=response.getWriter();
-            out.print("<script language='javascript'>" +
-                    "alert('we could not to service to you, Sorry !!');" +
-                    "window.location.href='EventManagement.jsp';" +
-                    "</script>");
+            int eventID = Integer.parseInt(request.getParameter("Id"));
+            int userID =(int)request.getSession().getAttribute("userID");
+            System.out.println(eventID +","+ userID + " Click the book button");
+
+            //try to book event
+            int r = bookEvent(eventID, userID,session);
+            if(r == 0){
+                PrintWriter out=response.getWriter();
+                out.print("<script language='javascript'>" +
+                        "alert('You booked an Study Group and your payment is successful !');" +
+                        "window.location.href='EventManagement.jsp';" +
+                        "</script>");
+            }else if(r == 1){
+                PrintWriter out=response.getWriter();
+                out.print("<script language='javascript'>" +
+                        "alert('You already booked this Study Group!');" +
+                        "window.location.href='EventManagement.jsp';" +
+                        "</script>");
+            }else if(r == 2){
+                PrintWriter out=response.getWriter();
+                out.print("<script language='javascript'>" +
+                        "alert('You peanuts are not enough for this Study Group!');" +
+                        "window.location.href='EventManagement.jsp';" +
+                        "</script>");
+            }else if(r == 3){
+                PrintWriter out=response.getWriter();
+                out.print("<script language='javascript'>" +
+                        "alert('You can not attend this Study Group!');" +
+                        "window.location.href='EventManagement.jsp';" +
+                        "</script>");
+            }else{
+                PrintWriter out=response.getWriter();
+                out.print("<script language='javascript'>" +
+                        "alert('we could not to service to you, Sorry !!');" +
+                        "window.location.href='EventManagement.jsp';" +
+                        "</script>");
+            }
         }
     }
 
@@ -161,7 +170,7 @@ public class BookEventServlet extends HttpServlet {
             }
 
             //check amount of peanut
-            if(Integer.parseInt(peanut) > Integer.parseInt(price)){
+            if(Integer.parseInt(peanut) >=5){
                 priceSuitable = true;
             }else{
                 return 2;
@@ -175,8 +184,9 @@ public class BookEventServlet extends HttpServlet {
                 statement.executeUpdate(query);
 
                 //make payment
-                if(PaymentSystem.doPayment(userID,price,peanut,userType,"Event Study",session)){
+                if(PaymentSystem.doPayment(userID,price,peanut,userType,AppNames.EventStudy,session)){
                     flag = 0;
+
                 }
 
                 //Insert into booking table

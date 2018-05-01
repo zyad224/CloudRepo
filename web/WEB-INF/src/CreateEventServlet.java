@@ -40,26 +40,35 @@ public class CreateEventServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         HttpSession session = request.getSession();
-       // int eventID = Integer.parseInt(request.getParameter("Id"));
-        int userID =(int)request.getSession().getAttribute("userID");
-        System.out.println(+ userID + " Click the create button");
 
-        String eventName = request.getParameter("Title");
-        String eventPlace=request.getParameter("Place");
-        String eventDate=request.getParameter("Date");
-        String eventPrice= request.getParameter("Price");
-        String eventTime= request.getParameter("Time");
-        String people= request.getParameter("People to attend");
-
-        //check
-        if(insertEvent(eventName,eventPlace,eventDate,eventPrice, eventTime,people,session,userID))
-            doGet(request, response);
-        else {
+        if(session == null){
             PrintWriter out=response.getWriter();
             out.print("<script language='javascript'>" +
-                    "alert('You peanuts are not enough for creating Study Group!');" +
+                    "alert('Please Login for creating Study Group!');" +
                     "window.location.href='EventManagement.jsp';" +
                     "</script>");
+        }else{
+            // int eventID = Integer.parseInt(request.getParameter("Id"));
+            int userID =(int)request.getSession().getAttribute("userID");
+            System.out.println(+ userID + " Click the create button");
+
+            String eventName = request.getParameter("Title");
+            String eventPlace=request.getParameter("Place");
+            String eventDate=request.getParameter("Date");
+            String eventPrice= request.getParameter("Price");
+            String eventTime= request.getParameter("Time");
+            String people= request.getParameter("People to attend");
+
+            //check
+            if(insertEvent(eventName,eventPlace,eventDate,eventPrice, eventTime,people,session,userID))
+                doGet(request, response);
+            else {
+                PrintWriter out=response.getWriter();
+                out.print("<script language='javascript'>" +
+                        "alert('You peanuts are not enough for creating Study Group!');" +
+                        "window.location.href='EventManagement.jsp';" +
+                        "</script>");
+            }
         }
     }
 
@@ -68,9 +77,9 @@ public class CreateEventServlet extends HttpServlet {
         response.setContentType("text/html");
         String path = "EventManagement.jsp";
         PrintWriter output = response.getWriter();
-        output.println("<!DOCTYPE html>\n" + "<html>\n" + "<body>");
-        output.println("<h2>You create an Event !!</h2>");
-        output.println("<p>This is a dynamic web page </br> " + "<a href="+path+">Click here to back</a></p>");
+        output.println("<!DOCTYPE html>\n" + "<html>\n<link rel=\"stylesheet\" type=\"text/css\" href=\"CSS\\eventList.css\">n" + "<body>");
+        output.println("<center><h2>You create an Event !!</h2></center>");
+        output.println("<p></br></br><center> " + "<a href="+path+" class=\"button\" >Click here to back</a></center></p>");
         output.println("</body>" + "</html>\n");
     }
 

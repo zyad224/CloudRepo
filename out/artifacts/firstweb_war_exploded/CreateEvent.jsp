@@ -38,7 +38,7 @@
     </div>
 </div>
 <% } %>
-
+<br><br>
 <div class="container-contact100">
     <div class="wrap-contact100">
         <form class="contact100-form validate-form" action="CreateEventServlet" method="post">
@@ -81,8 +81,6 @@
                 <input class="input100" name="Price" placeholder="What is your study price?"></input>
                 <span class="focus-input100"></span>
             </div>
-
-
 
             <div class="container-contact100-form-btn">
                 <div class="wrap-contact100-form-btn">

@@ -40,30 +40,38 @@ public class CreateHelpServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         HttpSession session = request.getSession();
-        // int eventID = Integer.parseInt(request.getParameter("Id"));
-        int userID =(int)request.getSession().getAttribute("userID");
-       // System.out.println(+ userID + " Click the create button");
 
-        String helpName = request.getParameter("Title");
-        String helpPlace=request.getParameter("Place");
-        String helpDate=request.getParameter("Date");
-        String helpPrice= request.getParameter("Price");
-        String helpTime= request.getParameter("Time");
-        String helpTopic= request.getParameter("Topic");
-        String helpDesc= request.getParameter("Description");
-        String helpMob= request.getParameter("Mobile");
-        String people = request.getParameter("People");
-
-        if(insertHelp(helpName,helpPlace,helpDate,helpPrice, helpTime,helpTopic,helpDesc,helpMob,people,session,userID))
-            doGet(request, response);
-        else{
+        if(session == null){
             PrintWriter out=response.getWriter();
             out.print("<script language='javascript'>" +
-                    "alert('You peanuts are not enough for creating a Help Request!');" +
+                    "alert('Please Login for creating a Help Request!');" +
                     "window.location.href='EventManagement.jsp';" +
                     "</script>");
-        }
+        }else{
+            // int eventID = Integer.parseInt(request.getParameter("Id"));
+            int userID =(int)request.getSession().getAttribute("userID");
+            // System.out.println(+ userID + " Click the create button");
 
+            String helpName = request.getParameter("Title");
+            String helpPlace=request.getParameter("Place");
+            String helpDate=request.getParameter("Date");
+            String helpPrice= request.getParameter("Price");
+            String helpTime= request.getParameter("Time");
+            String helpTopic= request.getParameter("Topic");
+            String helpDesc= request.getParameter("Description");
+            String helpMob= request.getParameter("Mobile");
+            String people = request.getParameter("People");
+
+            if(insertHelp(helpName,helpPlace,helpDate,helpPrice, helpTime,helpTopic,helpDesc,helpMob,people,session,userID))
+                doGet(request, response);
+            else{
+                PrintWriter out=response.getWriter();
+                out.print("<script language='javascript'>" +
+                        "alert('You peanuts are not enough for creating a Help Request!');" +
+                        "window.location.href='EventManagement.jsp';" +
+                        "</script>");
+            }
+        }
     }
 
     protected void createDynamicPage(HttpServletRequest request, HttpServletResponse response)
@@ -71,9 +79,9 @@ public class CreateHelpServlet extends HttpServlet {
         response.setContentType("text/html");
         String path = "Peer2peer.jsp";
         PrintWriter output = response.getWriter();
-        output.println("<!DOCTYPE html>\n" + "<html>\n" + "<body>");
-        output.println("<h2>You create a help request !!</h2>");
-        output.println("<p>This is a dynamic web page </br> " + "<a href="+path+">Click here to back</a></p>");
+        output.println("<!DOCTYPE html>\n" + "<html>\n<link rel=\"stylesheet\" type=\"text/css\" href=\"CSS\\eventList.css\">n" + "<body>");
+        output.println("<center><h2>You create a help request !!</h2></center>");
+        output.println("<p></br></br><center> " + "<a href="+path+" class=\"button\" >Click here to back</a></center></p>");
         output.println("</body>" + "</html>\n");
     }
 

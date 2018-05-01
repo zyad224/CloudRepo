@@ -93,7 +93,7 @@
                 try {
 
                     Class.forName("com.mysql.cj.jdbc.Driver");
-                    String url = "jdbc:mysql://localhost:3306/students";
+                    String url = "jdbc:mysql://localhost:3306/STUDENTS?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
                     Connection conn = DriverManager.getConnection(url, "root", "123");
 
                     String s = (String)session.getAttribute("email");
@@ -124,12 +124,9 @@
                 <td><%=rs2.getString("price")%></td>
                 <td><%=s%></td>
                 <td><%=rs2.getString("peopleToAttend")%></td>
-
-
+                <% if (session.getAttribute("email") != null) { %>
                 <td><a href="DeleteHelp?Id=<%=rs2.getInt("id") %>" class="button2">Delete</a></td>
-
-                </td>
-
+                <%}%>
             </tr>
 
             <%}

@@ -35,40 +35,49 @@ public class BookHelpServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         HttpSession session = request.getSession();
-        int helpID = Integer.parseInt(request.getParameter("Id"));
-        int userID =(int)request.getSession().getAttribute("userID");
 
-        int r = checkUserAlreadyRequested(helpID, userID,session);
-        if(r == 0){
+        if(session == null){
             PrintWriter out=response.getWriter();
             out.print("<script language='javascript'>" +
-                    "alert('You requested a Help!');" +
-                    "window.location.href='Peer2peer.jsp';" +
-                    "</script>");
-        }else if(r == 1){
-            PrintWriter out=response.getWriter();
-            out.print("<script language='javascript'>" +
-                    "alert('You already requested this Help!');" +
-                    "window.location.href='Peer2peer.jsp';" +
-                    "</script>");
-        }else if(r == 2){
-            PrintWriter out=response.getWriter();
-            out.print("<script language='javascript'>" +
-                    "alert('Your peanuts are not enough for this request!');" +
-                    "window.location.href='Peer2peer.jsp';" +
-                    "</script>");
-        }else if(r == 3){
-            PrintWriter out=response.getWriter();
-            out.print("<script language='javascript'>" +
-                    "alert('You can not request this Help because it is full!');" +
+                    "alert('Please Login for requesting a Help!');" +
                     "window.location.href='Peer2peer.jsp';" +
                     "</script>");
         }else{
-            PrintWriter out=response.getWriter();
-            out.print("<script language='javascript'>" +
-                    "alert('we could not to service to you, Sorry !!');" +
-                    "window.location.href='Peer2peer.jsp';" +
-                    "</script>");
+            int helpID = Integer.parseInt(request.getParameter("Id"));
+            int userID =(int)request.getSession().getAttribute("userID");
+
+            int r = checkUserAlreadyRequested(helpID, userID,session);
+            if(r == 0){
+                PrintWriter out=response.getWriter();
+                out.print("<script language='javascript'>" +
+                        "alert('You requested a Help!');" +
+                        "window.location.href='Peer2peer.jsp';" +
+                        "</script>");
+            }else if(r == 1){
+                PrintWriter out=response.getWriter();
+                out.print("<script language='javascript'>" +
+                        "alert('You already requested this Help!');" +
+                        "window.location.href='Peer2peer.jsp';" +
+                        "</script>");
+            }else if(r == 2){
+                PrintWriter out=response.getWriter();
+                out.print("<script language='javascript'>" +
+                        "alert('Your peanuts are not enough for this help request!');" +
+                        "window.location.href='Peer2peer.jsp';" +
+                        "</script>");
+            }else if(r == 3){
+                PrintWriter out=response.getWriter();
+                out.print("<script language='javascript'>" +
+                        "alert('You can not request this Help because it is full!');" +
+                        "window.location.href='Peer2peer.jsp';" +
+                        "</script>");
+            }else{
+                PrintWriter out=response.getWriter();
+                out.print("<script language='javascript'>" +
+                        "alert('we could not to service to you, Sorry !!');" +
+                        "window.location.href='Peer2peer.jsp';" +
+                        "</script>");
+            }
         }
     }
 
@@ -108,11 +117,11 @@ public class BookHelpServlet extends HttpServlet {
             }
 
             if(!list.contains(helpID)){
-                System.out.println(helpID + ", Event is not exist" );
+                System.out.println(helpID + ", Help is not exist" );
                 flag = bookHelp(userID,helpID,session);
             }else{
                 flag = 1;
-                System.out.println(helpID + ", Event is exist" );
+                System.out.println(helpID + ", Help is exist" );
             }
             con.close();
         }catch (Exception e){
@@ -162,7 +171,7 @@ public class BookHelpServlet extends HttpServlet {
             }
 
             //check amount of peanut
-            if(Integer.parseInt(peanut) >= Integer.parseInt(price)){
+            if(Integer.parseInt(peanut) >= 5){
                 priceSuitable = true;
             }else{
                 return 2;
@@ -175,7 +184,7 @@ public class BookHelpServlet extends HttpServlet {
                 statement.executeUpdate(query);
 
                 //make payment
-                if(PaymentSystem.doPayment(userID,price,peanut,userType,"Peer2Peer",session)){
+                if(PaymentSystem.doPayment(userID,price,peanut,userType,AppNames.Peer2Peer,session)){
                     flag = 0;
                 }
 

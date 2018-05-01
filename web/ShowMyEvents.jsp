@@ -118,8 +118,9 @@
                 <td><%=rs2.getString("peopleToAttend")%></td>
                 <td><%=rs2.getString("price")%></td>
                 <td><%=s%></td>
+                <% if (session.getAttribute("email") != null) { %>
                 <td><a href="DeleteEvent?Id=<%=rs2.getInt("id") %>" class="button2">Delete</a></td>
-                </td>
+                <%}%>
             </tr>
 
             <%}
