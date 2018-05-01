@@ -54,7 +54,7 @@ public class BookHelpServlet extends HttpServlet {
         }else if(r == 2){
             PrintWriter out=response.getWriter();
             out.print("<script language='javascript'>" +
-                    "alert('Your peanuts are not enough for this request!');" +
+                    "alert('Your peanuts are not enough for this help request!');" +
                     "window.location.href='Peer2peer.jsp';" +
                     "</script>");
         }else if(r == 3){
@@ -108,11 +108,11 @@ public class BookHelpServlet extends HttpServlet {
             }
 
             if(!list.contains(helpID)){
-                System.out.println(helpID + ", Event is not exist" );
+                System.out.println(helpID + ", Help is not exist" );
                 flag = bookHelp(userID,helpID,session);
             }else{
                 flag = 1;
-                System.out.println(helpID + ", Event is exist" );
+                System.out.println(helpID + ", Help is exist" );
             }
             con.close();
         }catch (Exception e){
@@ -162,7 +162,7 @@ public class BookHelpServlet extends HttpServlet {
             }
 
             //check amount of peanut
-            if(Integer.parseInt(peanut) >= Integer.parseInt(price)){
+            if(Integer.parseInt(peanut) >= 5){
                 priceSuitable = true;
             }else{
                 return 2;
@@ -175,7 +175,7 @@ public class BookHelpServlet extends HttpServlet {
                 statement.executeUpdate(query);
 
                 //make payment
-                if(PaymentSystem.doPayment(userID,price,peanut,userType,"Peer2Peer",session)){
+                if(PaymentSystem.doPayment(userID,price,peanut,userType,AppNames.Peer2Peer,session)){
                     flag = 0;
                 }
 
