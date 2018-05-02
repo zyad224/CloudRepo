@@ -83,7 +83,7 @@ public class CreateHelpServlet extends HttpServlet {
         response.setContentType("text/html");
         String path = "Peer2peer.jsp";
         PrintWriter output = response.getWriter();
-        output.println("<!DOCTYPE html>\n" + "<html>\n<link rel=\"stylesheet\" type=\"text/css\" href=\"CSS\\eventList.css\">n" + "<body>");
+        output.println("<!DOCTYPE html>\n" + "<html>\n<link rel=\"stylesheet\" type=\"text/css\" href=\"CSS\\eventList.css\">" + "<body>");
         output.println("<center><h2>You create a help request !!</h2></center>");
         output.println("<p></br></br><center> " + "<a href="+path+" class=\"button\" >Click here to back</a></center></p>");
         output.println("</body>" + "</html>\n");

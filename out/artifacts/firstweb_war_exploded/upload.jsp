@@ -1,6 +1,26 @@
 <!DOCTYPE html>
 <html>
 
+<style>
+    .fileContainer {
+        overflow: hidden;
+        position: relative;
+    }
+
+    .fileContainer [type=file] {
+        cursor: inherit;
+        display: block;
+        font-size: 999px;
+        filter: alpha(opacity=0);
+        min-height: 100%;
+        min-width: 100%;
+        opacity: 0;
+        position: absolute;
+        right: 0;
+        text-align: right;
+        top: 0;
+    }
+</style>
 <head>
     <meta charset="utf-8"/>
     <title>Upload Form</title>
@@ -9,7 +29,7 @@
     <link href="http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700" rel='stylesheet' />
 
     <!-- The main CSS file -->
-    <link href="CSS/uploadStyle.css" rel="stylesheet" />
+    <link href="CSS/eventList.css" rel="stylesheet" />
 </head>
 
 <% if (session.getAttribute("email") == null) { %>
@@ -41,31 +61,21 @@
 
 <body>
 
-<form id="upload" method="post" action="UploadServlet" enctype="multipart/form-data">
-    <div id="drop">
-        Drop Here
 
-        <a>Browse</a>
-        <input type="file" name="upl" multiple />
-    </div>
+<br><br><br><br><br><br>
+<div class="center">
+    <br><br>
+    <center>
+        <form method="post" action="UploadServlet" enctype="multipart/form-data">
+            <p>Select file to upload:</br></br>
+                <input  class="button3 tbl-header" type="file" name="file" size="60"/></p>
+            <p><input class="button" type="submit" value="Upload"/></p>
+        </form>
+    </center>
+    <br><br>
+</div>
 
-    <ul>
-        <!-- The file uploads will be shown here -->
-    </ul>
-
-</form>
 <h1>${message} </h1>
-<!-- JavaScript Includes -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script src="js/jquery.knob.js"></script>
-
-<!-- jQuery File Upload Dependencies -->
-<script src="js/jquery.ui.widget.js"></script>
-<script src="js/jquery.iframe-transport.js"></script>
-<script src="js/jquery.fileupload.js"></script>
-
-<!-- Our main JS file -->
-<script src="js/script.js"></script>
 
 </body>
 </html>

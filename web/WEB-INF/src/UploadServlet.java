@@ -40,20 +40,24 @@ public class UploadServlet extends HttpServlet {
         // Create path to the directory to save uploaded file
         String savePath = appPath + File.separator + SAVE_DIR;
 
+
         System.out.println(appPath);
         System.out.println(savePath);
 
-
-        // Create the save directory if it does not exist
-        File fileSaveDir = new File(savePath);
-        if (!fileSaveDir.exists())
-            fileSaveDir.mkdir();
-        for (Part part : req.getParts()) {
-            String fileName = extractFileName(part);
-            part.write(savePath + File.separator + fileName);
+        try{
+            // Create the save directory if it does not exist
+            File fileSaveDir = new File(savePath);
+            if (!fileSaveDir.exists())
+                fileSaveDir.mkdir();
+            for (Part part : req.getParts()) {
+                String fileName = extractFileName(part);
+                part.write(savePath + File.separator + fileName);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
         }
-        PrintWriter out=res.getWriter();
 
+        PrintWriter out=res.getWriter();
         out.print("<script language='javascript'>alert('File Uploaded Successfully!');window.location.href='login.jsp';</script>");
         // Add more code here to generate HTML response
         // to say that upload was completed successfully

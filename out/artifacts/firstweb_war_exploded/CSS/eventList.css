@@ -157,3 +157,42 @@ section{
     right: 0;
 }
 
+.button3 {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #f4511e;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 20px;
+    padding: 20px;
+    width: 400px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.button3 span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.button3 span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.button3:hover span {
+    padding-right: 60px;
+}
+
+.button3:hover span:after {
+    opacity: 1;
+    right: 0;
+}

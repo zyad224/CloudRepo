@@ -38,8 +38,6 @@
                 <select name="UserType">
                     <option value="">Please select your type</option>
                     <option value="regular">Regular User</option>
-                    <option value="application">Application Provide</option>
-                    <option value="microservice">Micro Service Provide</option>
                 </select><br><br>
 
 
