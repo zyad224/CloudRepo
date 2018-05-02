@@ -1,3 +1,7 @@
+import ApplicationInfo.AppNames;
+import DatabaseConnection.DatabaseConn;
+import PeanutPaymentSystem.PaymentSystem;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -184,7 +188,7 @@ public class BookEventServlet extends HttpServlet {
                 statement.executeUpdate(query);
 
                 //make payment
-                if(PaymentSystem.doPayment(userID,price,peanut,userType,AppNames.EventStudy,session)){
+                if(PaymentSystem.doPayment(userID,price,peanut,userType, AppNames.EventStudy,session)){
                     flag = 0;
 
                 }

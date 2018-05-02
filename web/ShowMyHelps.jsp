@@ -14,11 +14,10 @@
 <div id="myDiv" class="w3-top">
     <div class="w3-bar w3-white w3-padding w3-card myDiv2" style="letter-spacing:4px;">
         <a href="index.jsp" class="w3-bar-item w3-button">Login</a>
+        <a href="upload.jsp" class="w3-bar-item w3-button"><img src="Images\upload.png" width="25" height="25"/>  Upload</a>
         <!-- Right-sided navbar links. Hide them on small screens -->
         <div class="w3-right w3-hide-small">
             <a href="login.jsp" class="w3-bar-item w3-button">Applications</a>
-            <a href="EventManagement.jsp" class="w3-bar-item w3-button">Event Studies</a>
-            <a href="Peer2peer.jsp" class="w3-bar-item w3-button">Peer to Peer</a>
         </div>
     </div>
 </div>
@@ -28,9 +27,8 @@
         <a id="homePage"  href="#home" class="w3-bar-item w3-button">Welcome ${email}</a>
         <!-- Right-sided navbar links. Hide them on small screens -->
         <div class="w3-right w3-hide-small">
+            <a href="upload.jsp" class="w3-bar-item w3-button"><img src="Images\upload.png" width="25" height="25"/>  Upload</a>
             <a href="login.jsp" class="w3-bar-item w3-button">Applications</a>
-            <a href="EventManagement.jsp" class="w3-bar-item w3-button">Event Studies</a>
-            <a href="Peer2peer.jsp" class="w3-bar-item w3-button">Peer to Peer</a>
             <a href="TransactionHistory.jsp" class="w3-bar-item w3-button">Transaction History</a>
             <a href="#" class="w3-bar-item w3-button">Peanut: ${amountPeanut}</a>
             <a href="LogoutServlet" class="w3-bar-item w3-button">Log out</a>
@@ -93,7 +91,7 @@
                 try {
 
                     Class.forName("com.mysql.cj.jdbc.Driver");
-                    String url = "jdbc:mysql://localhost:3306/STUDENTS?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+                    String url = "jdbc:mysql://localhost:3306/students";
                     Connection conn = DriverManager.getConnection(url, "root", "123");
 
                     String s = (String)session.getAttribute("email");

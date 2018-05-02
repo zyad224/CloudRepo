@@ -1,3 +1,7 @@
+import ApplicationInfo.AppNames;
+import DatabaseConnection.DatabaseConn;
+import PeanutPaymentSystem.PaymentSystem;
+
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -109,7 +113,7 @@ public class CreateHelpServlet extends HttpServlet {
                         "'" + session.getAttribute("userID") + "');";
 
                 statement.executeUpdate(query);
-                PaymentSystem.doPayment(userID,"",peanut,userType,AppNames.Peer2Peer,session);
+                PaymentSystem.doPayment(userID,"",peanut,userType, AppNames.Peer2Peer,session);
                 flag=true;
             }
         }catch (Exception e){

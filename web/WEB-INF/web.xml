@@ -116,4 +116,14 @@
         <servlet-class>Team07.com.servlet.QuestionReply</servlet-class>
     </servlet>
 
+    <servlet>
+        <servlet-name>QuestionIndex</servlet-name>
+        <servlet-class>Team07.com.servlet.QuestionIndex</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>QuestionIndex</servlet-name>
+        <url-pattern>/problemSolving</url-pattern>
+    </servlet-mapping>
+
+
 </web-app>

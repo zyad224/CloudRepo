@@ -12,8 +12,6 @@
 		<a href="index.jsp" class="w3-bar-item w3-button">Login</a>
 		<div class="w3-right w3-hide-small">
 			<a href="login.jsp" class="w3-bar-item w3-button">Applications</a>
-			<a href="EventManagement.jsp" class="w3-bar-item w3-button">Event Studies</a>
-			<a href="Peer2peer.jsp" class="w3-bar-item w3-button">Peer to Peer</a>
 		</div>
 	</div>
 </div>
@@ -24,8 +22,6 @@
 		<!-- Right-sided navbar links. Hide them on small screens -->
 		<div class="w3-right w3-hide-small">
 			<a href="login.jsp" class="w3-bar-item w3-button">Applications</a>
-			<a href="EventManagement.jsp" class="w3-bar-item w3-button">Event Studies</a>
-			<a href="Peer2peer.jsp" class="w3-bar-item w3-button">Peer to Peer</a>
 			<a href="TransactionHistory.jsp" class="w3-bar-item w3-button">Transaction History</a>
 			<a href="#" class="w3-bar-item w3-button">Peanut: ${amountPeanut}</a>
 			<a href="LogoutServlet" class="w3-bar-item w3-button">Log out</a>

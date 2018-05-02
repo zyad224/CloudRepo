@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
-         version="4.0">
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+
 
     <listener>
         <listener-class>SessionListener</listener-class>
@@ -105,4 +106,24 @@
         <servlet-name>CreateHelp</servlet-name>
         <url-pattern>/CreateHelp</url-pattern>
     </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>QuestionReply</servlet-name>
+        <url-pattern>/QuestionReply</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>QuestionReply</servlet-name>
+        <servlet-class>Team07.com.servlet.QuestionReply</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>QuestionIndex</servlet-name>
+        <servlet-class>Team07.com.servlet.QuestionIndex</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>QuestionIndex</servlet-name>
+        <url-pattern>/problemSolving</url-pattern>
+    </servlet-mapping>
+
+
 </web-app>

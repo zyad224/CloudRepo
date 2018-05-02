@@ -4,7 +4,6 @@
 <head>
 <title>Login Page</title>
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="CSS\util.css">
 <link rel="stylesheet" type="text/css" href="CSS\main.css">
@@ -12,10 +11,9 @@
 <div id="myDiv" class="w3-top">
 	<div class="w3-bar w3-white w3-padding w3-card myDiv2" style="letter-spacing:4px;">
 		<!-- Right-sided navbar links. Hide them on small screens -->
+		<a href="upload.jsp" class="w3-bar-item w3-button"><img src="Images\upload.png" width="25" height="25"/>  Upload</a>
 		<div class="w3-right w3-hide-small">
 			<a href="login.jsp" class="w3-bar-item w3-button">Applications</a>
-			<a href="EventManagement.jsp" class="w3-bar-item w3-button">Event Studies</a>
-			<a href="Peer2peer.jsp" class="w3-bar-item w3-button">Peer to Peer</a>
 		</div>
 	</div>
 </div>
