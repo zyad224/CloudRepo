@@ -46,4 +46,7 @@
 
     <a href="upload.jsp">
         <img src="Images\upload.png" width="300" height="200"/></a>
+
+    <a href="problemSolving.jsp">
+        <img src="Images\questionSolver.png" width="300" height="200"/></a>
 </center>
